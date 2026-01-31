@@ -1,0 +1,29 @@
+{
+    "id": "long_sword",
+    "name": "Long Sword",
+    "description": "A versatile one-handed blade",
+    "category": "item",
+    "tags": ["weapon", "sword", "melee", "one_handed"],
+    
+    "components": {
+        "render": {
+            "char": "/",
+            "color": "cyan",
+            "priority": 3
+        },
+        "name": {
+            "name": "Long Sword",
+            "description": "A versatile one-handed blade"
+        },
+        "item": {
+            "type": "weapon",
+            "equip_slot": "hand",
+            "value": 100,
+            "base_damage": 10,
+            "attack_bonus": 8,
+            "cutting_chance": 0.18,
+            "required_limbs": 1,
+            "required_limb_type": "hand"
+        }
+    }
+}

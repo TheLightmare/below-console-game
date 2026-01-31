@@ -1,0 +1,27 @@
+{
+    "id": "iron_helmet",
+    "name": "Iron Helmet",
+    "description": "Protects your head",
+    "category": "item",
+    "tags": ["armor", "helmet", "head", "metal"],
+    
+    "components": {
+        "render": {
+            "char": "^",
+            "color": "gray",
+            "priority": 3
+        },
+        "name": {
+            "name": "Iron Helmet",
+            "description": "Protects your head"
+        },
+        "item": {
+            "type": "helmet",
+            "equip_slot": "head",
+            "value": 40,
+            "defense_bonus": 3,
+            "required_limbs": 1,
+            "required_limb_type": "head"
+        }
+    }
+}

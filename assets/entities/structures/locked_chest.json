@@ -1,0 +1,39 @@
+{
+    "id": "locked_chest",
+    "name": "Locked Chest",
+    "description": "A locked treasure chest",
+    "category": "structure",
+    "tags": ["container", "chest", "locked", "loot"],
+    
+    "components": {
+        "position": {
+            "x": 0,
+            "y": 0
+        },
+        "render": {
+            "char": "=",
+            "color": "brown",
+            "priority": 4
+        },
+        "name": {
+            "name": "Locked Chest",
+            "description": "A locked treasure chest"
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "chest": {
+            "is_open": false,
+            "is_locked": true,
+            "key_id": "chest_key",
+            "loot_table": "rare_loot",
+            "open_char": "_",
+            "closed_char": "="
+        },
+        "interactable": {
+            "interaction_type": "container",
+            "prompt": "Open chest"
+        }
+    }
+}

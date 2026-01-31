@@ -1,0 +1,62 @@
+{
+    "id": "bridge",
+    "name": "Stone Bridge",
+    "description": "A sturdy stone bridge crossing a gap",
+    "type_id": 16,
+    "min_size": 8,
+    "max_size": 12,
+    
+    "biomes": {
+        "plains": 0.02,
+        "forest": 0.02,
+        "swamp": 0.03
+    },
+    
+    "shapes": [
+        {
+            "type": "rect_filled",
+            "x1": -6, "y1": -1,
+            "x2": 6, "y2": 1,
+            "symbol": "=",
+            "color": "gray",
+            "walkable": true
+        }
+    ],
+    
+    "tiles": [
+        {"x": -6, "y": -2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": -5, "y": -2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": -4, "y": -2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": -3, "y": -2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": -2, "y": -2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": -1, "y": -2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": 0, "y": -2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": 1, "y": -2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": 2, "y": -2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": 3, "y": -2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": 4, "y": -2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": 5, "y": -2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": 6, "y": -2, "symbol": "|", "color": "gray", "walkable": false},
+        
+        {"x": -6, "y": 2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": -5, "y": 2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": -4, "y": 2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": -3, "y": 2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": -2, "y": 2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": -1, "y": 2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": 0, "y": 2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": 1, "y": 2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": 2, "y": 2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": 3, "y": 2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": 4, "y": 2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": 5, "y": 2, "symbol": "|", "color": "gray", "walkable": false},
+        {"x": 6, "y": 2, "symbol": "|", "color": "gray", "walkable": false},
+        
+        {"x": -4, "y": 0, "symbol": "O", "color": "gray", "walkable": false},
+        {"x": 4, "y": 0, "symbol": "O", "color": "gray", "walkable": false}
+    ],
+    
+    "spawns": [],
+    
+    "tags": ["crossing", "road"]
+}

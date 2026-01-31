@@ -1,0 +1,99 @@
+{
+    "_description": "World Generation Config - Two-Map System (Elevation + Moisture)",
+    
+    "noise": {
+        "elevation": {
+            "scale": 0.008,
+            "octaves": 6,
+            "persistence": 0.5,
+            "lacunarity": 2.0,
+            "_description": "Primary terrain shape - lower scale = larger landmasses"
+        },
+        "moisture": {
+            "scale": 0.005,
+            "octaves": 5,
+            "persistence": 0.55,
+            "lacunarity": 2.0,
+            "_description": "Rainfall distribution - affects biome wetness"
+        },
+        "continent": {
+            "scale": 0.0015,
+            "octaves": 5,
+            "persistence": 0.5,
+            "lacunarity": 2.0,
+            "_description": "Continent shapes - scale 0.0015 = ~600 unit landmasses"
+        },
+        "detail": {
+            "scale": 0.025,
+            "octaves": 3,
+            "persistence": 0.5,
+            "lacunarity": 2.0,
+            "_description": "Local terrain variation"
+        }
+    },
+    
+    "elevation": {
+        "deep_ocean": 0.20,
+        "ocean": 0.30,
+        "coast": 0.35,
+        "lowland": 0.50,
+        "midland": 0.65,
+        "highland": 0.80,
+        "_description": "Elevation thresholds for terrain types"
+    },
+    
+    "moisture": {
+        "arid": 0.20,
+        "dry": 0.35,
+        "moderate": 0.55,
+        "wet": 0.75,
+        "_description": "Moisture thresholds for climate zones"
+    },
+    
+    "rivers": {
+        "enabled": true,
+        "source_density": 0.003,
+        "source_min_elevation": 0.55,
+        "source_max_elevation": 0.85,
+        "source_min_moisture": 0.25,
+        "path_scale": 0.012,
+        "meander_scale": 0.005,
+        "meander_strength": 18.0,
+        "base_width": 0.010,
+        "max_width": 0.065,
+        "width_growth": 2.0,
+        "_description": "Rivers start in highlands, widen as they flow to ocean"
+    },
+    
+    "lakes": {
+        "enabled": true,
+        "density": 0.003,
+        "threshold": 0.90,
+        "min_elevation": 0.36,
+        "max_elevation": 0.65,
+        "min_moisture": 0.45,
+        "_description": "Lakes form in low wet areas"
+    },
+    
+    "roads": {
+        "enabled": false,
+        "scale": 0.008,
+        "threshold": 0.022,
+        "min_elevation": 0.36,
+        "max_elevation": 0.72,
+        "_description": "Road network connecting settlements"
+    },
+    
+    "structures": {
+        "spawn_exclusion_radius": 200,
+        "spawn_chance_multiplier": 1.0,
+        "_description": "Structure spawning - exclusion_radius creates a safe zone around (0,0)"
+    },
+    
+    "blending": {
+        "continent_weight": 0.45,
+        "local_weight": 0.55,
+        "detail_amplitude": 0.10,
+        "_description": "How noise layers combine - more local weight = more varied coastlines"
+    }
+}

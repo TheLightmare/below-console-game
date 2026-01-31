@@ -1,0 +1,29 @@
+{
+    "id": "great_sword",
+    "name": "Great Sword",
+    "description": "A massive two-handed blade",
+    "category": "item",
+    "tags": ["weapon", "sword", "melee", "two_handed"],
+    
+    "components": {
+        "render": {
+            "char": "/",
+            "color": "white",
+            "priority": 3
+        },
+        "name": {
+            "name": "Great Sword",
+            "description": "A massive two-handed blade"
+        },
+        "item": {
+            "type": "weapon",
+            "equip_slot": "two_hand",
+            "value": 120,
+            "base_damage": 18,
+            "attack_bonus": 2,
+            "cutting_chance": 0.25,
+            "required_limbs": 2,
+            "required_limb_type": "hand"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "id": "iron_sword",
+    "name": "Iron Sword",
+    "description": "A reliable one-handed blade",
+    "category": "item",
+    "tags": ["weapon", "sword", "melee", "one_handed"],
+    
+    "components": {
+        "render": {
+            "char": "/",
+            "color": "cyan",
+            "priority": 3
+        },
+        "name": {
+            "name": "Iron Sword",
+            "description": "A reliable one-handed blade"
+        },
+        "item": {
+            "type": "weapon",
+            "equip_slot": "hand",
+            "value": 50,
+            "base_damage": 8,
+            "attack_bonus": 1,
+            "cutting_chance": 0.15,
+            "required_limbs": 1,
+            "required_limb_type": "hand"
+        }
+    }
+}

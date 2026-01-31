@@ -1,0 +1,38 @@
+{
+    "id": "guardhouse",
+    "name": "Guard Post",
+    "description": "A small guardhouse with weapons rack and holding cell",
+    
+    "legend": {
+        "#": { "symbol": "#", "color": "gray", "walkable": false },
+        "+": { "symbol": "+", "color": "yellow", "walkable": true },
+        ".": { "symbol": ".", "color": "brown", "walkable": true },
+        "|": { "symbol": "|", "color": "gray", "walkable": false },
+        "-": { "symbol": "-", "color": "gray", "walkable": false },
+        "/": { "symbol": "/", "color": "white", "walkable": true },
+        "X": { "symbol": "X", "color": "white", "walkable": true },
+        "=": { "symbol": "=", "color": "brown", "walkable": true },
+        "o": { "symbol": "o", "color": "gray", "walkable": true },
+        "w": { "symbol": "\"", "color": "cyan", "walkable": false },
+        "G": { "spawn": "npc", "subtype": "guard", "name": "Town Guard" }
+    },
+    
+    "pattern": [
+        "################",
+        "#w/X/X/|......w#",
+        "#......|....=..#",
+        "#..G...|....=.o#",
+        "#------|--++---#",
+        "#w...o........w#",
+        "#..............#",
+        "#######++#######"
+    ],
+    
+    "jigsaw": {
+        "district": "entrance",
+        "spawn_weight": 0.8,
+        "unique": false
+    },
+    
+    "tags": ["building", "guard", "authority"]
+}

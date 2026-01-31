@@ -1,0 +1,66 @@
+{
+    "id": "oasis",
+    "name": "Desert Oasis",
+    "description": "A refreshing oasis with palm trees and clear water",
+    "type_id": 13,
+    "min_size": 6,
+    "max_size": 10,
+    
+    "biomes": {
+        "desert": 0.05
+    },
+    
+    "shapes": [
+        {
+            "type": "circle_filled",
+            "x1": 0, "y1": 0,
+            "radius": 5,
+            "symbol": ",",
+            "color": "green",
+            "walkable": true
+        },
+        {
+            "type": "circle_filled",
+            "x1": 0, "y1": 0,
+            "radius": 3,
+            "symbol": "~",
+            "color": "blue",
+            "walkable": false
+        }
+    ],
+    
+    "tiles": [
+        {"x": -4, "y": 0, "symbol": "T", "color": "green", "walkable": false},
+        {"x": 4, "y": 0, "symbol": "T", "color": "green", "walkable": false},
+        {"x": 0, "y": -4, "symbol": "T", "color": "green", "walkable": false},
+        {"x": 0, "y": 4, "symbol": "T", "color": "green", "walkable": false},
+        
+        {"x": -3, "y": -3, "symbol": "T", "color": "green", "walkable": false, "chance": 0.6},
+        {"x": 3, "y": -3, "symbol": "T", "color": "green", "walkable": false, "chance": 0.6},
+        {"x": -3, "y": 3, "symbol": "T", "color": "green", "walkable": false, "chance": 0.6},
+        {"x": 3, "y": 3, "symbol": "T", "color": "green", "walkable": false, "chance": 0.6}
+    ],
+    
+    "spawns": [
+        {
+            "type": "npc",
+            "subtype": "traveler",
+            "name": "Desert Traveler",
+            "x": 0, "y": 4,
+            "count_min": 1, "count_max": 1,
+            "chance": 0.6
+        },
+        {
+            "type": "enemy",
+            "subtype": "scorpion",
+            "name": "Giant Scorpion",
+            "x": 0, "y": 0,
+            "radius": 4,
+            "level_min": 3, "level_max": 5,
+            "count_min": 1, "count_max": 2,
+            "chance": 0.4
+        }
+    ],
+    
+    "tags": ["rest", "water"]
+}

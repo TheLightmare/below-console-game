@@ -1,0 +1,27 @@
+{
+    "id": "wooden_wall",
+    "name": "Wooden Wall",
+    "description": "A wooden wall",
+    "category": "structure",
+    "tags": ["wall", "wood", "impassable"],
+    
+    "components": {
+        "position": {
+            "x": 0,
+            "y": 0
+        },
+        "render": {
+            "char": "#",
+            "color": "brown",
+            "priority": 1
+        },
+        "name": {
+            "name": "Wooden Wall",
+            "description": "A wooden wall"
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": true
+        }
+    }
+}

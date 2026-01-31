@@ -1,0 +1,55 @@
+{
+    "id": "fairy_ring",
+    "name": "Fairy Ring",
+    "description": "A mystical circle of glowing mushrooms",
+    "type_id": 15,
+    "min_size": 6,
+    "max_size": 8,
+    
+    "biomes": {
+        "forest": 0.03,
+        "jungle": 0.04
+    },
+    
+    "shapes": [
+        {
+            "type": "circle_filled",
+            "x1": 0, "y1": 0,
+            "radius": 2,
+            "symbol": ",",
+            "color": "green",
+            "walkable": true
+        }
+    ],
+    
+    "tiles": [
+        {"x": 0, "y": 0, "symbol": "*", "color": "cyan", "walkable": true},
+        
+        {"x": 3, "y": 0, "symbol": "%", "color": "magenta", "walkable": true},
+        {"x": -3, "y": 0, "symbol": "%", "color": "magenta", "walkable": true},
+        {"x": 0, "y": 3, "symbol": "%", "color": "magenta", "walkable": true},
+        {"x": 0, "y": -3, "symbol": "%", "color": "magenta", "walkable": true},
+        {"x": 2, "y": 2, "symbol": "%", "color": "magenta", "walkable": true},
+        {"x": -2, "y": 2, "symbol": "%", "color": "magenta", "walkable": true},
+        {"x": 2, "y": -2, "symbol": "%", "color": "magenta", "walkable": true},
+        {"x": -2, "y": -2, "symbol": "%", "color": "magenta", "walkable": true},
+        {"x": 3, "y": 1, "symbol": "%", "color": "magenta", "walkable": true, "chance": 0.7},
+        {"x": -3, "y": 1, "symbol": "%", "color": "magenta", "walkable": true, "chance": 0.7},
+        {"x": 1, "y": 3, "symbol": "%", "color": "magenta", "walkable": true, "chance": 0.7},
+        {"x": -1, "y": -3, "symbol": "%", "color": "magenta", "walkable": true, "chance": 0.7}
+    ],
+    
+    "spawns": [
+        {
+            "type": "npc",
+            "subtype": "fairy",
+            "name": "Forest Fairy",
+            "x": 0, "y": 0,
+            "radius": 2,
+            "count_min": 1, "count_max": 3,
+            "chance": 0.6
+        }
+    ],
+    
+    "tags": ["magic", "rest_point", "natural"]
+}

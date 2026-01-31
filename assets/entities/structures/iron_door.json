@@ -1,0 +1,38 @@
+{
+    "id": "iron_door",
+    "name": "Iron Door",
+    "description": "A heavy iron door",
+    "category": "structure",
+    "tags": ["door", "iron", "lockable"],
+    
+    "components": {
+        "position": {
+            "x": 0,
+            "y": 0
+        },
+        "render": {
+            "char": "+",
+            "color": "gray",
+            "priority": 5
+        },
+        "name": {
+            "name": "Iron Door",
+            "description": "A heavy iron door"
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": true
+        },
+        "door": {
+            "is_open": false,
+            "is_locked": true,
+            "key_id": "iron_key",
+            "open_char": "'",
+            "closed_char": "+"
+        },
+        "interactable": {
+            "interaction_type": "door",
+            "prompt": "Open door"
+        }
+    }
+}

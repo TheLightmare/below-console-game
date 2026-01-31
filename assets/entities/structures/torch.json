@@ -1,0 +1,32 @@
+{
+    "id": "torch",
+    "name": "Torch",
+    "description": "A wall-mounted torch",
+    "category": "structure",
+    "tags": ["fire", "light", "wall"],
+    
+    "components": {
+        "position": {
+            "x": 0,
+            "y": 0
+        },
+        "render": {
+            "char": "i",
+            "color": "yellow",
+            "priority": 2
+        },
+        "name": {
+            "name": "Torch",
+            "description": "A wall-mounted torch"
+        },
+        "collision": {
+            "blocks_movement": false,
+            "blocks_sight": false
+        },
+        "light": {
+            "radius": 3,
+            "color": "yellow",
+            "intensity": 0.8
+        }
+    }
+}

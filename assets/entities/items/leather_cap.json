@@ -1,0 +1,27 @@
+{
+    "id": "leather_cap",
+    "name": "Leather Cap",
+    "description": "Basic head protection",
+    "category": "item",
+    "tags": ["armor", "helmet", "head", "leather"],
+    
+    "components": {
+        "render": {
+            "char": "^",
+            "color": "brown",
+            "priority": 3
+        },
+        "name": {
+            "name": "Leather Cap",
+            "description": "Basic head protection"
+        },
+        "item": {
+            "type": "helmet",
+            "equip_slot": "head",
+            "value": 30,
+            "defense_bonus": 2,
+            "required_limbs": 1,
+            "required_limb_type": "head"
+        }
+    }
+}

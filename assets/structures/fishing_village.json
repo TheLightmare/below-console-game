@@ -1,0 +1,83 @@
+{
+    "id": "fishing_village",
+    "name": "Fishing Village",
+    "description": "A small coastal settlement of fisherfolk",
+    "type_id": 23,
+    "min_size": 14,
+    "max_size": 18,
+    
+    "biomes": {
+        "beach": 0.05,
+        "swamp": 0.03
+    },
+    
+    "shapes": [
+        {
+            "type": "rect_filled",
+            "x1": -6, "y1": -3,
+            "x2": 6, "y2": 5,
+            "symbol": ",",
+            "color": "yellow",
+            "walkable": true
+        }
+    ],
+    
+    "tiles": [
+        {"x": -4, "y": -2, "symbol": "#", "color": "brown", "walkable": false},
+        {"x": -3, "y": -2, "symbol": "#", "color": "brown", "walkable": false},
+        {"x": -4, "y": -1, "symbol": "#", "color": "brown", "walkable": false},
+        {"x": -3, "y": -1, "symbol": "+", "color": "brown", "walkable": true},
+        
+        {"x": 2, "y": -2, "symbol": "#", "color": "brown", "walkable": false},
+        {"x": 3, "y": -2, "symbol": "#", "color": "brown", "walkable": false},
+        {"x": 2, "y": -1, "symbol": "#", "color": "brown", "walkable": false},
+        {"x": 3, "y": -1, "symbol": "+", "color": "brown", "walkable": true},
+        
+        {"x": -1, "y": 2, "symbol": "#", "color": "brown", "walkable": false},
+        {"x": 0, "y": 2, "symbol": "#", "color": "brown", "walkable": false},
+        {"x": 1, "y": 2, "symbol": "#", "color": "brown", "walkable": false},
+        {"x": -1, "y": 3, "symbol": "#", "color": "brown", "walkable": false},
+        {"x": 0, "y": 3, "symbol": "+", "color": "brown", "walkable": true},
+        {"x": 1, "y": 3, "symbol": "#", "color": "brown", "walkable": false},
+        
+        {"x": 0, "y": -4, "symbol": "~", "color": "blue", "walkable": false},
+        {"x": 1, "y": -4, "symbol": "~", "color": "blue", "walkable": false},
+        {"x": -1, "y": -4, "symbol": "~", "color": "blue", "walkable": false},
+        {"x": 0, "y": -5, "symbol": "~", "color": "blue", "walkable": false},
+        {"x": 1, "y": -5, "symbol": "~", "color": "blue", "walkable": false},
+        {"x": -1, "y": -5, "symbol": "~", "color": "blue", "walkable": false},
+        {"x": 2, "y": -5, "symbol": "~", "color": "blue", "walkable": false},
+        {"x": -2, "y": -5, "symbol": "~", "color": "blue", "walkable": false},
+        
+        {"x": 0, "y": -3, "symbol": "=", "color": "brown", "walkable": true},
+        {"x": 1, "y": -3, "symbol": "|", "color": "brown", "walkable": false},
+        {"x": -1, "y": -3, "symbol": "|", "color": "brown", "walkable": false},
+        
+        {"x": 5, "y": 0, "symbol": "^", "color": "brown", "walkable": false},
+        {"x": 5, "y": 1, "symbol": "^", "color": "brown", "walkable": false},
+        {"x": -5, "y": 0, "symbol": "^", "color": "brown", "walkable": false}
+    ],
+    
+    "spawns": [
+        {
+            "type": "npc",
+            "subtype": "fisherman",
+            "name": "Fisherman",
+            "x": 0, "y": 0,
+            "radius": 6,
+            "count_min": 3, "count_max": 6,
+            "chance": 1.0
+        },
+        {
+            "type": "npc",
+            "subtype": "trader",
+            "name": "Fish Merchant",
+            "x": 0, "y": 3,
+            "radius": 2,
+            "count_min": 1, "count_max": 1,
+            "chance": 0.8
+        }
+    ],
+    
+    "tags": ["settlement", "trade", "coastal"]
+}

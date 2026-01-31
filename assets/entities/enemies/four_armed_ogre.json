@@ -1,0 +1,65 @@
+{
+    "id": "four_armed_ogre",
+    "name": "Four-Armed Ogre",
+    "description": "A massive brute with extra arms",
+    "category": "enemy",
+    "tags": ["hostile", "humanoid", "orc", "boss"],
+    
+    "components": {
+        "render": {
+            "char": "O",
+            "color": "brown",
+            "priority": 5
+        },
+        "stats": {
+            "level": 2,
+            "hp_base": 25,
+            "hp_per_level": 25,
+            "attack_base": 12,
+            "attack_per_level": 1,
+            "defense_base": 6,
+            "defense_per_level": 1
+        },
+        "name": {
+            "name": "Four-Armed Ogre",
+            "description": "A massive brute with extra arms"
+        },
+        "ai": {
+            "behavior": "chase",
+            "aggro_range": 4.0,
+            "flee_threshold": 0.15
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "orc"
+        },
+        "utility_ai": {
+            "preset": "berserker",
+            "aggro_range": 4.0
+        },
+        "anatomy": {
+            "limbs": [
+                {"type": "head", "name": "head", "resistance": 0.5},
+                {"type": "torso", "name": "torso", "resistance": 0.7},
+                {"type": "arm", "name": "upper_left_arm", "resistance": 0.4},
+                {"type": "arm", "name": "upper_right_arm", "resistance": 0.4},
+                {"type": "arm", "name": "lower_left_arm", "resistance": 0.4},
+                {"type": "arm", "name": "lower_right_arm", "resistance": 0.4},
+                {"type": "hand", "name": "upper_left_hand", "resistance": 0.3},
+                {"type": "hand", "name": "upper_right_hand", "resistance": 0.3},
+                {"type": "hand", "name": "lower_left_hand", "resistance": 0.3},
+                {"type": "hand", "name": "lower_right_hand", "resistance": 0.3},
+                {"type": "leg", "name": "left_leg", "resistance": 0.5},
+                {"type": "leg", "name": "right_leg", "resistance": 0.5},
+                {"type": "foot", "name": "left_foot", "resistance": 0.3},
+                {"type": "foot", "name": "right_foot", "resistance": 0.3}
+            ]
+        },
+        "leaves_corpse": {
+            "decay_turns": 100
+        }
+    }
+}

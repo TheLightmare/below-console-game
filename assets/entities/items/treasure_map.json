@@ -1,0 +1,23 @@
+{
+    "id": "treasure_map",
+    "name": "Treasure Map",
+    "description": "Marks a hidden location",
+    "category": "item",
+    "tags": ["quest", "map"],
+    
+    "components": {
+        "render": {
+            "char": "?",
+            "color": "yellow",
+            "priority": 3
+        },
+        "name": {
+            "name": "Treasure Map",
+            "description": "Marks a hidden location"
+        },
+        "item": {
+            "type": "quest",
+            "value": 80
+        }
+    }
+}

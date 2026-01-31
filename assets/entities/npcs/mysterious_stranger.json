@@ -1,0 +1,127 @@
+{
+    "id": "mysterious_stranger",
+    "name": "Mysterious Stranger",
+    "description": "A cloaked figure with hidden intentions",
+    "category": "npc",
+    "tags": ["human", "neutral", "mysterious", "quest"],
+    
+    "components": {
+        "render": {
+            "char": "?",
+            "color": "magenta",
+            "priority": 6
+        },
+        "name": {
+            "name": "Mysterious Stranger",
+            "description": "A cloaked figure shrouded in mystery"
+        },
+        "stats": {
+            "level": 5,
+            "hp_base": 60,
+            "hp_per_level": 15,
+            "attack_base": 15,
+            "attack_per_level": 4,
+            "defense_base": 10,
+            "defense_per_level": 3
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "villager"
+        },
+        "ai": {
+            "behavior": "wander",
+            "aggro_range": 5.0,
+            "flee_threshold": 0.1
+        },
+        "anatomy": {
+            "preset": "humanoid"
+        },
+        "utility_ai": {
+            "preset": "wanderer"
+        },
+        "npc": {
+            "role": "quest_giver",
+            "disposition": "neutral",
+            "can_give_quests": true,
+            "greeting": "...",
+            "farewell": "Until we meet again..."
+        },
+        "inventory": {
+            "max_items": 10,
+            "gold": 0
+        },
+        "dialogue": {
+            "start_node_id": 0,
+            "nodes": [
+                {
+                    "id": 0,
+                    "speaker": "???",
+                    "text": "...You seek something. I can see it in your eyes.",
+                    "options": [
+                        { "text": "Who are you?", "next": 1 },
+                        { "text": "What do you want?", "next": 2 },
+                        { "text": "*Back away slowly*", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "speaker": "???",
+                    "text": "Names are but labels. What matters is not who I am, but what I know. And I know... many things.",
+                    "options": [
+                        { "text": "What kind of things?", "next": 3 },
+                        { "text": "This is too weird. Goodbye.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "speaker": "???",
+                    "text": "Want? I want nothing. But perhaps I can offer... guidance. For a price.",
+                    "options": [
+                        { "text": "What kind of price?", "next": 4 },
+                        { "text": "No thanks.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "speaker": "???",
+                    "text": "There is power in the old places. Ruins that hold secrets long forgotten. Seek them out, if you dare.",
+                    "options": [
+                        { "text": "I'll keep that in mind.", "next": -1, "ends": true },
+                        { "text": "Where are these ruins?", "next": 5 }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "speaker": "???",
+                    "text": "Not gold. Not blood. But... a favor. One day, I may call upon you. Will you accept?",
+                    "options": [
+                        { "text": "Very well.", "next": 6, "action": "accept_favor" },
+                        { "text": "I don't make blind promises.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "speaker": "???",
+                    "text": "They are everywhere... and nowhere. You will find them when the time is right. Trust your instincts.",
+                    "options": [
+                        { "text": "Cryptic, but okay.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "speaker": "???",
+                    "text": "Excellent. The pact is sealed. Now go... and remember: I am always watching.",
+                    "options": [
+                        { "text": "*Leave*", "next": -1, "ends": true }
+                    ]
+                }
+            ]
+        },
+        "interactable": {
+            "message": "Press E to talk"
+        }
+    }
+}

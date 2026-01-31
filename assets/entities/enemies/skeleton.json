@@ -1,0 +1,47 @@
+{
+    "id": "skeleton",
+    "name": "Skeleton",
+    "description": "An animated pile of bones, wielding rusted weapons",
+    "category": "enemy",
+    "tags": ["hostile", "undead", "humanoid"],
+    
+    "components": {
+        "render": {
+            "char": "s",
+            "color": "white",
+            "priority": 5
+        },
+        "stats": {
+            "level": 1,
+            "hp_base": 12,
+            "hp_per_level": 6,
+            "attack_base": 6,
+            "attack_per_level": 2,
+            "defense_base": 2,
+            "defense_per_level": 1
+        },
+        "name": {
+            "name": "Skeleton",
+            "description": "An animated pile of bones, wielding rusted weapons"
+        },
+        "ai": {
+            "behavior": "chase",
+            "aggro_range": 8.0,
+            "flee_threshold": 0.0
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "undead"
+        },
+        "utility_ai": {
+            "preset": "undead",
+            "aggro_range": 8.0
+        },
+        "anatomy": {
+            "preset": "humanoid"
+        }
+    }
+}

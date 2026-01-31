@@ -1,0 +1,24 @@
+{
+    "id": "lucky_charm",
+    "name": "Lucky Charm",
+    "description": "Brings good fortune",
+    "category": "item",
+    "tags": ["accessory", "magic"],
+    
+    "components": {
+        "render": {
+            "char": "\"",
+            "color": "green",
+            "priority": 3
+        },
+        "name": {
+            "name": "Lucky Charm",
+            "description": "Brings good fortune"
+        },
+        "item": {
+            "type": "misc",
+            "equip_slot": "neck",
+            "value": 200
+        }
+    }
+}

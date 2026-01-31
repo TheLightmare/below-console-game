@@ -1,0 +1,27 @@
+{
+    "id": "leather_boots",
+    "name": "Leather Boots",
+    "description": "Comfortable footwear",
+    "category": "item",
+    "tags": ["armor", "boots", "foot", "leather"],
+    
+    "components": {
+        "render": {
+            "char": "]",
+            "color": "brown",
+            "priority": 3
+        },
+        "name": {
+            "name": "Leather Boots",
+            "description": "Comfortable footwear"
+        },
+        "item": {
+            "type": "boots",
+            "equip_slot": "foot",
+            "value": 30,
+            "defense_bonus": 2,
+            "required_limbs": 2,
+            "required_limb_type": "foot"
+        }
+    }
+}

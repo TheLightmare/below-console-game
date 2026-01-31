@@ -1,0 +1,30 @@
+{
+    "id": "market_stall",
+    "name": "Market Stall",
+    "description": "A small outdoor vendor stall with goods on display",
+    
+    "legend": {
+        "#": { "symbol": "#", "color": "brown", "walkable": false },
+        ".": { "symbol": ".", "color": "brown", "walkable": true },
+        "~": { "symbol": "~", "color": "red", "walkable": false },
+        "-": { "symbol": "-", "color": "brown", "walkable": true },
+        "o": { "symbol": "o", "color": "yellow", "walkable": true },
+        "%": { "symbol": "%", "color": "green", "walkable": true },
+        "*": { "symbol": "*", "color": "cyan", "walkable": true }
+    },
+    
+    "pattern": [
+        "~~~~~",
+        "#o%*#",
+        "#---#",
+        "....."
+    ],
+    
+    "jigsaw": {
+        "district": "market",
+        "spawn_weight": 2.0,
+        "unique": false
+    },
+    
+    "tags": ["decoration", "market", "trade"]
+}

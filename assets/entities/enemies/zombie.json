@@ -1,0 +1,50 @@
+{
+    "id": "zombie",
+    "name": "Zombie",
+    "description": "A shambling corpse animated by dark magic",
+    "category": "enemy",
+    "tags": ["hostile", "undead", "humanoid"],
+    
+    "components": {
+        "render": {
+            "char": "z",
+            "color": "dark_green",
+            "priority": 5
+        },
+        "stats": {
+            "level": 1,
+            "hp_base": 20,
+            "hp_per_level": 12,
+            "attack_base": 4,
+            "attack_per_level": 2,
+            "defense_base": 2,
+            "defense_per_level": 1
+        },
+        "name": {
+            "name": "Zombie",
+            "description": "A shambling corpse animated by dark magic"
+        },
+        "ai": {
+            "behavior": "chase",
+            "aggro_range": 5.0,
+            "flee_threshold": 0.0
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "undead"
+        },
+        "utility_ai": {
+            "preset": "undead",
+            "aggro_range": 5.0
+        },
+        "anatomy": {
+            "preset": "humanoid"
+        },
+        "leaves_corpse": {
+            "decay_turns": -1
+        }
+    }
+}

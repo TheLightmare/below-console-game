@@ -1,0 +1,34 @@
+{
+    "id": "greater_health_potion",
+    "name": "Greater Health Potion",
+    "description": "A large vial of potent healing liquid",
+    "category": "item",
+    "tags": ["consumable", "potion", "healing"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "red",
+            "priority": 3
+        },
+        "name": {
+            "name": "Greater Health Potion",
+            "description": "Restores 50 HP"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 60,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "type": "heal_hp",
+                    "trigger": "on_use",
+                    "magnitude": 50,
+                    "message": "%target% feels much healthier!"
+                }
+            ]
+        }
+    }
+}

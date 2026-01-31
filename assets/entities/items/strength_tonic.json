@@ -1,0 +1,35 @@
+{
+    "id": "strength_tonic",
+    "name": "Strength Tonic",
+    "description": "Temporarily boosts attack power",
+    "category": "item",
+    "tags": ["consumable", "potion", "buff"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "orange",
+            "priority": 3
+        },
+        "name": {
+            "name": "Strength Tonic",
+            "description": "Temporarily boosts attack power"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 50,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "type": "buff_attack",
+                    "trigger": "on_use",
+                    "magnitude": 5,
+                    "duration": 10,
+                    "message": "%target%'s muscles surge with power!"
+                }
+            ]
+        }
+    }
+}

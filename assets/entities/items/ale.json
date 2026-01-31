@@ -1,0 +1,34 @@
+{
+    "id": "ale",
+    "name": "Ale",
+    "description": "A mug of local brew",
+    "category": "item",
+    "tags": ["consumable", "drink"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "yellow",
+            "priority": 3
+        },
+        "name": {
+            "name": "Ale",
+            "description": "A mug of local brew"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 8,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "type": "heal_hp",
+                    "trigger": "on_use",
+                    "magnitude": 3,
+                    "message": "%target% feels slightly better."
+                }
+            ]
+        }
+    }
+}

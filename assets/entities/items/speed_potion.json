@@ -1,0 +1,35 @@
+{
+    "id": "speed_potion",
+    "name": "Speed Potion",
+    "description": "Move like the wind",
+    "category": "item",
+    "tags": ["consumable", "potion", "buff"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "cyan",
+            "priority": 3
+        },
+        "name": {
+            "name": "Speed Potion",
+            "description": "Move like the wind"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 45,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "type": "buff_defense",
+                    "trigger": "on_use",
+                    "magnitude": 3,
+                    "duration": 10,
+                    "message": "%target% feels lighter on their feet!"
+                }
+            ]
+        }
+    }
+}

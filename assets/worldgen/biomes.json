@@ -1,0 +1,266 @@
+{
+    "biomes": [
+        {
+            "id": "ocean",
+            "name": "Ocean",
+            "description": "Vast open waters",
+            "tiles": [
+                { "symbol": "~", "color": "blue", "walkable": false, "weight": 1.0, "name": "water" }
+            ],
+            "thresholds": { "tree": 0.99, "rock": 0.01, "water": 0.0, "flower": 0.99 },
+            "modifiers": { "movement": 0.0, "visibility": 0.8, "structures": false },
+            "ambient": ["Waves lap against unseen shores."]
+        },
+        {
+            "id": "deep_ocean",
+            "name": "Deep Ocean",
+            "description": "Dark, mysterious depths",
+            "tiles": [
+                { "symbol": "~", "color": "dark_blue", "walkable": false, "weight": 1.0, "name": "deep water" }
+            ],
+            "thresholds": { "tree": 0.99, "rock": 0.01, "water": 0.0, "flower": 0.99 },
+            "modifiers": { "movement": 0.0, "visibility": 0.5, "structures": false },
+            "ambient": ["The water is dark and foreboding."]
+        },
+        {
+            "id": "river",
+            "name": "River",
+            "description": "Flowing water",
+            "tiles": [
+                { "symbol": "~", "color": "cyan", "walkable": false, "weight": 1.0, "name": "flowing water" }
+            ],
+            "thresholds": { "tree": 0.99, "rock": 0.01, "water": 0.0, "flower": 0.99 },
+            "modifiers": { "movement": 0.3, "visibility": 1.0, "structures": false }
+        },
+        {
+            "id": "lake",
+            "name": "Lake",
+            "description": "Still, peaceful waters",
+            "tiles": [
+                { "symbol": "~", "color": "blue", "walkable": false, "weight": 1.0, "name": "still water" }
+            ],
+            "thresholds": { "tree": 0.99, "rock": 0.01, "water": 0.0, "flower": 0.99 },
+            "modifiers": { "movement": 0.0, "visibility": 1.0, "structures": false }
+        },
+        {
+            "id": "beach",
+            "name": "Beach",
+            "description": "Sandy shores",
+            "tiles": [
+                { "symbol": ".", "color": "yellow", "walkable": true, "weight": 1.0, "name": "sand" }
+            ],
+            "thresholds": { "tree": 0.95, "rock": 0.05, "water": 0.1, "flower": 0.85 },
+            "modifiers": { "movement": 0.9, "visibility": 1.2, "structures": true },
+            "ambient": ["Warm sand shifts beneath your feet."]
+        },
+        {
+            "id": "tropical_beach",
+            "name": "Tropical Beach",
+            "description": "Paradise shores",
+            "tiles": [
+                { "symbol": ".", "color": "yellow", "walkable": true, "weight": 10.0, "name": "white sand" },
+                { "symbol": "T", "color": "green", "walkable": true, "weight": 1.0, "name": "palm tree", "movement_cost": 0.5 }
+            ],
+            "thresholds": { "tree": 0.7, "rock": 0.05, "water": 0.05, "flower": 0.8 },
+            "modifiers": { "movement": 0.9, "visibility": 1.3, "structures": true },
+            "ambient": ["Palm fronds sway in the warm breeze."]
+        },
+        {
+            "id": "plains",
+            "name": "Plains",
+            "description": "Open grasslands",
+            "tiles": [
+                { "symbol": ".", "color": "green", "walkable": true, "weight": 1.0, "name": "grass" }
+            ],
+            "thresholds": { "tree": 0.92, "rock": 0.05, "water": 0.02, "flower": 0.88 },
+            "modifiers": { "movement": 1.0, "visibility": 1.2, "structures": true },
+            "ambient": ["A gentle breeze ripples through the grass."]
+        },
+        {
+            "id": "savanna",
+            "name": "Savanna",
+            "description": "Dry grasslands with scattered trees",
+            "tiles": [
+                { "symbol": ",", "color": "yellow", "walkable": true, "weight": 10.0, "name": "dry grass" },
+                { "symbol": "T", "color": "brown", "walkable": true, "weight": 1.0, "name": "acacia tree", "movement_cost": 0.5 }
+            ],
+            "thresholds": { "tree": 0.88, "rock": 0.08, "water": 0.03, "flower": 0.85 },
+            "modifiers": { "movement": 1.0, "visibility": 1.3, "structures": true },
+            "ambient": ["Heat shimmers on the horizon."]
+        },
+        {
+            "id": "forest",
+            "name": "Forest",
+            "description": "Temperate woodland",
+            "tiles": [
+                { "symbol": ",", "color": "dark_green", "walkable": true, "weight": 5.0, "name": "forest floor" },
+                { "symbol": "T", "color": "green", "walkable": true, "weight": 3.0, "name": "tree", "movement_cost": 0.5 }
+            ],
+            "thresholds": { "tree": 0.55, "rock": 0.08, "water": 0.03, "flower": 0.9 },
+            "modifiers": { "movement": 0.85, "visibility": 0.7, "structures": true },
+            "ambient": ["Sunlight filters through the canopy."]
+        },
+        {
+            "id": "dense_forest",
+            "name": "Dense Forest",
+            "description": "Thick, ancient woodland",
+            "tiles": [
+                { "symbol": ",", "color": "dark_green", "walkable": true, "weight": 3.0, "name": "undergrowth" },
+                { "symbol": "T", "color": "dark_green", "walkable": true, "weight": 5.0, "name": "ancient tree", "movement_cost": 0.5 }
+            ],
+            "thresholds": { "tree": 0.35, "rock": 0.1, "water": 0.05, "flower": 0.95 },
+            "modifiers": { "movement": 0.7, "visibility": 0.5, "structures": true },
+            "ambient": ["The canopy blocks most sunlight."]
+        },
+        {
+            "id": "jungle",
+            "name": "Jungle",
+            "description": "Dense tropical rainforest",
+            "tiles": [
+                { "symbol": "#", "color": "green", "walkable": true, "weight": 3.0, "name": "dense foliage" },
+                { "symbol": "T", "color": "green", "walkable": true, "weight": 4.0, "name": "jungle tree", "movement_cost": 0.5 }
+            ],
+            "thresholds": { "tree": 0.4, "rock": 0.05, "water": 0.08, "flower": 0.85 },
+            "modifiers": { "movement": 0.6, "visibility": 0.4, "structures": true },
+            "ambient": ["The humidity is oppressive."]
+        },
+        {
+            "id": "mushroom_forest",
+            "name": "Mushroom Forest",
+            "description": "A bizarre forest of giant fungi",
+            "tiles": [
+                { "symbol": ",", "color": "magenta", "walkable": true, "weight": 3.0, "name": "mycelium" },
+                { "symbol": "T", "color": "magenta", "walkable": true, "weight": 2.0, "name": "giant mushroom", "movement_cost": 0.5 }
+            ],
+            "thresholds": { "tree": 0.5, "rock": 0.05, "water": 0.02, "flower": 0.7 },
+            "modifiers": { "movement": 0.85, "visibility": 0.6, "structures": true },
+            "ambient": ["Bioluminescent spores drift through the air."]
+        },
+        {
+            "id": "hills",
+            "name": "Hills",
+            "description": "Rolling highlands",
+            "tiles": [
+                { "symbol": ".", "color": "green", "walkable": true, "weight": 5.0, "name": "grassy slope" },
+                { "symbol": "^", "color": "gray", "walkable": true, "weight": 2.0, "name": "rocky outcrop" }
+            ],
+            "thresholds": { "tree": 0.85, "rock": 0.15, "water": 0.02, "flower": 0.9 },
+            "modifiers": { "movement": 0.8, "visibility": 1.1, "structures": true },
+            "ambient": ["The wind whips across the hillside."]
+        },
+        {
+            "id": "mountains",
+            "name": "Mountains",
+            "description": "Towering peaks",
+            "tiles": [
+                { "symbol": "^", "color": "gray", "walkable": true, "weight": 3.0, "name": "rocky slope" },
+                { "symbol": "M", "color": "gray", "walkable": false, "weight": 2.0, "name": "cliff face" }
+            ],
+            "thresholds": { "tree": 0.95, "rock": 0.25, "water": 0.01, "flower": 0.95 },
+            "modifiers": { "movement": 0.6, "visibility": 1.3, "structures": true },
+            "ambient": ["The air is thin and cold."]
+        },
+        {
+            "id": "snow_peaks",
+            "name": "Snow Peaks",
+            "description": "Frozen mountain summits",
+            "tiles": [
+                { "symbol": ".", "color": "white", "walkable": true, "weight": 3.0, "name": "snow" },
+                { "symbol": "M", "color": "white", "walkable": false, "weight": 1.0, "name": "ice wall" }
+            ],
+            "thresholds": { "tree": 0.99, "rock": 0.2, "water": 0.01, "flower": 0.99 },
+            "modifiers": { "movement": 0.5, "visibility": 1.5, "structures": false },
+            "ambient": ["The biting cold numbs your extremities."]
+        },
+        {
+            "id": "volcanic",
+            "name": "Volcanic",
+            "description": "Active volcanic terrain",
+            "tiles": [
+                { "symbol": ".", "color": "dark_gray", "walkable": true, "weight": 5.0, "name": "ash" },
+                { "symbol": "~", "color": "red", "walkable": false, "weight": 1.0, "name": "lava" }
+            ],
+            "thresholds": { "tree": 0.99, "rock": 0.3, "water": 0.0, "flower": 0.99 },
+            "modifiers": { "movement": 0.7, "visibility": 0.8, "structures": false },
+            "ambient": ["Heat radiates from the ground."]
+        },
+        {
+            "id": "desert",
+            "name": "Desert",
+            "description": "Arid wasteland",
+            "tiles": [
+                { "symbol": ".", "color": "yellow", "walkable": true, "weight": 1.0, "name": "sand" }
+            ],
+            "thresholds": { "tree": 0.98, "rock": 0.08, "water": 0.0, "flower": 0.95 },
+            "modifiers": { "movement": 0.85, "visibility": 1.4, "structures": true },
+            "ambient": ["The relentless sun beats down."]
+        },
+        {
+            "id": "desert_dunes",
+            "name": "Desert Dunes",
+            "description": "Shifting sand dunes",
+            "tiles": [
+                { "symbol": "~", "color": "yellow", "walkable": true, "weight": 1.0, "name": "dune" }
+            ],
+            "thresholds": { "tree": 0.99, "rock": 0.02, "water": 0.0, "flower": 0.99 },
+            "modifiers": { "movement": 0.7, "visibility": 1.2, "structures": false },
+            "ambient": ["The dunes shift with the wind."]
+        },
+        {
+            "id": "swamp",
+            "name": "Swamp",
+            "description": "Murky wetlands",
+            "tiles": [
+                { "symbol": "\"", "color": "dark_green", "walkable": true, "weight": 3.0, "name": "reeds" },
+                { "symbol": "~", "color": "dark_green", "walkable": false, "weight": 2.0, "name": "murky water" }
+            ],
+            "thresholds": { "tree": 0.7, "rock": 0.02, "water": 0.2, "flower": 0.95 },
+            "modifiers": { "movement": 0.6, "visibility": 0.6, "structures": true },
+            "ambient": ["The stench of decay fills the air."]
+        },
+        {
+            "id": "tundra",
+            "name": "Tundra",
+            "description": "Frozen plains",
+            "tiles": [
+                { "symbol": ".", "color": "white", "walkable": true, "weight": 1.0, "name": "permafrost" }
+            ],
+            "thresholds": { "tree": 0.95, "rock": 0.12, "water": 0.05, "flower": 0.9 },
+            "modifiers": { "movement": 0.85, "visibility": 1.2, "structures": true },
+            "ambient": ["A bitter wind cuts through you."]
+        },
+        {
+            "id": "frozen_tundra",
+            "name": "Frozen Tundra",
+            "description": "Deep freeze wasteland",
+            "tiles": [
+                { "symbol": ".", "color": "cyan", "walkable": true, "weight": 1.0, "name": "ice" }
+            ],
+            "thresholds": { "tree": 0.99, "rock": 0.15, "water": 0.02, "flower": 0.99 },
+            "modifiers": { "movement": 0.6, "visibility": 1.0, "structures": false },
+            "ambient": ["Everything is frozen solid."]
+        },
+        {
+            "id": "dead_lands",
+            "name": "Dead Lands",
+            "description": "Corrupted, lifeless terrain",
+            "tiles": [
+                { "symbol": ".", "color": "dark_gray", "walkable": true, "weight": 1.0, "name": "dead earth" }
+            ],
+            "thresholds": { "tree": 0.95, "rock": 0.15, "water": 0.0, "flower": 0.99 },
+            "modifiers": { "movement": 0.9, "visibility": 0.8, "structures": true },
+            "ambient": ["Nothing lives here."]
+        },
+        {
+            "id": "road",
+            "name": "Road",
+            "description": "A traveled path",
+            "tiles": [
+                { "symbol": "#", "color": "brown", "walkable": true, "weight": 1.0, "name": "dirt road" }
+            ],
+            "thresholds": { "tree": 0.99, "rock": 0.02, "water": 0.0, "flower": 0.95 },
+            "modifiers": { "movement": 1.2, "visibility": 1.0, "structures": true },
+            "ambient": ["The road stretches onward."]
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "chest_key",
+    "name": "Chest Key",
+    "description": "A small chest key",
+    "category": "item",
+    "tags": ["key", "brass", "unique"],
+    
+    "components": {
+        "render": {
+            "char": "-",
+            "color": "yellow",
+            "priority": 2
+        },
+        "name": {
+            "name": "Chest Key",
+            "description": "A small chest key"
+        },
+        "item": {
+            "type": "key",
+            "value": 0,
+            "key_id": "chest_key"
+        }
+    }
+}

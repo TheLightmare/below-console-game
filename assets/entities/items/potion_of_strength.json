@@ -1,0 +1,35 @@
+{
+    "id": "potion_of_strength",
+    "name": "Potion of Strength",
+    "description": "Temporarily increases attack",
+    "category": "item",
+    "tags": ["consumable", "potion", "buff"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "orange",
+            "priority": 3
+        },
+        "name": {
+            "name": "Potion of Strength",
+            "description": "Temporarily increases attack"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 45,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "type": "buff_attack",
+                    "trigger": "on_use",
+                    "magnitude": 5,
+                    "duration": 50,
+                    "message": "Power courses through %target%'s muscles!"
+                }
+            ]
+        }
+    }
+}

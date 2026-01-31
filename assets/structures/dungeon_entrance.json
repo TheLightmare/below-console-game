@@ -1,0 +1,57 @@
+{
+    "id": "dungeon_entrance",
+    "name": "Dungeon Entrance",
+    "description": "A stone archway leading underground",
+    "type_id": 6,
+    "min_size": 4,
+    "max_size": 6,
+    
+    "biomes": {
+        "plains": 0.02,
+        "hills": 0.03,
+        "forest": 0.02
+    },
+    
+    "tiles": [
+        {"x": -1, "y": -1, "symbol": "#", "color": "gray", "walkable": false},
+        {"x": 1, "y": -1, "symbol": "#", "color": "gray", "walkable": false},
+        {"x": -1, "y": 0, "symbol": "#", "color": "gray", "walkable": false},
+        {"x": 1, "y": 0, "symbol": "#", "color": "gray", "walkable": false},
+        {"x": -1, "y": 1, "symbol": "#", "color": "gray", "walkable": false},
+        {"x": 1, "y": 1, "symbol": "#", "color": "gray", "walkable": false},
+        
+        {"x": 0, "y": -1, "symbol": ">", "color": "dark_gray", "walkable": true},
+        {"x": 0, "y": 0, "symbol": ">", "color": "dark_gray", "walkable": true},
+        {"x": 0, "y": 1, "symbol": ">", "color": "dark_gray", "walkable": true},
+        
+        {"x": -2, "y": 0, "symbol": "*", "color": "yellow", "walkable": false},
+        {"x": 2, "y": 0, "symbol": "*", "color": "yellow", "walkable": false}
+    ],
+    
+    "shapes": [
+        {
+            "type": "line",
+            "x1": 0, "y1": 2,
+            "x2": 0, "y2": 8,
+            "symbol": ".",
+            "color": "gray",
+            "walkable": true,
+            "width": 2
+        }
+    ],
+    
+    "spawns": [
+        {
+            "type": "enemy",
+            "subtype": "dungeon_guardian",
+            "name": "Dungeon Guardian",
+            "x": 0, "y": 4,
+            "radius": 3,
+            "level_min": 3, "level_max": 5,
+            "count_min": 1, "count_max": 2,
+            "chance": 0.8
+        }
+    ],
+    
+    "tags": ["dungeon_entrance", "dangerous", "portal"]
+}

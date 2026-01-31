@@ -1,0 +1,29 @@
+{
+    "id": "battle_axe",
+    "name": "Battle Axe",
+    "description": "A fearsome two-handed axe",
+    "category": "item",
+    "tags": ["weapon", "axe", "melee", "two_handed"],
+    
+    "components": {
+        "render": {
+            "char": "/",
+            "color": "gray",
+            "priority": 3
+        },
+        "name": {
+            "name": "Battle Axe",
+            "description": "A fearsome two-handed axe"
+        },
+        "item": {
+            "type": "weapon",
+            "equip_slot": "two_hand",
+            "value": 150,
+            "base_damage": 12,
+            "attack_bonus": 2,
+            "cutting_chance": 0.3,
+            "required_limbs": 2,
+            "required_limb_type": "hand"
+        }
+    }
+}

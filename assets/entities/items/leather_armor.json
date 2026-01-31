@@ -1,0 +1,28 @@
+{
+    "id": "leather_armor",
+    "name": "Leather Armor",
+    "description": "Light and flexible protection",
+    "category": "item",
+    "tags": ["armor", "chest", "leather"],
+    
+    "components": {
+        "render": {
+            "char": "[",
+            "color": "brown",
+            "priority": 3
+        },
+        "name": {
+            "name": "Leather Armor",
+            "description": "Light and flexible protection"
+        },
+        "item": {
+            "type": "armor",
+            "equip_slot": "torso",
+            "value": 60,
+            "armor_bonus": 3,
+            "defense_bonus": 3,
+            "required_limbs": 1,
+            "required_limb_type": "torso"
+        }
+    }
+}

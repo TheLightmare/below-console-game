@@ -1,0 +1,34 @@
+{
+    "id": "meat_stew",
+    "name": "Meat Stew",
+    "description": "Hearty and warming",
+    "category": "item",
+    "tags": ["consumable", "food"],
+    
+    "components": {
+        "render": {
+            "char": "%",
+            "color": "brown",
+            "priority": 3
+        },
+        "name": {
+            "name": "Meat Stew",
+            "description": "Hearty and warming"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 15,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "type": "heal_hp",
+                    "trigger": "on_use",
+                    "magnitude": 15,
+                    "message": "The stew warms %target%'s belly."
+                }
+            ]
+        }
+    }
+}

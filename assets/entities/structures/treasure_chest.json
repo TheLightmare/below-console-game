@@ -1,0 +1,33 @@
+{
+    "id": "treasure_chest",
+    "name": "Treasure Chest",
+    "description": "A wooden chest that might contain valuables",
+    "category": "structure",
+    "tags": ["chest", "interactive", "loot", "container"],
+    
+    "components": {
+        "render": {
+            "char": "=",
+            "color": "yellow",
+            "priority": 3
+        },
+        "name": {
+            "name": "Treasure Chest",
+            "description": "A wooden treasure chest"
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "chest": {
+            "is_open": false,
+            "closed_char": "=",
+            "open_char": "u",
+            "closed_color": "yellow",
+            "open_color": "dark_yellow"
+        },
+        "interactable": {
+            "message": "Press E to open/loot"
+        }
+    }
+}

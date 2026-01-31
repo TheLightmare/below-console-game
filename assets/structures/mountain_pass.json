@@ -1,0 +1,71 @@
+{
+    "id": "mountain_pass",
+    "name": "Mountain Pass",
+    "description": "A narrow path winding through the mountains",
+    "type_id": 24,
+    "min_size": 10,
+    "max_size": 14,
+    
+    "biomes": {
+        "mountains": 0.06
+    },
+    
+    "shapes": [
+        {
+            "type": "line",
+            "x1": -6, "y1": 0,
+            "x2": 6, "y2": 0,
+            "symbol": ".",
+            "color": "gray",
+            "walkable": true,
+            "width": 2
+        }
+    ],
+    
+    "tiles": [
+        {"x": -6, "y": -2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": -5, "y": -2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": -4, "y": -2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": -3, "y": -2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": -2, "y": -2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": -1, "y": -3, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": 0, "y": -3, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": 1, "y": -3, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": 2, "y": -2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": 3, "y": -2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": 4, "y": -2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": 5, "y": -2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": 6, "y": -2, "symbol": "^", "color": "gray", "walkable": false},
+        
+        {"x": -6, "y": 2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": -5, "y": 2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": -4, "y": 2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": -3, "y": 3, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": -2, "y": 3, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": -1, "y": 3, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": 0, "y": 3, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": 1, "y": 3, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": 2, "y": 3, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": 3, "y": 2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": 4, "y": 2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": 5, "y": 2, "symbol": "^", "color": "gray", "walkable": false},
+        {"x": 6, "y": 2, "symbol": "^", "color": "gray", "walkable": false},
+        
+        {"x": 0, "y": 0, "symbol": ">", "color": "brown", "walkable": true}
+    ],
+    
+    "spawns": [
+        {
+            "type": "enemy",
+            "subtype": "mountain_goat",
+            "name": "Wild Goat",
+            "x": 0, "y": 0,
+            "radius": 4,
+            "level_min": 2, "level_max": 4,
+            "count_min": 1, "count_max": 3,
+            "chance": 0.5
+        }
+    ],
+    
+    "tags": ["road", "mountain", "crossing"]
+}

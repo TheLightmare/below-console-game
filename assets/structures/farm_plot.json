@@ -1,0 +1,31 @@
+{
+    "id": "farm_plot",
+    "name": "Farm Plot",
+    "description": "A cultivated farm plot with rows of crops",
+    
+    "legend": {
+        ",": { "symbol": ",", "color": "brown", "walkable": true },
+        "\"": { "symbol": "\"", "color": "green", "walkable": true },
+        "f": { "symbol": "f", "color": "yellow", "walkable": true },
+        ".": { "symbol": ".", "color": "brown", "walkable": true }
+    },
+    
+    "pattern": [
+        ",\"f\"f\"f\",",
+        ",\"f\"f\"f\",",
+        ".........",
+        ",\"f\"f\"f\",",
+        ",\"f\"f\"f\",",
+        ".........",
+        ",\"f\"f\"f\",",
+        ",\"f\"f\"f\","
+    ],
+    
+    "jigsaw": {
+        "district": "industrial",
+        "spawn_weight": 1.5,
+        "unique": false
+    },
+    
+    "tags": ["decoration", "farm", "food"]
+}

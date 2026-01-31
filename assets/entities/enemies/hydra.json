@@ -1,0 +1,56 @@
+{
+    "id": "hydra",
+    "name": "Hydra",
+    "description": "A multi-headed serpent beast",
+    "category": "enemy",
+    "tags": ["hostile", "boss", "beast", "multi_headed"],
+    
+    "components": {
+        "render": {
+            "char": "H",
+            "color": "green",
+            "priority": 5
+        },
+        "stats": {
+            "level": 3,
+            "hp_base": 30,
+            "hp_per_level": 30,
+            "attack_base": 10,
+            "attack_per_level": 1,
+            "defense_base": 5,
+            "defense_per_level": 1
+        },
+        "name": {
+            "name": "Hydra",
+            "description": "A multi-headed serpent beast"
+        },
+        "ai": {
+            "behavior": "chase",
+            "aggro_range": 5.0,
+            "flee_threshold": 0.1
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "beast"
+        },
+        "utility_ai": {
+            "preset": "boss",
+            "aggro_range": 5.0
+        },
+        "anatomy": {
+            "limbs": [
+                {"type": "head", "name": "head_1", "resistance": 0.5},
+                {"type": "head", "name": "head_2", "resistance": 0.5},
+                {"type": "head", "name": "head_3", "resistance": 0.5},
+                {"type": "torso", "name": "torso", "resistance": 0.7},
+                {"type": "other", "name": "tail", "resistance": 0.4}
+            ]
+        },
+        "leaves_corpse": {
+            "decay_turns": 200
+        }
+    }
+}

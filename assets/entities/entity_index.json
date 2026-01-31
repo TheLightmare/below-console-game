@@ -1,0 +1,130 @@
+{
+    "version": "1.0",
+    "description": "Entity template index for Below",
+    
+    "categories": {
+        "player": {
+            "path": "entities/player.json",
+            "entities": ["player"]
+        },
+        "enemies": {
+            "path": "entities/enemies/",
+            "entities": [
+                "goblin",
+                "skeleton",
+                "wolf",
+                "giant_spider",
+                "orc_warrior",
+                "dragon",
+                "hydra",
+                "four_armed_ogre",
+                "bandit",
+                "zombie",
+                "demon",
+                "bear"
+            ]
+        },
+        "creatures": {
+            "path": "entities/creatures/",
+            "entities": [
+                "deer",
+                "rabbit"
+            ]
+        },
+        "npcs": {
+            "path": "entities/npcs/",
+            "entities": [
+                "villager",
+                "guard",
+                "merchant",
+                "innkeeper",
+                "mysterious_stranger",
+                "wandering_trader",
+                "tutorial_guide"
+            ]
+        },
+        "items": {
+            "path": "entities/items/",
+            "entities": [
+                "iron_sword",
+                "short_sword",
+                "long_sword",
+                "great_sword",
+                "curved_blade",
+                "iron_dagger",
+                "battle_axe",
+                "hunting_bow",
+                "crossbow",
+                "throwing_knife",
+                "throwing_knives",
+                "sling",
+                "arrows",
+                "crossbow_bolts",
+                "bolts",
+                "sling_stones",
+                "health_potion",
+                "greater_health_potion",
+                "supreme_health_potion",
+                "elixir_of_vigor",
+                "elixir_of_regeneration",
+                "strength_tonic",
+                "potion_of_strength",
+                "potion_of_iron_skin",
+                "potion_of_swiftness",
+                "potion_of_night_vision",
+                "speed_potion",
+                "antidote",
+                "poison_vial",
+                "witchs_brew",
+                "mutagen",
+                "cloning_potion",
+                "body_swap_potion",
+                "soul_swap_potion",
+                "bottled_curse",
+                "bread",
+                "meat_stew",
+                "ale",
+                "wine",
+                "torch",
+                "rope",
+                "treasure_map",
+                "ruby",
+                "lucky_charm",
+                "iron_armor",
+                "chain_mail",
+                "leather_armor",
+                "iron_helmet",
+                "leather_cap",
+                "leather_boots",
+                "wooden_shield",
+                "iron_key",
+                "chest_key",
+                "gold_coin"
+            ]
+        },
+        "structures": {
+            "path": "entities/structures/",
+            "entities": [
+                "wooden_door",
+                "iron_door",
+                "treasure_chest",
+                "locked_chest",
+                "barrel",
+                "stone_wall",
+                "wooden_wall",
+                "signpost",
+                "campfire",
+                "torch"
+            ]
+        }
+    },
+    
+    "spawn_tables": {
+        "dungeon_enemies": ["goblin", "skeleton", "zombie", "orc_warrior"],
+        "wilderness_enemies": ["wolf", "bear", "bandit"],
+        "boss_enemies": ["dragon", "hydra", "four_armed_ogre", "demon"],
+        "peaceful_wildlife": ["deer", "rabbit"],
+        "dungeon_loot": ["iron_sword", "health_potion", "arrows", "gold_coin"],
+        "rare_loot": ["great_sword", "elixir_of_vigor", "iron_armor", "crossbow"]
+    }
+}

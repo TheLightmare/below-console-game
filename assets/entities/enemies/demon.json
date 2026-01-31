@@ -1,0 +1,55 @@
+{
+    "id": "demon",
+    "name": "Demon",
+    "description": "A fiend from the lower planes",
+    "category": "enemy",
+    "tags": ["hostile", "demon", "humanoid", "evil"],
+    
+    "components": {
+        "render": {
+            "char": "&",
+            "color": "dark_red",
+            "priority": 5
+        },
+        "stats": {
+            "level": 3,
+            "hp_base": 35,
+            "hp_per_level": 15,
+            "attack_base": 12,
+            "attack_per_level": 3,
+            "defense_base": 8,
+            "defense_per_level": 2
+        },
+        "name": {
+            "name": "Demon",
+            "description": "A fiend from the lower planes"
+        },
+        "ai": {
+            "behavior": "chase",
+            "aggro_range": 8.0,
+            "flee_threshold": 0.1
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "demon"
+        },
+        "utility_ai": {
+            "preset": "aggressive_melee",
+            "aggro_range": 8.0
+        },
+        "anatomy": {
+            "preset": "humanoid",
+            "limbs": [
+                {"type": "other", "name": "left_wing", "resistance": 0.6},
+                {"type": "other", "name": "right_wing", "resistance": 0.6},
+                {"type": "other", "name": "tail", "resistance": 0.5}
+            ]
+        },
+        "leaves_corpse": {
+            "decay_turns": 100
+        }
+    }
+}

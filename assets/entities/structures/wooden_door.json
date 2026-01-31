@@ -1,0 +1,33 @@
+{
+    "id": "wooden_door",
+    "name": "Wooden Door",
+    "description": "A sturdy wooden door",
+    "category": "structure",
+    "tags": ["door", "interactive", "building"],
+    
+    "components": {
+        "render": {
+            "char": "+",
+            "color": "brown",
+            "priority": 2
+        },
+        "name": {
+            "name": "Wooden Door",
+            "description": "A sturdy wooden door"
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "door": {
+            "is_open": false,
+            "closed_char": "+",
+            "open_char": "-",
+            "closed_color": "brown",
+            "open_color": "gray"
+        },
+        "interactable": {
+            "message": "Press E to open/close"
+        }
+    }
+}

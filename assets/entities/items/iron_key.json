@@ -1,0 +1,24 @@
+{
+    "id": "iron_key",
+    "name": "Iron Key",
+    "description": "A heavy iron key",
+    "category": "item",
+    "tags": ["key", "iron", "unique"],
+    
+    "components": {
+        "render": {
+            "char": "-",
+            "color": "gray",
+            "priority": 2
+        },
+        "name": {
+            "name": "Iron Key",
+            "description": "A heavy iron key"
+        },
+        "item": {
+            "type": "key",
+            "value": 0,
+            "key_id": "iron_key"
+        }
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "id": "ruins",
+    "name": "Ancient Ruins",
+    "description": "Crumbling remains of an ancient civilization",
+    "type_id": 0,
+    "min_size": 5,
+    "max_size": 8,
+    
+    "biomes": {
+        "plains": 0.03,
+        "forest": 0.02,
+        "hills": 0.04,
+        "desert": 0.03,
+        "beach": 0.02
+    },
+    
+    "shapes": [
+        {
+            "type": "rect_filled",
+            "x1": -4, "y1": -4,
+            "x2": 4, "y2": 4,
+            "symbol": ".",
+            "color": "dark_gray",
+            "walkable": true
+        }
+    ],
+    
+    "tiles": [
+        {"x": -4, "y": -4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -3, "y": -4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -2, "y": -4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -1, "y": -4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 0, "y": -4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 1, "y": -4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 2, "y": -4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 3, "y": -4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 4, "y": -4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        
+        {"x": -4, "y": 4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -3, "y": 4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -2, "y": 4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -1, "y": 4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 0, "y": 4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 1, "y": 4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 2, "y": 4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 3, "y": 4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 4, "y": 4, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        
+        {"x": -4, "y": -3, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -4, "y": -2, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -4, "y": -1, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -4, "y": 0, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -4, "y": 1, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -4, "y": 2, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -4, "y": 3, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        
+        {"x": 4, "y": -3, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 4, "y": -2, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 4, "y": -1, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 4, "y": 0, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 4, "y": 1, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 4, "y": 2, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 4, "y": 3, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        
+        {"x": -2, "y": -2, "symbol": "%", "color": "gray", "walkable": true, "chance": 0.5},
+        {"x": 1, "y": 0, "symbol": "%", "color": "gray", "walkable": true, "chance": 0.5},
+        {"x": 0, "y": 2, "symbol": "%", "color": "gray", "walkable": true, "chance": 0.5}
+    ],
+    
+    "spawns": [
+        {
+            "type": "enemy",
+            "subtype": "troll",
+            "name": "Troll",
+            "x": 0, "y": 0,
+            "radius": 3,
+            "level_min": 2, "level_max": 4,
+            "count_min": 1, "count_max": 2,
+            "chance": 1.0
+        }
+    ],
+    
+    "tags": ["dangerous", "loot"]
+}

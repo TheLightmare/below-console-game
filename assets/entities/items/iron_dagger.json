@@ -1,0 +1,29 @@
+{
+    "id": "iron_dagger",
+    "name": "Iron Dagger",
+    "description": "A small but deadly blade",
+    "category": "item",
+    "tags": ["weapon", "dagger", "melee", "one_handed"],
+    
+    "components": {
+        "render": {
+            "char": "/",
+            "color": "gray",
+            "priority": 3
+        },
+        "name": {
+            "name": "Iron Dagger",
+            "description": "A small but deadly blade"
+        },
+        "item": {
+            "type": "weapon",
+            "equip_slot": "hand",
+            "value": 25,
+            "base_damage": 3,
+            "attack_bonus": 1,
+            "cutting_chance": 0.1,
+            "required_limbs": 1,
+            "required_limb_type": "hand"
+        }
+    }
+}

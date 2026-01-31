@@ -1,0 +1,28 @@
+{
+    "id": "iron_armor",
+    "name": "Iron Armor",
+    "description": "Sturdy chest protection",
+    "category": "item",
+    "tags": ["armor", "chest", "metal"],
+    
+    "components": {
+        "render": {
+            "char": "[",
+            "color": "gray",
+            "priority": 3
+        },
+        "name": {
+            "name": "Iron Armor",
+            "description": "Sturdy chest protection"
+        },
+        "item": {
+            "type": "armor",
+            "equip_slot": "torso",
+            "value": 80,
+            "armor_bonus": 5,
+            "defense_bonus": 5,
+            "required_limbs": 1,
+            "required_limb_type": "torso"
+        }
+    }
+}

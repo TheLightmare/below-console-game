@@ -1,0 +1,55 @@
+{
+    "id": "house_large",
+    "name": "Large House",
+    "description": "A spacious home with multiple bedrooms and a kitchen",
+    
+    "legend": {
+        "#": { "symbol": "#", "color": "brown", "walkable": false },
+        "+": { "symbol": "+", "color": "yellow", "walkable": true },
+        ".": { "symbol": ".", "color": "brown", "walkable": true },
+        "|": { "symbol": "|", "color": "brown", "walkable": false },
+        "-": { "symbol": "-", "color": "brown", "walkable": false },
+        "=": { "symbol": "=", "color": "red", "walkable": true },
+        "B": { "symbol": "=", "color": "cyan", "walkable": true, "is_bed": true },
+        "b": { "symbol": "-", "color": "cyan", "walkable": true, "is_bed": true },
+        "T": { "symbol": "T", "color": "brown", "walkable": true },
+        "c": { "symbol": "h", "color": "brown", "walkable": true },
+        "C": { "symbol": "h", "color": "brown", "walkable": true },
+        "*": { "symbol": "*", "color": "yellow", "walkable": true },
+        "o": { "symbol": "o", "color": "gray", "walkable": true },
+        "~": { "symbol": "~", "color": "blue", "walkable": true },
+        "^": { "symbol": "^", "color": "red", "walkable": false },
+        "w": { "symbol": "\"", "color": "cyan", "walkable": false }
+    },
+    
+    "pattern": [
+        "^#############^",
+        "#w.Bb#....#Bbw#",
+        "#..Bb|....|Bb.#",
+        "#....|....|...#",
+        "#####++###+####",
+        "#.............#",
+        "#......*..*.o.#",
+        "#.Tc.........o#",
+        "#.Cc.....~....#",
+        "#.............#",
+        "####+++####+###"
+    ],
+    
+    "beds": [
+        { "x": 3, "y": 1 },
+        { "x": 4, "y": 1 },
+        { "x": 10, "y": 1 },
+        { "x": 11, "y": 1 }
+    ],
+    
+    "villagers_per_house": 2,
+    
+    "jigsaw": {
+        "district": "residential",
+        "spawn_weight": 1.5,
+        "unique": false
+    },
+    
+    "tags": ["building", "house", "residential"]
+}

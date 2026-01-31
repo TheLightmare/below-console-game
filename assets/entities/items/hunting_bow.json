@@ -1,0 +1,35 @@
+{
+    "id": "hunting_bow",
+    "name": "Hunting Bow",
+    "description": "A simple but reliable bow",
+    "category": "item",
+    "tags": ["weapon", "bow", "ranged", "two_handed"],
+    
+    "components": {
+        "render": {
+            "char": ")",
+            "color": "brown",
+            "priority": 3
+        },
+        "name": {
+            "name": "Hunting Bow",
+            "description": "A simple but reliable bow"
+        },
+        "item": {
+            "type": "weapon",
+            "equip_slot": "two_hand",
+            "value": 60,
+            "base_damage": 6,
+            "required_limbs": 2,
+            "required_limb_type": "hand"
+        },
+        "ranged_weapon": {
+            "range": 8,
+            "min_range": 2,
+            "ammo_type": "arrow",
+            "accuracy_bonus": 0,
+            "projectile_char": "-",
+            "projectile_color": "brown"
+        }
+    }
+}

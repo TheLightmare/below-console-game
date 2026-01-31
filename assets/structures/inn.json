@@ -1,0 +1,61 @@
+{
+    "id": "inn",
+    "name": "Village Inn",
+    "description": "A grand inn with tavern hall, kitchen, and comfortable guest rooms",
+    
+    "legend": {
+        "#": { "symbol": "#", "color": "brown", "walkable": false },
+        "+": { "symbol": "+", "color": "yellow", "walkable": true },
+        ".": { "symbol": ".", "color": "brown", "walkable": true },
+        "|": { "symbol": "|", "color": "brown", "walkable": false },
+        "-": { "symbol": "-", "color": "brown", "walkable": false },
+        "=": { "symbol": "=", "color": "red", "walkable": true },
+        "b": { "symbol": "=", "color": "blue", "walkable": true },
+        "T": { "symbol": "T", "color": "brown", "walkable": true },
+        "c": { "symbol": "h", "color": "brown", "walkable": true },
+        "*": { "symbol": "*", "color": "yellow", "walkable": true },
+        "o": { "symbol": "o", "color": "gray", "walkable": true },
+        "~": { "symbol": "~", "color": "blue", "walkable": true },
+        "%": { "symbol": "%", "color": "yellow", "walkable": true },
+        "a": { "symbol": "a", "color": "red", "walkable": true },
+        "^": { "symbol": "^", "color": "red", "walkable": false },
+        "w": { "symbol": "\"", "color": "cyan", "walkable": false },
+        "S": { "symbol": "S", "color": "brown", "walkable": false },
+        "K": { "symbol": "K", "color": "gray", "walkable": false },
+        "p": { "symbol": "p", "color": "brown", "walkable": true },
+        "I": { "spawn": "npc", "subtype": "innkeeper", "name": "Innkeeper" },
+        "B": { "spawn": "npc", "subtype": "barmaid", "name": "Barmaid" },
+        "G": { "spawn": "npc", "subtype": "guest", "name": "Guest" }
+    },
+    
+    "pattern": [
+        "^^^^######################################^^^^",
+        "##############################################",
+        "#w=...b#w=...b#w=...b#w=...b#w~....o....a..%%w#",
+        "#......|......|......|......|.................#",
+        "#.G....|......|.G....|......|.........K.....%%#",
+        "#......|......|......|......|.................#",
+        "###++####++####++####++###--|-------++---------#",
+        "#.................................*.........SS#",
+        "#.........Tcccccc...............*...........SS#",
+        "#.........Tcccccc....*......................SS#",
+        "#...B.....Tcccccc.................I..........S#",
+        "#.........Tcccccc.............................#",
+        "#.........Tcccccc..............*..............#",
+        "#w.......................................*...w#",
+        "#.....Tcccc.......Tcccc.......Tcccc...........#",
+        "#.....Tcccc.......Tcccc.......Tcccc..........o#",
+        "#..........................................*..#",
+        "#w............................................#",
+        "#..........................*..................#",
+        "##################++++#####################++##"
+    ],
+    
+    "jigsaw": {
+        "district": "market",
+        "spawn_weight": 0.8,
+        "unique": true
+    },
+    
+    "tags": ["building", "inn", "rest", "safe"]
+}

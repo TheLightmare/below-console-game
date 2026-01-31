@@ -1,0 +1,23 @@
+{
+    "id": "ruby",
+    "name": "Ruby",
+    "description": "A precious gemstone",
+    "category": "item",
+    "tags": ["valuable", "gem"],
+    
+    "components": {
+        "render": {
+            "char": "*",
+            "color": "red",
+            "priority": 3
+        },
+        "name": {
+            "name": "Ruby",
+            "description": "A precious gemstone"
+        },
+        "item": {
+            "type": "misc",
+            "value": 150
+        }
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "id": "dragon_lair",
+    "name": "Dragon's Lair",
+    "description": "A massive cave entrance filled with treasure and bones",
+    "type_id": 22,
+    "min_size": 8,
+    "max_size": 12,
+    
+    "biomes": {
+        "mountains": 0.02
+    },
+    
+    "shapes": [
+        {
+            "type": "circle_outline",
+            "x1": 0, "y1": 0,
+            "radius": 5,
+            "symbol": "#",
+            "color": "dark_gray",
+            "walkable": false
+        },
+        {
+            "type": "circle_filled",
+            "x1": 0, "y1": 0,
+            "radius": 4,
+            "symbol": ".",
+            "color": "dark_gray",
+            "walkable": true
+        },
+        {
+            "type": "circle_filled",
+            "x1": 0, "y1": 7,
+            "radius": 2,
+            "symbol": ".",
+            "color": "black",
+            "walkable": true
+        }
+    ],
+    
+    "tiles": [
+        {"x": 0, "y": 5, "symbol": ">", "color": "black", "walkable": true},
+        
+        {"x": 0, "y": 0, "symbol": "$", "color": "yellow", "walkable": true},
+        {"x": -1, "y": 0, "symbol": "$", "color": "yellow", "walkable": true},
+        {"x": 1, "y": 0, "symbol": "$", "color": "yellow", "walkable": true},
+        {"x": 0, "y": -1, "symbol": "$", "color": "yellow", "walkable": true},
+        {"x": 0, "y": 1, "symbol": "$", "color": "yellow", "walkable": true},
+        
+        {"x": -3, "y": -2, "symbol": "%", "color": "white", "walkable": true, "chance": 0.7},
+        {"x": 2, "y": -3, "symbol": "%", "color": "white", "walkable": true, "chance": 0.7},
+        {"x": 3, "y": 1, "symbol": "%", "color": "white", "walkable": true, "chance": 0.7},
+        {"x": -2, "y": 2, "symbol": "%", "color": "white", "walkable": true, "chance": 0.7}
+    ],
+    
+    "spawns": [
+        {
+            "type": "enemy",
+            "subtype": "dragon",
+            "name": "Dragon",
+            "x": 0, "y": 0,
+            "radius": 2,
+            "level": 10,
+            "count": 1,
+            "chance": 1.0,
+            "properties": {
+                "hp_multiplier": "100",
+                "attack": "25",
+                "defense": "15",
+                "symbol": "D",
+                "color": "red",
+                "boss": "true"
+            }
+        },
+        {
+            "type": "enemy",
+            "subtype": "cultist",
+            "name": "Dragon Cultist",
+            "x": 0, "y": 0,
+            "radius": 4,
+            "level_min": 3, "level_max": 4,
+            "count_min": 2, "count_max": 3,
+            "chance": 0.8
+        }
+    ],
+    
+    "tags": ["dungeon_entrance", "boss", "treasure", "dangerous"]
+}

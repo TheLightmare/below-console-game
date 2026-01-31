@@ -1,0 +1,32 @@
+{
+    "id": "throwing_knives",
+    "name": "Throwing Knives",
+    "description": "A set of balanced blades",
+    "category": "item",
+    "tags": ["weapon", "ranged", "throwing"],
+    
+    "components": {
+        "render": {
+            "char": "/",
+            "color": "silver",
+            "priority": 3
+        },
+        "name": {
+            "name": "Throwing Knives",
+            "description": "A set of balanced blades"
+        },
+        "item": {
+            "type": "weapon",
+            "equip_slot": "hand",
+            "value": 75,
+            "attack_bonus": 4
+        },
+        "ranged_weapon": {
+            "range": 5,
+            "min_range": 1,
+            "ammo_type": "none",
+            "consumes_self": true,
+            "accuracy_bonus": 0
+        }
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "id": "temple",
+    "name": "Ancient Temple",
+    "description": "A sacred temple dedicated to forgotten gods",
+    "type_id": 11,
+    "min_size": 10,
+    "max_size": 14,
+    
+    "biomes": {
+        "forest": 0.015,
+        "hills": 0.02,
+        "desert": 0.02,
+        "swamp": 0.01
+    },
+    
+    "shapes": [
+        {
+            "type": "rect_filled",
+            "x1": -6, "y1": -6,
+            "x2": 6, "y2": 6,
+            "symbol": ".",
+            "color": "white",
+            "walkable": true
+        },
+        {
+            "type": "rect_outline",
+            "x1": -6, "y1": -6,
+            "x2": 6, "y2": 6,
+            "symbol": "#",
+            "color": "white",
+            "walkable": false
+        }
+    ],
+    
+    "tiles": [
+        {"x": -4, "y": -4, "symbol": "O", "color": "white", "walkable": false},
+        {"x": 4, "y": -4, "symbol": "O", "color": "white", "walkable": false},
+        {"x": -4, "y": 4, "symbol": "O", "color": "white", "walkable": false},
+        {"x": 4, "y": 4, "symbol": "O", "color": "white", "walkable": false},
+        
+        {"x": 0, "y": 6, "symbol": "+", "color": "yellow", "walkable": true},
+        
+        {"x": 0, "y": -4, "symbol": "*", "color": "yellow", "walkable": false},
+        {"x": -1, "y": -4, "symbol": "|", "color": "yellow", "walkable": false},
+        {"x": 1, "y": -4, "symbol": "|", "color": "yellow", "walkable": false},
+        
+        {"x": 0, "y": 0, "symbol": "A", "color": "cyan", "walkable": false},
+        
+        {"x": -2, "y": -2, "symbol": "*", "color": "cyan", "walkable": true, "chance": 0.5},
+        {"x": 2, "y": -2, "symbol": "*", "color": "cyan", "walkable": true, "chance": 0.5},
+        {"x": -2, "y": 2, "symbol": "*", "color": "cyan", "walkable": true, "chance": 0.5},
+        {"x": 2, "y": 2, "symbol": "*", "color": "cyan", "walkable": true, "chance": 0.5}
+    ],
+    
+    "spawns": [
+        {
+            "type": "npc",
+            "subtype": "priest",
+            "name": "Temple Priest",
+            "x": 0, "y": -2,
+            "count_min": 1, "count_max": 1,
+            "chance": 0.7
+        },
+        {
+            "type": "enemy",
+            "subtype": "temple_guardian",
+            "name": "Temple Guardian",
+            "x": 0, "y": 0,
+            "radius": 3,
+            "level_min": 5, "level_max": 8,
+            "count_min": 1, "count_max": 2,
+            "chance": 0.3
+        }
+    ],
+    
+    "tags": ["sacred", "blessing", "loot"]
+}

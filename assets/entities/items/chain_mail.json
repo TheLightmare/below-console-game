@@ -1,0 +1,28 @@
+{
+    "id": "chain_mail",
+    "name": "Chain Mail",
+    "description": "Good protection with mobility",
+    "category": "item",
+    "tags": ["armor", "chest", "metal"],
+    
+    "components": {
+        "render": {
+            "char": "[",
+            "color": "silver",
+            "priority": 3
+        },
+        "name": {
+            "name": "Chain Mail",
+            "description": "Good protection with mobility"
+        },
+        "item": {
+            "type": "armor",
+            "equip_slot": "torso",
+            "value": 120,
+            "armor_bonus": 6,
+            "defense_bonus": 6,
+            "required_limbs": 1,
+            "required_limb_type": "torso"
+        }
+    }
+}

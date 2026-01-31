@@ -1,0 +1,32 @@
+{
+    "id": "signpost",
+    "name": "Signpost",
+    "description": "A wooden signpost",
+    "category": "structure",
+    "tags": ["sign", "readable", "wood"],
+    
+    "components": {
+        "position": {
+            "x": 0,
+            "y": 0
+        },
+        "render": {
+            "char": "T",
+            "color": "brown",
+            "priority": 2
+        },
+        "name": {
+            "name": "Signpost",
+            "description": "A wooden signpost"
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "interactable": {
+            "interaction_type": "read",
+            "prompt": "Read sign",
+            "text": "Welcome to the village!"
+        }
+    }
+}

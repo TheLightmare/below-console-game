@@ -1,0 +1,44 @@
+{
+    "id": "wayshrine",
+    "name": "Wayshrine",
+    "description": "A small roadside shrine with an eternal flame",
+    "type_id": 18,
+    "min_size": 4,
+    "max_size": 6,
+    
+    "biomes": {
+        "plains": 0.03,
+        "hills": 0.02,
+        "savanna": 0.02
+    },
+    
+    "shapes": [
+        {
+            "type": "circle_filled",
+            "x1": 0, "y1": 0,
+            "radius": 3,
+            "symbol": ".",
+            "color": "gray",
+            "walkable": true
+        }
+    ],
+    
+    "tiles": [
+        {"x": -1, "y": -1, "symbol": "#", "color": "white", "walkable": false},
+        {"x": 0, "y": -1, "symbol": "#", "color": "white", "walkable": false},
+        {"x": 1, "y": -1, "symbol": "#", "color": "white", "walkable": false},
+        {"x": -1, "y": 0, "symbol": "#", "color": "white", "walkable": false},
+        {"x": 0, "y": 0, "symbol": "*", "color": "yellow", "walkable": false},
+        {"x": 1, "y": 0, "symbol": "#", "color": "white", "walkable": false},
+        {"x": -1, "y": 1, "symbol": "#", "color": "white", "walkable": false},
+        {"x": 0, "y": 1, "symbol": "#", "color": "white", "walkable": false},
+        {"x": 1, "y": 1, "symbol": "#", "color": "white", "walkable": false},
+        
+        {"x": -2, "y": 0, "symbol": "o", "color": "gray", "walkable": true},
+        {"x": 2, "y": 0, "symbol": "o", "color": "gray", "walkable": true}
+    ],
+    
+    "spawns": [],
+    
+    "tags": ["rest_point", "healing", "road"]
+}

@@ -1,0 +1,34 @@
+{
+    "id": "elixir_of_vigor",
+    "name": "Elixir of Vigor",
+    "description": "Fully restores HP",
+    "category": "item",
+    "tags": ["consumable", "potion", "healing", "rare"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "yellow",
+            "priority": 3
+        },
+        "name": {
+            "name": "Elixir of Vigor",
+            "description": "Fully restores HP"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 100,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "type": "restore_hp_percent",
+                    "trigger": "on_use",
+                    "magnitude": 100,
+                    "message": "%target% feels completely restored!"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "id": "blacksmith",
+    "name": "Blacksmith Forge",
+    "description": "A large forge with smithing area, weapon displays, and water cooling",
+    
+    "legend": {
+        "#": { "symbol": "#", "color": "gray", "walkable": false },
+        "+": { "symbol": "+", "color": "yellow", "walkable": true },
+        ".": { "symbol": ".", "color": "brown", "walkable": true },
+        "|": { "symbol": "|", "color": "gray", "walkable": false },
+        "-": { "symbol": "-", "color": "gray", "walkable": false },
+        "^": { "symbol": "^", "color": "red", "walkable": false },
+        "*": { "symbol": "*", "color": "yellow", "walkable": true },
+        "A": { "symbol": "A", "color": "white", "walkable": true },
+        "/": { "symbol": "/", "color": "gray", "walkable": true },
+        "\\": { "symbol": "\\", "color": "gray", "walkable": true },
+        "~": { "symbol": "~", "color": "blue", "walkable": true },
+        "o": { "symbol": "o", "color": "gray", "walkable": true },
+        "&": { "symbol": "&", "color": "red", "walkable": false },
+        "n": { "symbol": "n", "color": "gray", "walkable": false },
+        "=": { "symbol": "=", "color": "gray", "walkable": true },
+        ",": { "symbol": ",", "color": "gray", "walkable": true },
+        "w": { "symbol": "\"", "color": "cyan", "walkable": false },
+        "X": { "symbol": "X", "color": "white", "walkable": true },
+        "T": { "symbol": "T", "color": "brown", "walkable": true },
+        "S": { "spawn": "npc", "subtype": "blacksmith", "name": "Blacksmith" }
+    },
+    
+    "pattern": [
+        "^^^^############################",
+        "################################",
+        "#&&&&^^^*|w./A\\..X..X../A\\.X.w#",
+        "#&&.....n|....................#",
+        "#&&&..*..|....................#",
+        "#........|.....========......o#",
+        "#...S....|.....=......=.......#",
+        "#........|.....=......=.......#",
+        "#........|.....========.......#",
+        "#########|------++------#######",
+        "#w~~~~~........*........,,,,.w#",
+        "#~~..~~..................,,,...#",
+        "#~....~.......T..T.......,...o#",
+        "#~~..~~.......T..T.......,,,...#",
+        "#w~~~~~........*.........,,,.w#",
+        "#..................o..........#",
+        "############+++################"
+    ],
+    
+    "jigsaw": {
+        "district": "industrial",
+        "spawn_weight": 0.9,
+        "unique": true
+    },
+    
+    "tags": ["building", "blacksmith", "trade", "craft"]
+}

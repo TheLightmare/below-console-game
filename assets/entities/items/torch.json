@@ -1,0 +1,23 @@
+{
+    "id": "torch",
+    "name": "Torch",
+    "description": "Lights the way",
+    "category": "item",
+    "tags": ["tool", "light"],
+    
+    "components": {
+        "render": {
+            "char": "/",
+            "color": "yellow",
+            "priority": 3
+        },
+        "name": {
+            "name": "Torch",
+            "description": "Lights the way"
+        },
+        "item": {
+            "type": "misc",
+            "value": 5
+        }
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "id": "bandit_hideout",
+    "name": "Bandit Hideout",
+    "description": "A hidden camp where bandits plot their next raid",
+    "type_id": 20,
+    "min_size": 8,
+    "max_size": 12,
+    
+    "biomes": {
+        "forest": 0.025,
+        "hills": 0.02,
+        "mountains": 0.015
+    },
+    
+    "shapes": [
+        {
+            "type": "rect_filled",
+            "x1": -5, "y1": -4,
+            "x2": 5, "y2": 4,
+            "symbol": ",",
+            "color": "dark_green",
+            "walkable": true
+        }
+    ],
+    
+    "tiles": [
+        {"x": -4, "y": -3, "symbol": "^", "color": "brown", "walkable": true},
+        {"x": -3, "y": -3, "symbol": "^", "color": "brown", "walkable": true},
+        {"x": -4, "y": -2, "symbol": "^", "color": "brown", "walkable": true},
+        
+        {"x": 3, "y": -3, "symbol": "^", "color": "brown", "walkable": true},
+        {"x": 4, "y": -3, "symbol": "^", "color": "brown", "walkable": true},
+        {"x": 4, "y": -2, "symbol": "^", "color": "brown", "walkable": true},
+        
+        {"x": 0, "y": 0, "symbol": "*", "color": "red", "walkable": true},
+        
+        {"x": -3, "y": 2, "symbol": "=", "color": "yellow", "walkable": true},
+        {"x": -2, "y": 2, "symbol": "=", "color": "yellow", "walkable": true},
+        
+        {"x": 2, "y": 2, "symbol": "$", "color": "yellow", "walkable": true, "chance": 0.6},
+        {"x": 3, "y": 2, "symbol": "$", "color": "yellow", "walkable": true, "chance": 0.4},
+        
+        {"x": -5, "y": 0, "symbol": "T", "color": "green", "walkable": false},
+        {"x": 5, "y": 0, "symbol": "T", "color": "green", "walkable": false},
+        {"x": -5, "y": -4, "symbol": "T", "color": "green", "walkable": false},
+        {"x": 5, "y": -4, "symbol": "T", "color": "green", "walkable": false},
+        {"x": -5, "y": 4, "symbol": "T", "color": "green", "walkable": false},
+        {"x": 5, "y": 4, "symbol": "T", "color": "green", "walkable": false}
+    ],
+    
+    "spawns": [
+        {
+            "type": "enemy",
+            "subtype": "bandit",
+            "name": "Bandit",
+            "x": 0, "y": 0,
+            "radius": 4,
+            "level_min": 2, "level_max": 4,
+            "count_min": 3, "count_max": 5,
+            "chance": 1.0
+        },
+        {
+            "type": "enemy",
+            "subtype": "bandit_leader",
+            "name": "Bandit Leader",
+            "x": 0, "y": -2,
+            "level_min": 4, "level_max": 6,
+            "count_min": 1, "count_max": 1,
+            "chance": 0.7
+        },
+        {
+            "type": "item",
+            "subtype": "gold",
+            "name": "Stolen Gold",
+            "x": 3, "y": 2,
+            "count_min": 50, "count_max": 150,
+            "chance": 0.8
+        }
+    ],
+    
+    "tags": ["hostile", "loot", "dangerous"]
+}

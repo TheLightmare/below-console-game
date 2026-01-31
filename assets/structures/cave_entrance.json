@@ -1,0 +1,58 @@
+{
+    "id": "cave_entrance",
+    "name": "Cave Entrance",
+    "description": "A dark opening in the rock face",
+    "type_id": 7,
+    "min_size": 5,
+    "max_size": 7,
+    
+    "biomes": {
+        "hills": 0.04,
+        "mountains": 0.05,
+        "forest": 0.02
+    },
+    
+    "shapes": [
+        {
+            "type": "circle_outline",
+            "x1": 0, "y1": 0,
+            "radius": 3,
+            "symbol": "#",
+            "color": "gray",
+            "walkable": false
+        }
+    ],
+    
+    "tiles": [
+        {"x": 0, "y": 0, "symbol": ">", "color": "black", "walkable": true},
+        {"x": 0, "y": -1, "symbol": ".", "color": "dark_gray", "walkable": true},
+        {"x": 0, "y": 1, "symbol": ".", "color": "dark_gray", "walkable": true},
+        {"x": -1, "y": 0, "symbol": ".", "color": "dark_gray", "walkable": true},
+        {"x": 1, "y": 0, "symbol": ".", "color": "dark_gray", "walkable": true}
+    ],
+    
+    "spawns": [
+        {
+            "type": "enemy",
+            "subtype": "cave_bat",
+            "name": "Cave Bat",
+            "x": 0, "y": 0,
+            "radius": 2,
+            "level_min": 1, "level_max": 3,
+            "count_min": 2, "count_max": 4,
+            "chance": 0.7
+        },
+        {
+            "type": "enemy",
+            "subtype": "cave_spider",
+            "name": "Cave Spider",
+            "x": 0, "y": 0,
+            "radius": 3,
+            "level_min": 2, "level_max": 4,
+            "count_min": 1, "count_max": 2,
+            "chance": 0.5
+        }
+    ],
+    
+    "tags": ["dungeon_entrance", "dangerous", "cave"]
+}

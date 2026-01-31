@@ -1,0 +1,50 @@
+{
+    "id": "orc_warrior",
+    "name": "Orc Warrior",
+    "description": "A brutish green-skinned warrior with a fearsome battle cry",
+    "category": "enemy",
+    "tags": ["hostile", "humanoid", "orc", "warrior"],
+    
+    "components": {
+        "render": {
+            "char": "O",
+            "color": "dark_green",
+            "priority": 5
+        },
+        "stats": {
+            "level": 2,
+            "hp_base": 25,
+            "hp_per_level": 12,
+            "attack_base": 8,
+            "attack_per_level": 3,
+            "defense_base": 5,
+            "defense_per_level": 2
+        },
+        "name": {
+            "name": "Orc Warrior",
+            "description": "A brutish green-skinned warrior with a fearsome battle cry"
+        },
+        "ai": {
+            "behavior": "chase",
+            "aggro_range": 5.0,
+            "flee_threshold": 0.1
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "orc"
+        },
+        "utility_ai": {
+            "preset": "berserker",
+            "aggro_range": 5.0
+        },
+        "anatomy": {
+            "preset": "humanoid"
+        },
+        "leaves_corpse": {
+            "decay_turns": 100
+        }
+    }
+}

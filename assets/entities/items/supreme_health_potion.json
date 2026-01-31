@@ -1,0 +1,34 @@
+{
+    "id": "supreme_health_potion",
+    "name": "Supreme Health Potion",
+    "description": "A powerful elixir that restores 100 HP",
+    "category": "item",
+    "tags": ["consumable", "potion", "healing"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "bright_red",
+            "priority": 3
+        },
+        "name": {
+            "name": "Supreme Health Potion",
+            "description": "Restores 100 HP"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 150,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "type": "heal_hp",
+                    "trigger": "on_use",
+                    "magnitude": 100,
+                    "message": "Vitality surges through %target%!"
+                }
+            ]
+        }
+    }
+}

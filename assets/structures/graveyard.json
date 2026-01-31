@@ -1,0 +1,55 @@
+{
+    "id": "graveyard",
+    "name": "Abandoned Graveyard",
+    "description": "An eerie graveyard filled with old tombstones and restless spirits",
+    "type_id": 12,
+    "min_size": 8,
+    "max_size": 12,
+    
+    "biomes": {
+        "plains": 0.015,
+        "forest": 0.02,
+        "swamp": 0.03,
+        "hills": 0.01
+    },
+    
+    "legend": {
+        "#": { "symbol": "#", "color": "gray", "walkable": false, "chance": 0.7 },
+        ".": { "symbol": ".", "color": "dark_gray", "walkable": true },
+        "+": { "symbol": "+", "color": "gray", "walkable": false },
+        "t": { "symbol": "+", "color": "gray", "walkable": false, "chance": 0.8 },
+        "T": { "symbol": "+", "color": "gray", "walkable": false, "chance": 0.6 },
+        "X": { "symbol": "X", "color": "white", "walkable": false },
+        "S": { "symbol": ".", "color": "dark_gray", "walkable": true, "spawn": "enemy", "subtype": "skeleton", "name": "Skeleton" },
+        "G": { "symbol": ".", "color": "dark_gray", "walkable": true, "spawn": "enemy", "subtype": "ghost", "name": "Restless Spirit" }
+    },
+    
+    "pattern": [
+        "###########",
+        "#.+.+.+.+.#",
+        "#.........#",
+        "#.+.+.+.+.#",
+        "#....S....#",
+        "#.t.t.t.t.#",
+        "#....G....#",
+        "#.T.T.T.T.#",
+        "#....X....#",
+        "#.T.T.T.T.#",
+        "###########"
+    ],
+    
+    "spawns": [
+        {
+            "type": "enemy",
+            "subtype": "skeleton",
+            "name": "Skeleton",
+            "x": 0, "y": 0,
+            "radius": 4,
+            "level_min": 2, "level_max": 5,
+            "count_min": 2, "count_max": 5,
+            "chance": 1.0
+        }
+    ],
+    
+    "tags": ["undead", "dangerous", "loot"]
+}

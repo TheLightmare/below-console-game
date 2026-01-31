@@ -1,0 +1,30 @@
+{
+    "id": "arrows",
+    "name": "Arrows",
+    "description": "Standard wooden arrows",
+    "category": "item",
+    "tags": ["ammo", "arrow"],
+    
+    "components": {
+        "render": {
+            "char": "|",
+            "color": "brown",
+            "priority": 2
+        },
+        "name": {
+            "name": "Arrows",
+            "description": "Standard wooden arrows"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 20,
+            "stackable": true,
+            "stack_count": 20
+        },
+        "ammo": {
+            "ammo_type": "arrow",
+            "quantity": 20,
+            "damage_bonus": 0
+        }
+    }
+}

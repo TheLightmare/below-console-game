@@ -1,0 +1,50 @@
+{
+    "id": "bear",
+    "name": "Bear",
+    "description": "A large and dangerous predator",
+    "category": "enemy",
+    "tags": ["hostile", "beast", "predator", "animal"],
+    
+    "components": {
+        "render": {
+            "char": "B",
+            "color": "brown",
+            "priority": 5
+        },
+        "stats": {
+            "level": 2,
+            "hp_base": 30,
+            "hp_per_level": 15,
+            "attack_base": 10,
+            "attack_per_level": 3,
+            "defense_base": 5,
+            "defense_per_level": 2
+        },
+        "name": {
+            "name": "Bear",
+            "description": "A large and dangerous predator"
+        },
+        "ai": {
+            "behavior": "chase",
+            "aggro_range": 5.0,
+            "flee_threshold": 0.15
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "predator"
+        },
+        "utility_ai": {
+            "preset": "predator",
+            "aggro_range": 5.0
+        },
+        "anatomy": {
+            "preset": "quadruped"
+        },
+        "leaves_corpse": {
+            "decay_turns": 100
+        }
+    }
+}

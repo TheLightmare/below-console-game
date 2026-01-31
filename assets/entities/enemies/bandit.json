@@ -1,0 +1,50 @@
+{
+    "id": "bandit",
+    "name": "Bandit",
+    "description": "A ruthless outlaw",
+    "category": "enemy",
+    "tags": ["hostile", "humanoid", "bandit"],
+    
+    "components": {
+        "render": {
+            "char": "b",
+            "color": "dark_red",
+            "priority": 5
+        },
+        "stats": {
+            "level": 1,
+            "hp_base": 18,
+            "hp_per_level": 10,
+            "attack_base": 6,
+            "attack_per_level": 2,
+            "defense_base": 4,
+            "defense_per_level": 1
+        },
+        "name": {
+            "name": "Bandit",
+            "description": "A ruthless outlaw"
+        },
+        "ai": {
+            "behavior": "chase",
+            "aggro_range": 6.0,
+            "flee_threshold": 0.25
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "bandit"
+        },
+        "utility_ai": {
+            "preset": "aggressive_melee",
+            "aggro_range": 6.0
+        },
+        "anatomy": {
+            "preset": "humanoid"
+        },
+        "leaves_corpse": {
+            "decay_turns": 100
+        }
+    }
+}

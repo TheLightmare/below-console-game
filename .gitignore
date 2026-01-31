@@ -1,0 +1,65 @@
+# Build directories
+build/
+out/
+cmake-build-*/
+
+# Compiled binaries
+*.exe
+*.out
+*.app
+*.o
+*.obj
+*.lib
+*.a
+*.dll
+*.so
+*.dylib
+
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.suo
+*.sdf
+*.opensdf
+*.db
+*.opendb
+*.ipch
+x64/
+x86/
+Debug/
+Release/
+MinSizeRel/
+RelWithDebInfo/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# IDE and editors
+*.swp
+*.swo
+*~
+.idea/
+*.code-workspace
+.vscode/
+
+# Save files (user-specific game data)
+saves/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.log

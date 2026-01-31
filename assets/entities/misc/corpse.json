@@ -1,0 +1,44 @@
+{
+    "id": "corpse",
+    "name": "Corpse",
+    "description": "The remains of a dead creature",
+    "category": "misc",
+    "tags": ["corpse", "container", "interactable"],
+    
+    "components": {
+        "render": {
+            "char": "%",
+            "color": "dark_red",
+            "priority": 2
+        },
+        "name": {
+            "name": "Corpse",
+            "description": "The remains of a dead creature"
+        },
+        "collision": {
+            "blocks_movement": false,
+            "blocks_sight": false
+        },
+        "stats": {
+            "level": 1,
+            "max_hp": 1,
+            "current_hp": 1,
+            "attack": 1,
+            "defense": 0
+        },
+        "inventory": {
+            "max_items": 20,
+            "gold": 0
+        },
+        "equipment": {},
+        "corpse": {
+            "original_entity_name": "",
+            "decay_turns": -1
+        },
+        "faction": {
+            "faction": "none"
+        }
+    },
+    
+    "notes": "Base corpse template. Spawn_corpse creates from this template then overrides with dead entity's data."
+}

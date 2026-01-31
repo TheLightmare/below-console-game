@@ -1,0 +1,32 @@
+{
+    "id": "fountain",
+    "name": "Village Fountain",
+    "description": "An ornate stone fountain with flowing water",
+    
+    "legend": {
+        "O": { "symbol": "O", "color": "white", "walkable": false },
+        "o": { "symbol": "o", "color": "gray", "walkable": false },
+        "~": { "symbol": "~", "color": "cyan", "walkable": false },
+        ":": { "symbol": ":", "color": "gray", "walkable": true },
+        "^": { "symbol": "^", "color": "cyan", "walkable": false },
+        ".": { "symbol": ".", "color": "gray", "walkable": true }
+    },
+    
+    "pattern": [
+        "...:..:..",
+        "..:ooo:..",
+        ".:o~~~o:.",
+        ":o~~^~~o:",
+        ".:o~~~o:.",
+        "..:ooo:..",
+        "...:..:.."
+    ],
+    
+    "jigsaw": {
+        "district": "center",
+        "spawn_weight": 1.0,
+        "unique": true
+    },
+    
+    "tags": ["decoration", "water", "landmark", "center"]
+}

@@ -1,0 +1,134 @@
+{
+    "id": "witch",
+    "name": "Witch",
+    "description": "A mysterious potion seller living in the swamps",
+    "category": "npc",
+    "tags": ["friendly", "humanoid", "merchant", "magic"],
+    
+    "components": {
+        "render": {
+            "char": "W",
+            "color": "magenta",
+            "priority": 6
+        },
+        "stats": {
+            "level": 5,
+            "hp_base": 30,
+            "hp_per_level": 6,
+            "attack_base": 8,
+            "attack_per_level": 2,
+            "defense_base": 4,
+            "defense_per_level": 1
+        },
+        "name": {
+            "name": "Witch",
+            "description": "A mysterious woman with arcane knowledge"
+        },
+        "ai": {
+            "behavior": "idle",
+            "aggro_range": 5.0,
+            "flee_threshold": 0.3
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "villager"
+        },
+        "utility_ai": {
+            "preset": "merchant"
+        },
+        "anatomy": {
+            "preset": "humanoid"
+        },
+        "npc": {
+            "disposition": "friendly",
+            "role": "merchant",
+            "greeting": "Eye of newt, toe of frog... Ah, a visitor!",
+            "farewell": "May your path be shrouded in shadow...",
+            "can_trade": true
+        },
+        "inventory": {
+            "max_items": 25,
+            "gold": 150
+        },
+        "dialogue": {
+            "start_node_id": 0,
+            "nodes": [
+                {
+                    "id": 0,
+                    "speaker": "Witch",
+                    "text": "Hehehe... Welcome to my humble hut, traveler. The spirits told me you would come. Are you seeking my special brews?",
+                    "options": [
+                        { "text": "What potions do you have?", "next": 1, "action": "trade" },
+                        { "text": "What can you tell me about this area?", "next": 2 },
+                        { "text": "You're not going to curse me, are you?", "next": 3 },
+                        { "text": "I should go...", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "speaker": "Witch",
+                    "text": "Potions, elixirs, draughts of power! Each one brewed under the moonlight with ingredients you don't want to know about. Take a look...",
+                    "options": [
+                        { "text": "Thanks!", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "speaker": "Witch",
+                    "text": "The swamps hold many secrets, dear. Ancient things lurk in the murky waters. And in the forest... well, not all who wander are lost, but some certainly should be.",
+                    "options": [
+                        { "text": "That sounds ominous.", "next": 4 },
+                        { "text": "Let me see your wares.", "next": 1, "action": "trade" },
+                        { "text": "I'll be careful. Goodbye.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "speaker": "Witch",
+                    "text": "Curse you? Hehehehe... Only if you don't buy anything! Just kidding, dear. I save my curses for those who truly deserve them.",
+                    "options": [
+                        { "text": "Good to know...", "next": 0 },
+                        { "text": "I'll take my chances elsewhere.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "speaker": "Witch",
+                    "text": "Ominous? I prefer 'atmospheric'. But yes, take care out there. My potions might just save your life.",
+                    "options": [
+                        { "text": "Show me what you've got.", "next": 1, "action": "trade" },
+                        { "text": "I'll keep that in mind. Farewell.", "next": -1, "ends": true }
+                    ]
+                }
+            ]
+        },
+        "shop": {
+            "buy_multiplier": 1.2,
+            "sell_multiplier": 0.4,
+            "restocks": true,
+            "restock_interval": 80,
+            "items": [
+                { "template_id": "health_potion", "name": "Health Potion", "price": 25 },
+                { "template_id": "greater_health_potion", "name": "Greater Health Potion", "price": 60 },
+                { "template_id": "supreme_health_potion", "name": "Supreme Health Potion", "price": 150 },
+                { "template_id": "potion_of_strength", "name": "Potion of Strength", "price": 45 },
+                { "template_id": "potion_of_iron_skin", "name": "Potion of Iron Skin", "price": 45 },
+                { "template_id": "potion_of_swiftness", "name": "Potion of Swiftness", "price": 50 },
+                { "template_id": "antidote", "name": "Antidote", "price": 20 },
+                { "template_id": "potion_of_night_vision", "name": "Potion of Night Vision", "price": 35 },
+                { "template_id": "poison_vial", "name": "Poison Vial", "price": 40 },
+                { "template_id": "elixir_of_regeneration", "name": "Elixir of Regeneration", "price": 80 },
+                { "template_id": "witchs_brew", "name": "Witch's Brew", "price": 100 },
+                { "template_id": "mutagen", "name": "Mutagen", "price": 75 },
+                { "template_id": "cloning_potion", "name": "Cloning Potion", "price": 10 },
+                { "template_id": "bottled_curse", "name": "Bottled Curse", "price": 60 }
+            ]
+        },
+        "interactable": {
+            "message": "Press E to trade"
+        }
+    }
+}

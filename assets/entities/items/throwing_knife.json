@@ -1,0 +1,38 @@
+{
+    "id": "throwing_knife",
+    "name": "Throwing Knife",
+    "description": "A balanced blade for throwing",
+    "category": "item",
+    "tags": ["weapon", "ranged", "throwing", "one_handed"],
+    
+    "components": {
+        "render": {
+            "char": "/",
+            "color": "silver",
+            "priority": 3
+        },
+        "name": {
+            "name": "Throwing Knife",
+            "description": "A balanced blade for throwing"
+        },
+        "item": {
+            "type": "weapon",
+            "equip_slot": "hand",
+            "value": 15,
+            "base_damage": 4,
+            "required_limbs": 1,
+            "required_limb_type": "hand",
+            "stackable": true,
+            "stack_count": 5
+        },
+        "ranged_weapon": {
+            "range": 5,
+            "min_range": 1,
+            "ammo_type": "none",
+            "consumes_self": true,
+            "accuracy_bonus": 1,
+            "projectile_char": "/",
+            "projectile_color": "silver"
+        }
+    }
+}

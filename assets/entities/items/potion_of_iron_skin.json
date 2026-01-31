@@ -1,0 +1,35 @@
+{
+    "id": "potion_of_iron_skin",
+    "name": "Potion of Iron Skin",
+    "description": "Temporarily increases defense",
+    "category": "item",
+    "tags": ["consumable", "potion", "buff"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "gray",
+            "priority": 3
+        },
+        "name": {
+            "name": "Potion of Iron Skin",
+            "description": "Temporarily increases defense"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 45,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "type": "buff_defense",
+                    "trigger": "on_use",
+                    "magnitude": 5,
+                    "duration": 50,
+                    "message": "%target%'s skin hardens like iron!"
+                }
+            ]
+        }
+    }
+}

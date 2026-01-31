@@ -1,0 +1,33 @@
+{
+    "id": "mutagen",
+    "name": "Mutagen",
+    "description": "Add a random limb",
+    "category": "item",
+    "tags": ["consumable", "potion", "mutation"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "purple",
+            "priority": 3
+        },
+        "name": {
+            "name": "Mutagen",
+            "description": "Add a random limb"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 75,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "effect_id": "effect.mutagen",
+                    "trigger": "on_use",
+                    "message": "The strange liquid courses through %target%'s veins..."
+                }
+            ]
+        }
+    }
+}

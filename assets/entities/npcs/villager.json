@@ -1,0 +1,108 @@
+{
+    "id": "villager",
+    "name": "Villager",
+    "description": "A common villager going about their daily business",
+    "category": "npc",
+    "tags": ["friendly", "humanoid", "villager", "civilian"],
+    
+    "components": {
+        "render": {
+            "char": "V",
+            "color": "green",
+            "priority": 6
+        },
+        "stats": {
+            "level": 1,
+            "hp_base": 18,
+            "hp_per_level": 5,
+            "attack_base": 3,
+            "attack_per_level": 1,
+            "defense_base": 2,
+            "defense_per_level": 1
+        },
+        "name": {
+            "name": "Villager",
+            "description": "A common villager"
+        },
+        "ai": {
+            "behavior": "wander",
+            "aggro_range": 5.0,
+            "flee_threshold": 0.3
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "villager"
+        },
+        "utility_ai": {
+            "preset": "defensive_villager"
+        },
+        "anatomy": {
+            "preset": "humanoid"
+        },
+        "npc": {
+            "disposition": "neutral",
+            "role": "villager",
+            "greeting": "Hello there, traveler!",
+            "farewell": "Farewell!"
+        },
+        "inventory": {
+            "max_items": 10,
+            "gold": 15
+        },
+        "dialogue": {
+            "start_node_id": 0,
+            "nodes": [
+                {
+                    "id": 0,
+                    "speaker": "Villager",
+                    "text": "Hello there, traveler! What brings you to these parts?",
+                    "options": [
+                        { "text": "Just passing through.", "next": 1 },
+                        { "text": "I'm looking for adventure.", "next": 2 },
+                        { "text": "Goodbye.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "speaker": "Villager",
+                    "text": "Ah, a wanderer. Be careful out there - I've heard rumors of monsters in the wilderness.",
+                    "options": [
+                        { "text": "Thanks for the warning.", "next": -1, "ends": true },
+                        { "text": "Tell me more about these monsters.", "next": 3 }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "speaker": "Villager",
+                    "text": "Adventure, eh? You've got the look of a hero about you. Good luck out there!",
+                    "options": [
+                        { "text": "Thank you!", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "speaker": "Villager",
+                    "text": "Goblins, spiders, wolves... all manner of beasts roam these lands. Some say there are even trolls in the ancient ruins!",
+                    "options": [
+                        { "text": "I'll be careful. Thanks.", "next": -1, "ends": true },
+                        { "text": "Trolls? Tell me more!", "next": 4 }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "speaker": "Villager",
+                    "text": "The ruins lie to the north... or south... well, they're somewhere out there. Old stone structures from a forgotten age. Very dangerous!",
+                    "options": [
+                        { "text": "I'll check it out. Thanks!", "next": -1, "ends": true }
+                    ]
+                }
+            ]
+        },
+        "interactable": {
+            "message": "Press E to talk"
+        }
+    }
+}

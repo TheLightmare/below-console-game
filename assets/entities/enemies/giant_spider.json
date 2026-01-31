@@ -1,0 +1,50 @@
+{
+    "id": "giant_spider",
+    "name": "Giant Spider",
+    "description": "An eight-legged monstrosity with venomous fangs",
+    "category": "enemy",
+    "tags": ["hostile", "beast", "spider", "ambush"],
+    
+    "components": {
+        "render": {
+            "char": "X",
+            "color": "dark_gray",
+            "priority": 5
+        },
+        "stats": {
+            "level": 1,
+            "hp_base": 12,
+            "hp_per_level": 6,
+            "attack_base": 4,
+            "attack_per_level": 2,
+            "defense_base": 2,
+            "defense_per_level": 1
+        },
+        "name": {
+            "name": "Giant Spider",
+            "description": "An eight-legged monstrosity with venomous fangs"
+        },
+        "ai": {
+            "behavior": "chase",
+            "aggro_range": 6.0,
+            "flee_threshold": 0.3
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "spider"
+        },
+        "utility_ai": {
+            "preset": "ambush_predator",
+            "aggro_range": 6.0
+        },
+        "anatomy": {
+            "preset": "spider"
+        },
+        "leaves_corpse": {
+            "decay_turns": 100
+        }
+    }
+}

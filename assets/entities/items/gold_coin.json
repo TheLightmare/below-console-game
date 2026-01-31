@@ -1,0 +1,25 @@
+{
+    "id": "gold_coin",
+    "name": "Gold Coin",
+    "description": "A shiny gold coin",
+    "category": "item",
+    "tags": ["currency", "gold", "stackable"],
+    
+    "components": {
+        "render": {
+            "char": "$",
+            "color": "yellow",
+            "priority": 2
+        },
+        "name": {
+            "name": "Gold Coin",
+            "description": "A shiny gold coin"
+        },
+        "item": {
+            "type": "currency",
+            "value": 1,
+            "stackable": true,
+            "stack_count": 1
+        }
+    }
+}

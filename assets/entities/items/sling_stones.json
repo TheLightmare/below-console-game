@@ -1,0 +1,30 @@
+{
+    "id": "sling_stones",
+    "name": "Sling Stones",
+    "description": "Smooth stones for slinging",
+    "category": "item",
+    "tags": ["ammo", "stone"],
+    
+    "components": {
+        "render": {
+            "char": "*",
+            "color": "gray",
+            "priority": 1
+        },
+        "name": {
+            "name": "Sling Stones",
+            "description": "Smooth stones for slinging"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 1,
+            "stackable": true,
+            "stack_count": 30
+        },
+        "ammo": {
+            "ammo_type": "stone",
+            "quantity": 30,
+            "damage_bonus": -1
+        }
+    }
+}

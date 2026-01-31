@@ -1,0 +1,56 @@
+{
+    "id": "house_small",
+    "name": "Cottage",
+    "description": "A cozy cottage with a bedroom and living area",
+    
+    "legend": {
+        "#": { "symbol": "#", "color": "brown", "walkable": false },
+        "+": { "symbol": "+", "color": "yellow", "walkable": true },
+        ".": { "symbol": ".", "color": "brown", "walkable": true },
+        "|": { "symbol": "|", "color": "brown", "walkable": false },
+        "-": { "symbol": "-", "color": "brown", "walkable": false },
+        "=": { "symbol": "=", "color": "red", "walkable": true },
+        "B": { "symbol": "=", "color": "cyan", "walkable": true, "is_bed": true },
+        "b": { "symbol": "-", "color": "cyan", "walkable": true, "is_bed": true },
+        "T": { "symbol": "T", "color": "brown", "walkable": true },
+        "c": { "symbol": "h", "color": "brown", "walkable": true },
+        "C": { "symbol": "C", "color": "brown", "walkable": true },
+        "*": { "symbol": "*", "color": "yellow", "walkable": true },
+        "o": { "symbol": "o", "color": "gray", "walkable": true },
+        "~": { "symbol": "~", "color": "red", "walkable": false },
+        "w": { "symbol": "\"", "color": "cyan", "walkable": false },
+        "p": { "symbol": "p", "color": "green", "walkable": true },
+        "f": { "symbol": "f", "color": "red", "walkable": true }
+    },
+    
+    "pattern": [
+        "~~~##############~~~",
+        "####################",
+        "#w.Bb|w........*.w#",
+        "#..Bb|...Tc..c....#",
+        "#....|...Tc..c...o#",
+        "#=...|............#",
+        "######|--++--#######",
+        "#w..p....*.....~..w#",
+        "#..pp..........~...#",
+        "#w..p...........C.w#",
+        "#...f.....o........#",
+        "#..................#",
+        "#########++#########"
+    ],
+    
+    "beds": [
+        { "x": 3, "y": 2 },
+        { "x": 4, "y": 2 }
+    ],
+    
+    "villagers_per_house": 1,
+    
+    "jigsaw": {
+        "district": "residential",
+        "spawn_weight": 3.0,
+        "unique": false
+    },
+    
+    "tags": ["building", "house", "residential"]
+}

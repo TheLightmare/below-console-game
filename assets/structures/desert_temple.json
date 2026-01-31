@@ -1,0 +1,118 @@
+{
+    "id": "desert_temple",
+    "name": "Desert Temple",
+    "description": "An ancient temple half-buried in the sand",
+    "type_id": 25,
+    "min_size": 14,
+    "max_size": 18,
+    
+    "biomes": {
+        "desert": 0.03
+    },
+    
+    "shapes": [
+        {
+            "type": "rect_filled",
+            "x1": -4, "y1": -4,
+            "x2": 4, "y2": 4,
+            "symbol": ".",
+            "color": "yellow",
+            "walkable": true
+        }
+    ],
+    
+    "tiles": [
+        {"x": -5, "y": -5, "symbol": "^", "color": "yellow", "walkable": false},
+        {"x": 5, "y": -5, "symbol": "^", "color": "yellow", "walkable": false},
+        {"x": -5, "y": 5, "symbol": "^", "color": "yellow", "walkable": false},
+        {"x": 5, "y": 5, "symbol": "^", "color": "yellow", "walkable": false},
+        
+        {"x": -5, "y": -4, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -5, "y": -3, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -5, "y": -2, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -5, "y": -1, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -5, "y": 0, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -5, "y": 1, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -5, "y": 2, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -5, "y": 3, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -5, "y": 4, "symbol": "#", "color": "yellow", "walkable": false},
+        
+        {"x": 5, "y": -4, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 5, "y": -3, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 5, "y": -2, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 5, "y": -1, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 5, "y": 0, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 5, "y": 1, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 5, "y": 2, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 5, "y": 3, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 5, "y": 4, "symbol": "#", "color": "yellow", "walkable": false},
+        
+        {"x": -4, "y": -5, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -3, "y": -5, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -2, "y": -5, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 2, "y": -5, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 3, "y": -5, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 4, "y": -5, "symbol": "#", "color": "yellow", "walkable": false},
+        
+        {"x": -4, "y": 5, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -3, "y": 5, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 4, "y": 5, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 3, "y": 5, "symbol": "#", "color": "yellow", "walkable": false},
+        
+        {"x": -1, "y": -5, "symbol": "+", "color": "brown", "walkable": true},
+        {"x": 0, "y": -5, "symbol": "+", "color": "brown", "walkable": true},
+        {"x": 1, "y": -5, "symbol": "+", "color": "brown", "walkable": true},
+        
+        {"x": -2, "y": 5, "symbol": "+", "color": "brown", "walkable": true},
+        {"x": -1, "y": 5, "symbol": "+", "color": "brown", "walkable": true},
+        {"x": 0, "y": 5, "symbol": "+", "color": "brown", "walkable": true},
+        {"x": 1, "y": 5, "symbol": "+", "color": "brown", "walkable": true},
+        {"x": 2, "y": 5, "symbol": "+", "color": "brown", "walkable": true},
+        
+        {"x": -2, "y": -2, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -1, "y": -2, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 0, "y": -2, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 1, "y": -2, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 2, "y": -2, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -2, "y": -1, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 2, "y": -1, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -2, "y": 0, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 2, "y": 0, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -2, "y": 1, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 2, "y": 1, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -2, "y": 2, "symbol": "+", "color": "brown", "walkable": true},
+        {"x": 2, "y": 2, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": -1, "y": 2, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 0, "y": 2, "symbol": "#", "color": "yellow", "walkable": false},
+        {"x": 1, "y": 2, "symbol": "#", "color": "yellow", "walkable": false},
+        
+        {"x": 0, "y": 0, "symbol": "*", "color": "yellow", "walkable": false},
+        
+        {"x": 0, "y": -1, "symbol": ">", "color": "black", "walkable": true}
+    ],
+    
+    "spawns": [
+        {
+            "type": "enemy",
+            "subtype": "mummy",
+            "name": "Desert Mummy",
+            "x": 0, "y": 0,
+            "radius": 3,
+            "level_min": 5, "level_max": 8,
+            "count_min": 1, "count_max": 2,
+            "chance": 0.8
+        },
+        {
+            "type": "enemy",
+            "subtype": "sand_wraith",
+            "name": "Sand Wraith",
+            "x": 0, "y": 3,
+            "radius": 4,
+            "level_min": 4, "level_max": 7,
+            "count_min": 2, "count_max": 4,
+            "chance": 0.7
+        }
+    ],
+    
+    "tags": ["dangerous", "loot", "dungeon_entrance", "ancient"]
+}

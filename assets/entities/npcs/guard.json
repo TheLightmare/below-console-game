@@ -1,0 +1,100 @@
+{
+    "id": "guard",
+    "name": "Guard",
+    "description": "A trained town guard keeping watch",
+    "category": "npc",
+    "tags": ["friendly", "humanoid", "guard", "warrior"],
+    
+    "components": {
+        "render": {
+            "char": "G",
+            "color": "cyan",
+            "priority": 6
+        },
+        "stats": {
+            "level": 3,
+            "hp_base": 50,
+            "hp_per_level": 15,
+            "attack_base": 12,
+            "attack_per_level": 3,
+            "defense_base": 10,
+            "defense_per_level": 2
+        },
+        "name": {
+            "name": "Guard",
+            "description": "A trained town guard"
+        },
+        "ai": {
+            "behavior": "patrol",
+            "aggro_range": 8.0,
+            "flee_threshold": 0.1
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "guard"
+        },
+        "utility_ai": {
+            "preset": "town_guard",
+            "aggro_range": 8.0
+        },
+        "anatomy": {
+            "preset": "humanoid"
+        },
+        "npc": {
+            "disposition": "neutral",
+            "role": "guard",
+            "greeting": "Halt! State your business.",
+            "farewell": "Move along, citizen."
+        },
+        "inventory": {
+            "max_items": 5,
+            "gold": 25
+        },
+        "dialogue": {
+            "start_node_id": 0,
+            "nodes": [
+                {
+                    "id": 0,
+                    "speaker": "Guard",
+                    "text": "I'm keeping watch for troublemakers. You're not a troublemaker, are you?",
+                    "options": [
+                        { "text": "No, just a traveler.", "next": 1 },
+                        { "text": "What if I am?", "next": 2 },
+                        { "text": "I'll be on my way.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "speaker": "Guard",
+                    "text": "Good. Keep your nose clean and we won't have any problems. If you see anything suspicious, report it to me.",
+                    "options": [
+                        { "text": "Will do.", "next": -1, "ends": true },
+                        { "text": "What kind of suspicious activity?", "next": 3 }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "speaker": "Guard",
+                    "text": "Then you'd be making a big mistake, friend. I suggest you reconsider.",
+                    "options": [
+                        { "text": "Just joking! I'll be going now.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "speaker": "Guard",
+                    "text": "Bandits have been spotted in the area. If you see anyone lurking about, let me know. There's a reward for information.",
+                    "options": [
+                        { "text": "I'll keep an eye out.", "next": -1, "ends": true }
+                    ]
+                }
+            ]
+        },
+        "interactable": {
+            "message": "Press E to talk"
+        }
+    }
+}

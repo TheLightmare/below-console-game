@@ -1,0 +1,51 @@
+{
+    "id": "goblin",
+    "name": "Goblin",
+    "description": "A small, green-skinned creature with sharp teeth",
+    "category": "enemy",
+    "tags": ["hostile", "humanoid", "goblinoid"],
+    
+    "components": {
+        "render": {
+            "char": "g",
+            "color": "green",
+            "priority": 5
+        },
+        "stats": {
+            "level": 1,
+            "hp_base": 15,
+            "hp_per_level": 8,
+            "attack_base": 5,
+            "attack_per_level": 2,
+            "defense_base": 3,
+            "defense_per_level": 1
+        },
+        "name": {
+            "name": "Goblin",
+            "description": "A small, green-skinned creature with sharp teeth"
+        },
+        "ai": {
+            "behavior": "chase",
+            "aggro_range": 6.0,
+            "flee_threshold": 0.2
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "goblin"
+        },
+        "utility_ai": {
+            "preset": "aggressive_melee",
+            "aggro_range": 6.0
+        },
+        "anatomy": {
+            "preset": "humanoid"
+        },
+        "leaves_corpse": {
+            "corpse_color": "dark_green",
+            "decay_turns": 100
+        }
+    }
+}

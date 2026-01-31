@@ -1,0 +1,36 @@
+{
+    "id": "campfire",
+    "name": "Campfire",
+    "description": "A warm campfire",
+    "category": "structure",
+    "tags": ["fire", "light", "rest"],
+    
+    "components": {
+        "position": {
+            "x": 0,
+            "y": 0
+        },
+        "render": {
+            "char": "*",
+            "color": "orange",
+            "priority": 3
+        },
+        "name": {
+            "name": "Campfire",
+            "description": "A warm campfire"
+        },
+        "collision": {
+            "blocks_movement": false,
+            "blocks_sight": false
+        },
+        "interactable": {
+            "interaction_type": "rest",
+            "prompt": "Rest by the fire"
+        },
+        "light": {
+            "radius": 4,
+            "color": "orange",
+            "intensity": 1.0
+        }
+    }
+}

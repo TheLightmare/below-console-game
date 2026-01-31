@@ -1,0 +1,63 @@
+{
+    "id": "witch_hut",
+    "name": "Witch's Hut",
+    "description": "A crooked hut on stilts, smoke rising from the chimney",
+    "type_id": 19,
+    "min_size": 5,
+    "max_size": 7,
+    
+    "biomes": {
+        "forest": 0.02,
+        "swamp": 0.04
+    },
+    
+    "shapes": [
+        {
+            "type": "rect_filled",
+            "x1": -2, "y1": -2,
+            "x2": 2, "y2": 2,
+            "symbol": "#",
+            "color": "brown",
+            "walkable": false
+        },
+        {
+            "type": "rect_filled",
+            "x1": -1, "y1": -1,
+            "x2": 1, "y2": 1,
+            "symbol": ".",
+            "color": "dark_green",
+            "walkable": true
+        }
+    ],
+    
+    "tiles": [
+        {"x": 0, "y": 2, "symbol": "+", "color": "brown", "walkable": true},
+        
+        {"x": -2, "y": 3, "symbol": "|", "color": "brown", "walkable": false},
+        {"x": 2, "y": 3, "symbol": "|", "color": "brown", "walkable": false},
+        
+        {"x": 0, "y": 0, "symbol": "U", "color": "gray", "walkable": false},
+        
+        {"x": -4, "y": 0, "symbol": "%", "color": "green", "walkable": true},
+        {"x": -4, "y": 1, "symbol": "%", "color": "magenta", "walkable": true},
+        {"x": 4, "y": 0, "symbol": "%", "color": "red", "walkable": true},
+        {"x": 4, "y": 1, "symbol": "%", "color": "cyan", "walkable": true, "chance": 0.7}
+    ],
+    
+    "spawns": [
+        {
+            "type": "npc",
+            "subtype": "witch",
+            "name": "Witch",
+            "x": 0, "y": 3,
+            "radius": 0,
+            "chance": 1.0,
+            "properties": {
+                "greeting": "Eye of newt, toe of frog... Ah, a visitor!",
+                "sells_potions": "true"
+            }
+        }
+    ],
+    
+    "tags": ["safe_zone", "trade", "magic"]
+}

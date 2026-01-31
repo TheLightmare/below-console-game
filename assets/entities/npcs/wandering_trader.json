@@ -1,0 +1,116 @@
+{
+    "id": "wandering_trader",
+    "name": "Wandering Trader",
+    "description": "A traveling merchant with exotic wares",
+    "category": "npc",
+    "tags": ["human", "friendly", "merchant", "traveling"],
+    
+    "components": {
+        "render": {
+            "char": "T",
+            "color": "white",
+            "priority": 6
+        },
+        "name": {
+            "name": "Wandering Trader",
+            "description": "A traveling merchant with exotic wares"
+        },
+        "stats": {
+            "level": 3,
+            "hp_base": 35,
+            "hp_per_level": 8,
+            "attack_base": 7,
+            "attack_per_level": 2,
+            "defense_base": 5,
+            "defense_per_level": 1
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "villager"
+        },
+        "ai": {
+            "behavior": "wander",
+            "aggro_range": 6.0,
+            "flee_threshold": 0.4
+        },
+        "anatomy": {
+            "preset": "humanoid"
+        },
+        "utility_ai": {
+            "preset": "wanderer"
+        },
+        "npc": {
+            "role": "merchant",
+            "disposition": "friendly",
+            "can_trade": true,
+            "greeting": "Ah, a customer in these wilds!",
+            "farewell": "Safe travels!"
+        },
+        "inventory": {
+            "max_items": 25,
+            "gold": 150
+        },
+        "dialogue": {
+            "start_node_id": 0,
+            "nodes": [
+                {
+                    "id": 0,
+                    "speaker": "Wandering Trader",
+                    "text": "Greetings, fellow traveler! I carry rare goods from distant lands. Care to take a look?",
+                    "options": [
+                        { "text": "Show me your wares.", "next": 1, "action": "trade" },
+                        { "text": "Where have you traveled?", "next": 2 },
+                        { "text": "No thanks.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "speaker": "Wandering Trader",
+                    "text": "Here's my selection. I accept gold and valuable items in trade.",
+                    "options": [
+                        { "text": "Thanks.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "speaker": "Wandering Trader",
+                    "text": "I've been all over these lands and beyond. Mountains, forests, deserts... I've seen it all. The world is vast and full of wonders!",
+                    "options": [
+                        { "text": "Fascinating. Good luck on your journey.", "next": -1, "ends": true },
+                        { "text": "Any advice for a traveler?", "next": 3 }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "speaker": "Wandering Trader",
+                    "text": "Stay alert, travel light, and never trust a goblin offering directions. Also, potions can save your life - buy some before you need them!",
+                    "options": [
+                        { "text": "Good advice. Thanks!", "next": -1, "ends": true }
+                    ]
+                }
+            ]
+        },
+        "shop": {
+            "buy_multiplier": 1.3,
+            "sell_multiplier": 0.6,
+            "restocks": false,
+            "items": [
+                { "template_id": "curved_blade", "name": "Curved Blade", "price": 180 },
+                { "template_id": "throwing_knives", "name": "Throwing Knives", "price": 75, "stock": 5 },
+                { "template_id": "elixir_of_vigor", "name": "Elixir of Vigor", "price": 100, "stock": 3 },
+                { "template_id": "strength_tonic", "name": "Strength Tonic", "price": 50, "stock": 5 },
+                { "template_id": "speed_potion", "name": "Speed Potion", "price": 45, "stock": 5 },
+                { "template_id": "antidote", "name": "Antidote", "price": 35 },
+                { "template_id": "treasure_map", "name": "Treasure Map", "price": 80, "stock": 1 },
+                { "template_id": "ruby", "name": "Ruby", "price": 150, "stock": 2 },
+                { "template_id": "lucky_charm", "name": "Lucky Charm", "price": 200, "stock": 1 }
+            ]
+        },
+        "interactable": {
+            "message": "Press E to trade"
+        }
+    }
+}

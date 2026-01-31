@@ -1,0 +1,33 @@
+{
+    "id": "potion_of_swiftness",
+    "name": "Potion of Swiftness",
+    "description": "Increases movement speed",
+    "category": "item",
+    "tags": ["consumable", "potion", "buff"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "cyan",
+            "priority": 3
+        },
+        "name": {
+            "name": "Potion of Swiftness",
+            "description": "Increases movement speed"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 50,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "effect_id": "effect.swiftness",
+                    "trigger": "on_use",
+                    "message": "%target% feels light as a feather!"
+                }
+            ]
+        }
+    }
+}

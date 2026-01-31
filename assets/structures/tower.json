@@ -1,0 +1,65 @@
+{
+    "id": "tower",
+    "name": "Wizard Tower",
+    "description": "A tall stone tower crackling with arcane energy",
+    "type_id": 9,
+    "min_size": 6,
+    "max_size": 8,
+    
+    "biomes": {
+        "hills": 0.02,
+        "mountains": 0.03,
+        "forest": 0.01
+    },
+    
+    "shapes": [
+        {
+            "type": "circle_filled",
+            "x1": 0, "y1": 0,
+            "radius": 4,
+            "symbol": ".",
+            "color": "dark_gray",
+            "walkable": true
+        },
+        {
+            "type": "circle_outline",
+            "x1": 0, "y1": 0,
+            "radius": 4,
+            "symbol": "#",
+            "color": "gray",
+            "walkable": false
+        }
+    ],
+    
+    "tiles": [
+        {"x": 0, "y": 4, "symbol": "+", "color": "brown", "walkable": true},
+        {"x": 0, "y": 0, "symbol": "*", "color": "cyan", "walkable": false},
+        {"x": -1, "y": -1, "symbol": "+", "color": "magenta", "walkable": true, "chance": 0.7},
+        {"x": 1, "y": -1, "symbol": "+", "color": "magenta", "walkable": true, "chance": 0.7},
+        {"x": -2, "y": 0, "symbol": "=", "color": "brown", "walkable": true},
+        {"x": 2, "y": 0, "symbol": "=", "color": "brown", "walkable": true}
+    ],
+    
+    "spawns": [
+        {
+            "type": "npc",
+            "subtype": "wizard",
+            "name": "Wizard",
+            "x": 0, "y": -2,
+            "count_min": 1, "count_max": 1,
+            "chance": 0.8
+        },
+        {
+            "type": "enemy",
+            "subtype": "elemental",
+            "name": "Fire Elemental",
+            "x": 0, "y": 0,
+            "radius": 2,
+            "level_min": 5, "level_max": 8,
+            "count_min": 1, "count_max": 2,
+            "chance": 0.4
+        }
+    ],
+    
+    "tags": ["magic", "loot", "npc"]
+}

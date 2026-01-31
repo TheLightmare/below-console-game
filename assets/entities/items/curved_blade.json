@@ -1,0 +1,29 @@
+{
+    "id": "curved_blade",
+    "name": "Curved Blade",
+    "description": "An elegant foreign sword",
+    "category": "item",
+    "tags": ["weapon", "sword", "melee", "one_handed", "exotic"],
+    
+    "components": {
+        "render": {
+            "char": "/",
+            "color": "white",
+            "priority": 3
+        },
+        "name": {
+            "name": "Curved Blade",
+            "description": "An elegant foreign sword"
+        },
+        "item": {
+            "type": "weapon",
+            "equip_slot": "hand",
+            "value": 180,
+            "base_damage": 12,
+            "attack_bonus": 10,
+            "cutting_chance": 0.25,
+            "required_limbs": 1,
+            "required_limb_type": "hand"
+        }
+    }
+}

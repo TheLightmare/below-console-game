@@ -1,0 +1,47 @@
+{
+    "id": "church",
+    "name": "Village Chapel",
+    "description": "A small chapel with altar, pews, and bell tower",
+    
+    "legend": {
+        "#": { "symbol": "#", "color": "white", "walkable": false },
+        "+": { "symbol": "+", "color": "yellow", "walkable": true },
+        ".": { "symbol": ".", "color": "brown", "walkable": true },
+        "|": { "symbol": "|", "color": "white", "walkable": false },
+        "-": { "symbol": "-", "color": "white", "walkable": false },
+        "A": { "symbol": "A", "color": "yellow", "walkable": false },
+        "C": { "symbol": "C", "color": "yellow", "walkable": true },
+        "T": { "symbol": "T", "color": "cyan", "walkable": false },
+        "=": { "symbol": "=", "color": "brown", "walkable": true },
+        "*": { "symbol": "*", "color": "yellow", "walkable": true },
+        "o": { "symbol": "o", "color": "gray", "walkable": true },
+        "w": { "symbol": "\"", "color": "cyan", "walkable": false },
+        "^": { "symbol": "^", "color": "white", "walkable": false },
+        "P": { "spawn": "npc", "subtype": "priest", "name": "Priest" }
+    },
+    
+    "pattern": [
+        "     ^^^^     ",
+        "   ^^####^^   ",
+        "   ##....##   ",
+        "   #w.TC.w#   ",
+        "####......####",
+        "#w...*..*..*w#",
+        "#..=..=..=...#",
+        "#.P=..=..=..o#",
+        "#..=..=..=...#",
+        "#w.=..=..=..w#",
+        "#..=..=..=...#",
+        "#..........A.#",
+        "#w..*........#",
+        "######++######"
+    ],
+    
+    "jigsaw": {
+        "district": "religious",
+        "spawn_weight": 0.5,
+        "unique": true
+    },
+    
+    "tags": ["building", "church", "holy", "safe"]
+}

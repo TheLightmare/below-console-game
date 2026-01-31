@@ -1,0 +1,32 @@
+{
+    "id": "well",
+    "name": "Village Well",
+    "description": "An ornate stone well with fresh water, the heart of the village",
+    
+    "legend": {
+        "O": { "symbol": "O", "color": "gray", "walkable": false },
+        "o": { "symbol": "o", "color": "gray", "walkable": false },
+        "~": { "symbol": "~", "color": "cyan", "walkable": false },
+        ".": { "symbol": ".", "color": "gray", "walkable": true },
+        ":": { "symbol": ":", "color": "gray", "walkable": true },
+        "^": { "symbol": "^", "color": "brown", "walkable": false },
+        "*": { "symbol": "*", "color": "yellow", "walkable": true }
+    },
+    
+    "pattern": [
+        "..:..:.",
+        ".:oOo:.",
+        ":oO~Oo:",
+        ".:oOo:.",
+        "..^.^..",
+        "..:..:."
+    ],
+    
+    "jigsaw": {
+        "district": "center",
+        "spawn_weight": 1.0,
+        "unique": true
+    },
+    
+    "tags": ["water", "landmark", "center"]
+}

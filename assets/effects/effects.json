@@ -1,0 +1,257 @@
+{
+    "effect_types": [
+        {
+            "id": "heal",
+            "name": "Healed",
+            "category": "instant",
+            "color": "cyan",
+            "color_hex": "00FFAA",
+            "is_instant": true,
+            "description": "Instantly restores HP"
+        },
+        {
+            "id": "heal_percent",
+            "name": "Healed",
+            "category": "instant",
+            "color": "cyan",
+            "color_hex": "00FFAA",
+            "is_instant": true,
+            "description": "Instantly restores percentage of max HP"
+        },
+        {
+            "id": "damage",
+            "name": "Damaged",
+            "category": "instant",
+            "color": "red",
+            "color_hex": "FF0000",
+            "is_instant": true,
+            "description": "Instantly deals damage"
+        },
+        {
+            "id": "gain_xp",
+            "name": "Experience Gained",
+            "category": "instant",
+            "color": "yellow",
+            "color_hex": "FFFF00",
+            "is_instant": true,
+            "description": "Instantly grants experience points"
+        },
+        {
+            "id": "poison",
+            "name": "Poisoned",
+            "category": "damage_over_time",
+            "color": "green",
+            "color_hex": "00FF00",
+            "is_instant": false,
+            "is_negative": true,
+            "tick_behavior": "damage",
+            "description": "Deals poison damage each turn"
+        },
+        {
+            "id": "burn",
+            "name": "Burning",
+            "category": "damage_over_time",
+            "color": "orange",
+            "color_hex": "FF4400",
+            "is_instant": false,
+            "is_negative": true,
+            "tick_behavior": "damage",
+            "description": "Deals fire damage each turn"
+        },
+        {
+            "id": "bleed",
+            "name": "Bleeding",
+            "category": "damage_over_time",
+            "color": "dark_red",
+            "color_hex": "880000",
+            "is_instant": false,
+            "is_negative": true,
+            "tick_behavior": "damage",
+            "description": "Deals bleed damage each turn"
+        },
+        {
+            "id": "regeneration",
+            "name": "Regenerating",
+            "category": "healing_over_time",
+            "color": "cyan",
+            "color_hex": "00FFAA",
+            "is_instant": false,
+            "is_negative": false,
+            "tick_behavior": "heal",
+            "description": "Heals HP each turn"
+        },
+        {
+            "id": "buff_attack",
+            "name": "Attack Boost",
+            "category": "stat_modifier",
+            "color": "yellow",
+            "color_hex": "FFFF00",
+            "is_instant": false,
+            "is_negative": false,
+            "stat": "attack",
+            "modifier_type": "add",
+            "description": "Temporarily increases attack"
+        },
+        {
+            "id": "buff_defense",
+            "name": "Defense Boost",
+            "category": "stat_modifier",
+            "color": "blue",
+            "color_hex": "4444FF",
+            "is_instant": false,
+            "is_negative": false,
+            "stat": "defense",
+            "modifier_type": "add",
+            "description": "Temporarily increases defense"
+        },
+        {
+            "id": "buff_speed",
+            "name": "Haste",
+            "category": "stat_modifier",
+            "color": "cyan",
+            "color_hex": "00FFFF",
+            "is_instant": false,
+            "is_negative": false,
+            "stat": "speed",
+            "modifier_type": "add",
+            "description": "Temporarily increases movement speed"
+        },
+        {
+            "id": "debuff_attack",
+            "name": "Attack Reduced",
+            "category": "stat_modifier",
+            "color": "dark_yellow",
+            "color_hex": "888800",
+            "is_instant": false,
+            "is_negative": true,
+            "stat": "attack",
+            "modifier_type": "subtract",
+            "description": "Temporarily decreases attack"
+        },
+        {
+            "id": "debuff_defense",
+            "name": "Defense Reduced",
+            "category": "stat_modifier",
+            "color": "dark_blue",
+            "color_hex": "000088",
+            "is_instant": false,
+            "is_negative": true,
+            "stat": "defense",
+            "modifier_type": "subtract",
+            "description": "Temporarily decreases defense"
+        },
+        {
+            "id": "debuff_speed",
+            "name": "Slowed",
+            "category": "stat_modifier",
+            "color": "dark_cyan",
+            "color_hex": "008888",
+            "is_instant": false,
+            "is_negative": true,
+            "stat": "speed",
+            "modifier_type": "subtract",
+            "description": "Temporarily decreases movement speed"
+        },
+        {
+            "id": "stun",
+            "name": "Stunned",
+            "category": "control",
+            "color": "yellow",
+            "color_hex": "FFFF00",
+            "is_instant": false,
+            "is_negative": true,
+            "prevents_action": true,
+            "prevents_movement": true,
+            "description": "Cannot act"
+        },
+        {
+            "id": "paralysis",
+            "name": "Paralyzed",
+            "category": "control",
+            "color": "magenta",
+            "color_hex": "FF00FF",
+            "is_instant": false,
+            "is_negative": true,
+            "prevents_action": false,
+            "prevents_movement": true,
+            "description": "Cannot move but can attack adjacent"
+        },
+        {
+            "id": "blind",
+            "name": "Blinded",
+            "category": "control",
+            "color": "dark_gray",
+            "color_hex": "444444",
+            "is_instant": false,
+            "is_negative": true,
+            "reduces_vision": true,
+            "description": "Reduced vision range"
+        },
+        {
+            "id": "confusion",
+            "name": "Confused",
+            "category": "control",
+            "color": "magenta",
+            "color_hex": "FF88FF",
+            "is_instant": false,
+            "is_negative": true,
+            "randomizes_movement": true,
+            "description": "Random movement direction"
+        },
+        {
+            "id": "fear",
+            "name": "Afraid",
+            "category": "control",
+            "color": "dark_magenta",
+            "color_hex": "8800FF",
+            "is_instant": false,
+            "is_negative": true,
+            "causes_flee": true,
+            "description": "Flees from source"
+        },
+        {
+            "id": "charm",
+            "name": "Charmed",
+            "category": "control",
+            "color": "magenta",
+            "color_hex": "FF88AA",
+            "is_instant": false,
+            "is_negative": true,
+            "changes_allegiance": true,
+            "description": "Treats source as ally"
+        },
+        {
+            "id": "invisibility",
+            "name": "Invisible",
+            "category": "misc",
+            "color": "white",
+            "color_hex": "AAFFFF",
+            "is_instant": false,
+            "is_negative": false,
+            "grants_invisibility": true,
+            "description": "Cannot be seen by enemies"
+        },
+        {
+            "id": "invulnerable",
+            "name": "Invulnerable",
+            "category": "misc",
+            "color": "white",
+            "color_hex": "FFFFFF",
+            "is_instant": false,
+            "is_negative": false,
+            "grants_invulnerability": true,
+            "description": "Cannot take damage"
+        },
+        {
+            "id": "berserk",
+            "name": "Berserk",
+            "category": "misc",
+            "color": "red",
+            "color_hex": "FF0000",
+            "is_instant": false,
+            "is_negative": false,
+            "attacks_anyone": true,
+            "description": "Increased damage but attacks anyone"
+        }
+    ]
+}

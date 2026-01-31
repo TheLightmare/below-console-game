@@ -1,0 +1,85 @@
+{
+    "id": "abandoned_castle",
+    "name": "Abandoned Castle",
+    "description": "A crumbling castle overtaken by time and monsters",
+    "type_id": 21,
+    "min_size": 16,
+    "max_size": 20,
+    
+    "biomes": {
+        "mountains": 0.02,
+        "hills": 0.01
+    },
+    
+    "shapes": [
+        {
+            "type": "rect_filled",
+            "x1": -4, "y1": -3,
+            "x2": 4, "y2": 3,
+            "symbol": ".",
+            "color": "dark_gray",
+            "walkable": true
+        }
+    ],
+    
+    "tiles": [
+        {"x": -7, "y": -7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -6, "y": -7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -5, "y": -7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -4, "y": -7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -3, "y": -7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        
+        {"x": 3, "y": -7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 4, "y": -7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 5, "y": -7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 6, "y": -7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 7, "y": -7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        
+        {"x": -7, "y": 7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -6, "y": 7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": -5, "y": 7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        
+        {"x": 5, "y": 7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 6, "y": 7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        {"x": 7, "y": 7, "symbol": "#", "color": "gray", "walkable": false, "chance": 0.6},
+        
+        {"x": 5, "y": -5, "symbol": "#", "color": "gray", "walkable": false},
+        {"x": 6, "y": -5, "symbol": "#", "color": "gray", "walkable": false},
+        {"x": 5, "y": -4, "symbol": "#", "color": "gray", "walkable": false},
+        {"x": 6, "y": -4, "symbol": "#", "color": "gray", "walkable": false},
+        {"x": 5, "y": -5, "symbol": "%", "color": "gray", "walkable": true},
+        
+        {"x": 0, "y": -2, "symbol": "#", "color": "yellow", "walkable": false},
+        
+        {"x": 0, "y": 2, "symbol": ">", "color": "black", "walkable": true},
+        
+        {"x": -3, "y": -2, "symbol": "%", "color": "gray", "walkable": true, "chance": 0.7},
+        {"x": 2, "y": 1, "symbol": "%", "color": "gray", "walkable": true, "chance": 0.7},
+        {"x": -1, "y": 3, "symbol": "%", "color": "gray", "walkable": true, "chance": 0.7}
+    ],
+    
+    "spawns": [
+        {
+            "type": "enemy",
+            "subtype": "skeleton_knight",
+            "name": "Skeleton Knight",
+            "x": 0, "y": 0,
+            "radius": 5,
+            "level_min": 5, "level_max": 8,
+            "count_min": 2, "count_max": 4,
+            "chance": 0.9
+        },
+        {
+            "type": "enemy",
+            "subtype": "ghost",
+            "name": "Castle Specter",
+            "x": 0, "y": -2,
+            "radius": 3,
+            "level_min": 6, "level_max": 9,
+            "count_min": 1, "count_max": 2,
+            "chance": 0.7
+        }
+    ],
+    
+    "tags": ["dangerous", "loot", "dungeon_entrance"]
+}

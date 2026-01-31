@@ -1,0 +1,47 @@
+{
+    "id": "rabbit",
+    "name": "Rabbit",
+    "description": "A small fluffy creature",
+    "category": "creature",
+    "tags": ["wildlife", "animal", "peaceful", "small"],
+    
+    "components": {
+        "render": {
+            "char": "r",
+            "color": "white",
+            "priority": 4
+        },
+        "stats": {
+            "level": 1,
+            "hp_base": 5,
+            "hp_per_level": 2,
+            "attack_base": 1,
+            "attack_per_level": 0,
+            "defense_base": 0,
+            "defense_per_level": 0
+        },
+        "name": {
+            "name": "Rabbit",
+            "description": "A small fluffy creature"
+        },
+        "ai": {
+            "behavior": "flee",
+            "aggro_range": 10.0,
+            "flee_threshold": 1.0
+        },
+        "collision": {
+            "blocks_movement": false,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "wildlife"
+        },
+        "utility_ai": {
+            "preset": "wildlife",
+            "aggro_range": 10.0
+        },
+        "anatomy": {
+            "preset": "quadruped"
+        }
+    }
+}

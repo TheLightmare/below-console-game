@@ -1,0 +1,47 @@
+{
+    "id": "mine_entrance",
+    "name": "Abandoned Mine",
+    "description": "A wooden-framed entrance to an old mine shaft",
+    "type_id": 8,
+    "min_size": 5,
+    "max_size": 7,
+    
+    "biomes": {
+        "hills": 0.05,
+        "mountains": 0.04
+    },
+    
+    "tiles": [
+        {"x": -1, "y": -1, "symbol": "#", "color": "brown", "walkable": false},
+        {"x": 1, "y": -1, "symbol": "#", "color": "brown", "walkable": false},
+        {"x": -1, "y": 0, "symbol": "#", "color": "brown", "walkable": false},
+        {"x": 1, "y": 0, "symbol": "#", "color": "brown", "walkable": false},
+        
+        {"x": 0, "y": -1, "symbol": ">", "color": "gray", "walkable": true},
+        {"x": 0, "y": 0, "symbol": ">", "color": "gray", "walkable": true},
+        
+        {"x": 0, "y": 1, "symbol": "=", "color": "gray", "walkable": true},
+        {"x": 0, "y": 2, "symbol": "=", "color": "gray", "walkable": true},
+        {"x": 0, "y": 3, "symbol": "=", "color": "gray", "walkable": true},
+        {"x": 0, "y": 4, "symbol": "=", "color": "gray", "walkable": true},
+        {"x": 0, "y": 5, "symbol": "=", "color": "gray", "walkable": true},
+        
+        {"x": 3, "y": 0, "symbol": "*", "color": "yellow", "walkable": true},
+        {"x": 4, "y": 0, "symbol": "*", "color": "gray", "walkable": true}
+    ],
+    
+    "spawns": [
+        {
+            "type": "enemy",
+            "subtype": "miner_ghost",
+            "name": "Miner's Ghost",
+            "x": 0, "y": 0,
+            "radius": 3,
+            "level_min": 3, "level_max": 5,
+            "count_min": 1, "count_max": 2,
+            "chance": 0.6
+        }
+    ],
+    
+    "tags": ["dungeon_entrance", "dangerous", "mine", "loot"]
+}

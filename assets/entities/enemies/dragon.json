@@ -1,0 +1,55 @@
+{
+    "id": "dragon",
+    "name": "Dragon",
+    "description": "An ancient and terrible beast of legend",
+    "category": "enemy",
+    "tags": ["hostile", "boss", "dragon", "flying"],
+    
+    "components": {
+        "render": {
+            "char": "D",
+            "color": "red",
+            "priority": 8
+        },
+        "stats": {
+            "level": 5,
+            "hp_base": 100,
+            "hp_per_level": 30,
+            "attack_base": 20,
+            "attack_per_level": 5,
+            "defense_base": 15,
+            "defense_per_level": 3
+        },
+        "name": {
+            "name": "Dragon",
+            "description": "An ancient and terrible beast of legend"
+        },
+        "ai": {
+            "behavior": "chase",
+            "aggro_range": 10.0,
+            "flee_threshold": 0.0
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "dragon"
+        },
+        "utility_ai": {
+            "preset": "boss",
+            "aggro_range": 10.0
+        },
+        "anatomy": {
+            "preset": "quadruped",
+            "limbs": [
+                {"type": "other", "name": "left_wing", "resistance": 0.7},
+                {"type": "other", "name": "right_wing", "resistance": 0.7},
+                {"type": "other", "name": "tail", "resistance": 0.8}
+            ]
+        },
+        "leaves_corpse": {
+            "decay_turns": 200
+        }
+    }
+}

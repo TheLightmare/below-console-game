@@ -1,0 +1,103 @@
+{
+    "id": "fortress",
+    "name": "Mountain Fortress",
+    "description": "A massive stone fortress built into the mountainside",
+    "type_id": 10,
+    "min_size": 16,
+    "max_size": 20,
+    
+    "biomes": {
+        "mountains": 0.02,
+        "hills": 0.01
+    },
+    
+    "shapes": [
+        {
+            "type": "rect_outline",
+            "x1": -8, "y1": -8,
+            "x2": 8, "y2": 8,
+            "symbol": "#",
+            "color": "gray",
+            "walkable": false
+        },
+        {
+            "type": "rect_filled",
+            "x1": -7, "y1": -7,
+            "x2": 7, "y2": 7,
+            "symbol": ".",
+            "color": "gray",
+            "walkable": true
+        },
+        {
+            "type": "rect_filled",
+            "x1": -3, "y1": -3,
+            "x2": 3, "y2": 3,
+            "symbol": "#",
+            "color": "white",
+            "walkable": false
+        },
+        {
+            "type": "rect_filled",
+            "x1": -2, "y1": -2,
+            "x2": 2, "y2": 2,
+            "symbol": ".",
+            "color": "dark_gray",
+            "walkable": true
+        }
+    ],
+    
+    "tiles": [
+        {"x": -9, "y": -9, "symbol": "#", "color": "white", "walkable": false},
+        {"x": -8, "y": -9, "symbol": "#", "color": "white", "walkable": false},
+        {"x": -9, "y": -8, "symbol": "#", "color": "white", "walkable": false},
+        
+        {"x": 9, "y": -9, "symbol": "#", "color": "white", "walkable": false},
+        {"x": 8, "y": -9, "symbol": "#", "color": "white", "walkable": false},
+        {"x": 9, "y": -8, "symbol": "#", "color": "white", "walkable": false},
+        
+        {"x": -9, "y": 9, "symbol": "#", "color": "white", "walkable": false},
+        {"x": -8, "y": 9, "symbol": "#", "color": "white", "walkable": false},
+        {"x": -9, "y": 8, "symbol": "#", "color": "white", "walkable": false},
+        
+        {"x": 9, "y": 9, "symbol": "#", "color": "white", "walkable": false},
+        {"x": 8, "y": 9, "symbol": "#", "color": "white", "walkable": false},
+        {"x": 9, "y": 8, "symbol": "#", "color": "white", "walkable": false},
+        
+        {"x": -1, "y": 8, "symbol": "+", "color": "brown", "walkable": true},
+        {"x": 0, "y": 8, "symbol": "+", "color": "brown", "walkable": true},
+        {"x": 1, "y": 8, "symbol": "+", "color": "brown", "walkable": true},
+        
+        {"x": 0, "y": 3, "symbol": "+", "color": "brown", "walkable": true},
+        
+        {"x": -6, "y": -6, "symbol": "#", "color": "gray", "walkable": false},
+        {"x": -5, "y": -6, "symbol": "#", "color": "gray", "walkable": false},
+        {"x": -6, "y": -5, "symbol": "#", "color": "gray", "walkable": false},
+        {"x": -5, "y": -5, "symbol": ".", "color": "brown", "walkable": true},
+        {"x": -5, "y": -4, "symbol": "+", "color": "brown", "walkable": true}
+    ],
+    
+    "spawns": [
+        {
+            "type": "enemy",
+            "subtype": "fortress_guard",
+            "name": "Fortress Guard",
+            "x": 0, "y": 5,
+            "radius": 6,
+            "level_min": 4, "level_max": 7,
+            "count_min": 4, "count_max": 8,
+            "chance": 1.0
+        },
+        {
+            "type": "enemy",
+            "subtype": "fortress_commander",
+            "name": "Commander",
+            "x": 0, "y": 0,
+            "radius": 2,
+            "level_min": 6, "level_max": 9,
+            "count_min": 1, "count_max": 1,
+            "chance": 0.8
+        }
+    ],
+    
+    "tags": ["dangerous", "loot", "fortress"]
+}

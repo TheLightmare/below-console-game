@@ -1,0 +1,27 @@
+{
+    "id": "wooden_shield",
+    "name": "Wooden Shield",
+    "description": "A sturdy defensive tool",
+    "category": "item",
+    "tags": ["armor", "shield", "hand", "wood"],
+    
+    "components": {
+        "render": {
+            "char": "O",
+            "color": "blue",
+            "priority": 3
+        },
+        "name": {
+            "name": "Wooden Shield",
+            "description": "A sturdy defensive tool"
+        },
+        "item": {
+            "type": "shield",
+            "equip_slot": "hand",
+            "value": 60,
+            "defense_bonus": 8,
+            "required_limbs": 1,
+            "required_limb_type": "hand"
+        }
+    }
+}

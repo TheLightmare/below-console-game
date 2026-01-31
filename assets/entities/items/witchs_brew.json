@@ -1,0 +1,33 @@
+{
+    "id": "witchs_brew",
+    "name": "Witch's Brew",
+    "description": "Random powerful effect",
+    "category": "item",
+    "tags": ["consumable", "potion", "magic"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "purple",
+            "priority": 3
+        },
+        "name": {
+            "name": "Witch's Brew",
+            "description": "Random powerful effect"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 100,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "effect_id": "effect.random_buff",
+                    "trigger": "on_use",
+                    "message": "Strange magic courses through %target%!"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "id": "bolts",
+    "name": "Bolts",
+    "description": "Heavy iron-tipped bolts",
+    "category": "item",
+    "tags": ["ammo", "bolt", "ranged"],
+    
+    "components": {
+        "render": {
+            "char": "|",
+            "color": "gray",
+            "priority": 3
+        },
+        "name": {
+            "name": "Bolts",
+            "description": "Heavy iron-tipped bolts"
+        },
+        "item": {
+            "type": "misc",
+            "value": 30
+        },
+        "ammo": {
+            "ammo_type": "bolt",
+            "quantity": 15,
+            "damage_bonus": 2
+        }
+    }
+}

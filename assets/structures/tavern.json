@@ -1,0 +1,51 @@
+{
+    "id": "tavern",
+    "name": "The Rusty Mug",
+    "description": "A lively tavern with bar, gaming tables, and stage",
+    
+    "legend": {
+        "#": { "symbol": "#", "color": "brown", "walkable": false },
+        "+": { "symbol": "+", "color": "yellow", "walkable": true },
+        ".": { "symbol": ".", "color": "brown", "walkable": true },
+        "|": { "symbol": "|", "color": "brown", "walkable": false },
+        "-": { "symbol": "-", "color": "brown", "walkable": false },
+        "=": { "symbol": "=", "color": "brown", "walkable": true },
+        "B": { "symbol": "B", "color": "brown", "walkable": false },
+        "b": { "symbol": "b", "color": "yellow", "walkable": true },
+        "T": { "symbol": "T", "color": "brown", "walkable": true },
+        "c": { "symbol": "h", "color": "brown", "walkable": true },
+        "*": { "symbol": "*", "color": "yellow", "walkable": true },
+        "o": { "symbol": "o", "color": "gray", "walkable": true },
+        "~": { "symbol": "~", "color": "yellow", "walkable": true },
+        "%": { "symbol": "%", "color": "red", "walkable": true },
+        "w": { "symbol": "\"", "color": "cyan", "walkable": false },
+        "K": { "spawn": "npc", "subtype": "bartender", "name": "Bartender" },
+        "D": { "spawn": "npc", "subtype": "drunk", "name": "Drunk Patron" },
+        "M": { "spawn": "npc", "subtype": "bard", "name": "Wandering Bard" }
+    },
+    
+    "pattern": [
+        "^^^^############################",
+        "################################",
+        "#wBBBBBB|~~~~~~~~|..Tcccc...D.w#",
+        "#..K....|~~~~~~~~|..Tcccc......#",
+        "#.......|~~~~~~~~|..*......o...#",
+        "#-------+---------+------------#",
+        "#w......*....*...........*....w#",
+        "#....Tcccc....Tcccc....Tcccc...#",
+        "#....Tcccc....Tcccc....Tcccc..o#",
+        "#....Tcccc....Tcccc....Tcccc...#",
+        "#w..............................#",
+        "#.M...%%%%%..........*........w#",
+        "#.....%%%%%....................#",
+        "##############+++++#############"
+    ],
+    
+    "jigsaw": {
+        "district": "market",
+        "spawn_weight": 0.6,
+        "unique": true
+    },
+    
+    "tags": ["building", "tavern", "rest", "entertainment"]
+}

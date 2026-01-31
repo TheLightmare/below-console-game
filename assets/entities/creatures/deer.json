@@ -1,0 +1,47 @@
+{
+    "id": "deer",
+    "name": "Deer",
+    "description": "A peaceful forest creature",
+    "category": "creature",
+    "tags": ["wildlife", "animal", "peaceful"],
+    
+    "components": {
+        "render": {
+            "char": "d",
+            "color": "brown",
+            "priority": 4
+        },
+        "stats": {
+            "level": 1,
+            "hp_base": 10,
+            "hp_per_level": 5,
+            "attack_base": 2,
+            "attack_per_level": 1,
+            "defense_base": 1,
+            "defense_per_level": 1
+        },
+        "name": {
+            "name": "Deer",
+            "description": "A peaceful forest creature"
+        },
+        "ai": {
+            "behavior": "flee",
+            "aggro_range": 8.0,
+            "flee_threshold": 0.9
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "wildlife"
+        },
+        "utility_ai": {
+            "preset": "wildlife",
+            "aggro_range": 8.0
+        },
+        "anatomy": {
+            "preset": "quadruped"
+        }
+    }
+}

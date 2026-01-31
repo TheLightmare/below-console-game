@@ -1,0 +1,33 @@
+{
+    "id": "cloning_potion",
+    "name": "Cloning Potion",
+    "description": "Creates a clone of the target",
+    "category": "item",
+    "tags": ["consumable", "potion", "magic"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "bright_cyan",
+            "priority": 3
+        },
+        "name": {
+            "name": "Cloning Potion",
+            "description": "Creates a clone of the target"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 10,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "effect_id": "effect.cloning_potion",
+                    "trigger": "on_use",
+                    "message": "%target%'s form splits in two!"
+                }
+            ]
+        }
+    }
+}

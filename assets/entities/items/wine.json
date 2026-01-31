@@ -1,0 +1,34 @@
+{
+    "id": "wine",
+    "name": "Wine",
+    "description": "A fine vintage",
+    "category": "item",
+    "tags": ["consumable", "drink"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "red",
+            "priority": 3
+        },
+        "name": {
+            "name": "Wine",
+            "description": "A fine vintage"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 20,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "type": "heal_hp",
+                    "trigger": "on_use",
+                    "magnitude": 10,
+                    "message": "The wine relaxes %target%."
+                }
+            ]
+        }
+    }
+}

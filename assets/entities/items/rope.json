@@ -1,0 +1,23 @@
+{
+    "id": "rope",
+    "name": "Rope",
+    "description": "50 feet of sturdy rope",
+    "category": "item",
+    "tags": ["tool"],
+    
+    "components": {
+        "render": {
+            "char": "~",
+            "color": "brown",
+            "priority": 3
+        },
+        "name": {
+            "name": "Rope",
+            "description": "50 feet of sturdy rope"
+        },
+        "item": {
+            "type": "misc",
+            "value": 7
+        }
+    }
+}

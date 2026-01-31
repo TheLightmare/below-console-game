@@ -1,0 +1,27 @@
+{
+    "id": "stone_wall",
+    "name": "Stone Wall",
+    "description": "A solid stone wall",
+    "category": "structure",
+    "tags": ["wall", "stone", "impassable"],
+    
+    "components": {
+        "position": {
+            "x": 0,
+            "y": 0
+        },
+        "render": {
+            "char": "#",
+            "color": "gray",
+            "priority": 1
+        },
+        "name": {
+            "name": "Wall",
+            "description": "A solid stone wall"
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": true
+        }
+    }
+}

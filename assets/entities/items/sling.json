@@ -1,0 +1,35 @@
+{
+    "id": "sling",
+    "name": "Sling",
+    "description": "A simple but effective ranged weapon",
+    "category": "item",
+    "tags": ["weapon", "ranged", "sling", "one_handed"],
+    
+    "components": {
+        "render": {
+            "char": "(",
+            "color": "brown",
+            "priority": 3
+        },
+        "name": {
+            "name": "Sling",
+            "description": "A simple but effective ranged weapon"
+        },
+        "item": {
+            "type": "weapon",
+            "equip_slot": "hand",
+            "value": 20,
+            "base_damage": 2,
+            "required_limbs": 1,
+            "required_limb_type": "hand"
+        },
+        "ranged_weapon": {
+            "range": 6,
+            "min_range": 1,
+            "ammo_type": "stone",
+            "accuracy_bonus": -1,
+            "projectile_char": "*",
+            "projectile_color": "gray"
+        }
+    }
+}

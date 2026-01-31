@@ -1,0 +1,40 @@
+{
+    "id": "starting_hut",
+    "name": "Traveler's Rest",
+    "description": "A small welcoming hut at the center of the world",
+    "type_id": 26,
+    
+    "legend": {
+        "#": { "symbol": "#", "color": "brown", "walkable": false },
+        "+": { "symbol": "+", "color": "yellow", "walkable": true },
+        ".": { "symbol": ".", "color": "brown", "walkable": true },
+        ",": { "symbol": ",", "color": "green", "walkable": true },
+        "*": { "symbol": "*", "color": "yellow", "walkable": true },
+        "T": { "symbol": "T", "color": "brown", "walkable": true },
+        "c": { "symbol": "h", "color": "brown", "walkable": true },
+        "o": { "symbol": "o", "color": "gray", "walkable": true },
+        "=": { "symbol": "=", "color": "gray", "walkable": true },
+        "G": { "spawn": "npc", "subtype": "tutorial_guide", "name": "Guide" }
+    },
+    
+    "pattern": [
+        ",,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,",
+        ",,,,,,########,,,,",
+        ",,,,,,#......#,,,,",
+        ",,,,,,#..Tc..#,,,,",
+        ",,,,,,#......#,,,,",
+        ",,,,,,#..G...#,,,,",
+        ",,,,,,#......#,,,,",
+        ",,,,,,###++###,,,,",
+        ",,,,,,,=....=,,,,,",
+        ",,,,,,*=....=*,,,,",
+        ",,,,,,,=....=,,,,,",
+        ",,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,"
+    ]
+}

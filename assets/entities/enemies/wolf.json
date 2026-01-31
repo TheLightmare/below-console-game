@@ -1,0 +1,50 @@
+{
+    "id": "wolf",
+    "name": "Wolf",
+    "description": "A fierce grey predator",
+    "category": "enemy",
+    "tags": ["hostile", "beast", "predator"],
+    
+    "components": {
+        "render": {
+            "char": "w",
+            "color": "gray",
+            "priority": 5
+        },
+        "stats": {
+            "level": 1,
+            "hp_base": 18,
+            "hp_per_level": 10,
+            "attack_base": 7,
+            "attack_per_level": 3,
+            "defense_base": 3,
+            "defense_per_level": 1
+        },
+        "name": {
+            "name": "Wolf",
+            "description": "A fierce grey predator"
+        },
+        "ai": {
+            "behavior": "chase",
+            "aggro_range": 7.0,
+            "flee_threshold": 0.2
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "predator"
+        },
+        "utility_ai": {
+            "preset": "pack_hunter",
+            "aggro_range": 7.0
+        },
+        "anatomy": {
+            "preset": "quadruped"
+        },
+        "leaves_corpse": {
+            "decay_turns": 100
+        }
+    }
+}

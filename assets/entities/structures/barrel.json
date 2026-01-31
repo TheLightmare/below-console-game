@@ -1,0 +1,38 @@
+{
+    "id": "barrel",
+    "name": "Barrel",
+    "description": "A wooden storage barrel",
+    "category": "structure",
+    "tags": ["container", "barrel", "wood"],
+    
+    "components": {
+        "position": {
+            "x": 0,
+            "y": 0
+        },
+        "render": {
+            "char": "0",
+            "color": "brown",
+            "priority": 3
+        },
+        "name": {
+            "name": "Barrel",
+            "description": "A wooden storage barrel"
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "chest": {
+            "is_open": false,
+            "is_locked": false,
+            "loot_table": "common_loot",
+            "open_char": "o",
+            "closed_char": "0"
+        },
+        "interactable": {
+            "interaction_type": "container",
+            "prompt": "Search barrel"
+        }
+    }
+}

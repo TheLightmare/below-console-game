@@ -1,0 +1,33 @@
+{
+    "id": "poison_vial",
+    "name": "Poison Vial",
+    "description": "Coat your weapon with poison",
+    "category": "item",
+    "tags": ["consumable", "potion", "poison"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "dark_green",
+            "priority": 3
+        },
+        "name": {
+            "name": "Poison Vial",
+            "description": "Coat your weapon with poison"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 40,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "effect_id": "effect.weapon_poison",
+                    "trigger": "on_use",
+                    "message": "%target%'s weapon drips with venom!"
+                }
+            ]
+        }
+    }
+}

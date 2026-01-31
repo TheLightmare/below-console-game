@@ -1,0 +1,35 @@
+{
+    "id": "crossbow",
+    "name": "Crossbow",
+    "description": "A powerful mechanical bow",
+    "category": "item",
+    "tags": ["weapon", "ranged", "crossbow", "two_handed"],
+    
+    "components": {
+        "render": {
+            "char": ")",
+            "color": "gray",
+            "priority": 3
+        },
+        "name": {
+            "name": "Crossbow",
+            "description": "A powerful mechanical bow"
+        },
+        "item": {
+            "type": "weapon",
+            "equip_slot": "two_hand",
+            "value": 120,
+            "base_damage": 4,
+            "required_limbs": 2,
+            "required_limb_type": "hand"
+        },
+        "ranged_weapon": {
+            "range": 10,
+            "min_range": 2,
+            "ammo_type": "bolt",
+            "accuracy_bonus": 2,
+            "projectile_char": "-",
+            "projectile_color": "white"
+        }
+    }
+}

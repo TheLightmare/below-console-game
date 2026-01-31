@@ -1,0 +1,63 @@
+{
+    "id": "stone_circle",
+    "name": "Ancient Stone Circle",
+    "description": "Standing stones arranged in a mystical pattern",
+    "type_id": 2,
+    "min_size": 5,
+    "max_size": 6,
+    
+    "biomes": {
+        "plains": 0.02,
+        "hills": 0.03,
+        "forest": 0.01
+    },
+    
+    "shapes": [
+        {
+            "type": "circle_filled",
+            "x1": 0, "y1": 0,
+            "radius": 4,
+            "symbol": ".",
+            "color": "dark_gray",
+            "walkable": true
+        }
+    ],
+    
+    "tiles": [
+        {"x": 0, "y": -4, "symbol": "O", "color": "gray", "walkable": false},
+        {"x": 3, "y": -3, "symbol": "O", "color": "gray", "walkable": false},
+        {"x": 4, "y": 0, "symbol": "O", "color": "gray", "walkable": false},
+        {"x": 3, "y": 3, "symbol": "O", "color": "gray", "walkable": false},
+        {"x": 0, "y": 4, "symbol": "O", "color": "gray", "walkable": false},
+        {"x": -3, "y": 3, "symbol": "O", "color": "gray", "walkable": false},
+        {"x": -4, "y": 0, "symbol": "O", "color": "gray", "walkable": false},
+        {"x": -3, "y": -3, "symbol": "O", "color": "gray", "walkable": false},
+        
+        {"x": 0, "y": 0, "symbol": "+", "color": "white", "walkable": true}
+    ],
+    
+    "spawns": [
+        {
+            "type": "enemy",
+            "subtype": "skeleton",
+            "name": "Skeleton",
+            "x": 0, "y": 0,
+            "radius": 3,
+            "level_min": 2, "level_max": 3,
+            "count_min": 3, "count_max": 5,
+            "chance": 1.0
+        },
+        {
+            "type": "enemy",
+            "subtype": "bear",
+            "name": "Guardian Bear",
+            "x": 0, "y": 0,
+            "radius": 2,
+            "level": 3,
+            "count": 1,
+            "chance": 0.5
+        }
+    ],
+    
+    "tags": ["mystical", "dangerous"]
+}

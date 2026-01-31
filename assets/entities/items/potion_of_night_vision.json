@@ -1,0 +1,33 @@
+{
+    "id": "potion_of_night_vision",
+    "name": "Potion of Night Vision",
+    "description": "See in the dark",
+    "category": "item",
+    "tags": ["consumable", "potion", "buff"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "yellow",
+            "priority": 3
+        },
+        "name": {
+            "name": "Potion of Night Vision",
+            "description": "See in the dark"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 35,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "effect_id": "effect.night_vision",
+                    "trigger": "on_use",
+                    "message": "%target%'s eyes adjust to the darkness!"
+                }
+            ]
+        }
+    }
+}

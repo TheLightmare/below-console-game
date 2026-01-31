@@ -1,0 +1,34 @@
+{
+    "id": "health_potion",
+    "name": "Health Potion",
+    "description": "A vial of red liquid that restores health",
+    "category": "item",
+    "tags": ["consumable", "potion", "healing"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "magenta",
+            "priority": 3
+        },
+        "name": {
+            "name": "Health Potion",
+            "description": "Restores 20 HP"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 25,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "type": "heal_hp",
+                    "trigger": "on_use",
+                    "magnitude": 20,
+                    "message": "%target% feels healthier!"
+                }
+            ]
+        }
+    }
+}

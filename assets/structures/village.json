@@ -1,0 +1,128 @@
+{
+    "id": "village",
+    "name": "Village",
+    "description": "A thriving organic village with districts, winding roads, and varied buildings",
+    "type_id": 3,
+    "min_size": 45,
+    "max_size": 60,
+    
+    "biomes": {
+        "plains": 0.025,
+        "forest": 0.012,
+        "hills": 0.008
+    },
+    
+    "village_config": {
+        "roads": {
+            "main_roads_min": 3,
+            "main_roads_max": 4,
+            "segments_min": 3,
+            "segments_max": 4,
+            "ring_chance": 0.7,
+            "ring_distances": [0.4, 0.7],
+            "path_chance": 0.25,
+            "main_style": {
+                "symbol": "#",
+                "color": "gray",
+                "width": 3
+            },
+            "side_style": {
+                "symbol": ":",
+                "color": "gray",
+                "width": 2
+            },
+            "path_style": {
+                "symbol": ".",
+                "color": "brown",
+                "width": 1
+            }
+        },
+        
+        "ground": [
+            { "symbol": ",", "color": "green", "chance": 0.90 },
+            { "symbol": "*", "color": "yellow", "chance": 0.02 },
+            { "symbol": ".", "color": "brown", "chance": 0.08 }
+        ],
+        
+        "center_radius": 0.2,
+        "entrance_angle_start": 70,
+        "entrance_angle_end": 110,
+        "entrance_inner": 0.7,
+        
+        "building_quotas": [
+            { "district": "residential", "base_count": 5, "per_radius": 15 },
+            { "district": "market", "base_count": 3, "per_radius": 25 },
+            { "district": "industrial", "base_count": 2, "per_radius": 30 }
+        ],
+        
+        "center_clear": 10,
+        "building_spacing": 4,
+        "edge_margin": 3,
+        "max_attempts": 100,
+        
+        "perimeter": {
+            "enabled": true,
+            "fence_symbol": "|",
+            "fence_color": "brown",
+            "tree_chance": 0.15,
+            "tree_symbol": "T",
+            "tree_color": "green"
+        },
+        
+        "decorations": {
+            "flower_chance": 0.02,
+            "flower_symbol": "*",
+            "flower_color": "yellow",
+            "dirt_chance": 0.08
+        },
+        
+        "allowed_buildings": [
+            "house_small", "house_large",
+            "shop", "inn", "tavern", "bakery", "market_stall",
+            "blacksmith", "stable", "farm_plot",
+            "church", "guardhouse",
+            "fountain", "well"
+        ],
+        
+        "required_buildings": ["fountain", "inn"]
+    },
+    
+    "spawns": [
+        {
+            "type": "npc",
+            "subtype": "guard",
+            "name": "Village Guard",
+            "x": 5, "y": 3,
+            "count": 1,
+            "chance": 0.9
+        },
+        {
+            "type": "npc",
+            "subtype": "guard",
+            "name": "Village Guard",
+            "x": -5, "y": -3,
+            "count": 1,
+            "chance": 0.9
+        },
+        {
+            "type": "npc",
+            "subtype": "merchant",
+            "name": "Traveling Merchant",
+            "radius": 20,
+            "count_min": 1,
+            "count_max": 3,
+            "chance": 0.5
+        },
+        {
+            "type": "npc",
+            "subtype": "villager",
+            "name": "Villager",
+            "radius": 30,
+            "count_min": 5,
+            "count_max": 10,
+            "chance": 1.0
+        }
+    ],
+    
+    "tags": ["settlement", "village", "safe"]
+}

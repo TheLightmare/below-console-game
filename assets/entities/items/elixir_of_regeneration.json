@@ -1,0 +1,35 @@
+{
+    "id": "elixir_of_regeneration",
+    "name": "Elixir of Regeneration",
+    "description": "Slowly regenerate HP over time",
+    "category": "item",
+    "tags": ["consumable", "potion", "healing"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "pink",
+            "priority": 3
+        },
+        "name": {
+            "name": "Elixir of Regeneration",
+            "description": "Slowly regenerate HP over time"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 80,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "type": "regeneration",
+                    "trigger": "on_use",
+                    "magnitude": 2,
+                    "duration": 50,
+                    "message": "Warmth spreads through %target%'s body..."
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,133 @@
+{
+    "id": "tutorial_guide",
+    "name": "Wise Elder",
+    "description": "An old guide who helps new travelers",
+    "category": "npc",
+    "tags": ["friendly", "humanoid", "guide", "tutorial"],
+    
+    "components": {
+        "render": {
+            "char": "?",
+            "color": "cyan",
+            "priority": 6
+        },
+        "stats": {
+            "level": 99,
+            "hp_base": 50,
+            "hp_per_level": 10,
+            "attack_base": 5,
+            "attack_per_level": 2,
+            "defense_base": 5,
+            "defense_per_level": 2
+        },
+        "name": {
+            "name": "Wise Elder",
+            "description": "A weathered traveler who has seen much of the world"
+        },
+        "ai": {
+            "behavior": "idle",
+            "aggro_range": 0,
+            "flee_threshold": 0.2
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "villager"
+        },
+        "utility_ai": {
+            "preset": "passive"
+        },
+        "anatomy": {
+            "preset": "humanoid"
+        },
+        "npc": {
+            "disposition": "friendly",
+            "role": "guide",
+            "greeting": "Ah, a new traveler! Welcome!",
+            "farewell": "Safe travels, young one.",
+            "can_trade": false
+        },
+        "dialogue": {
+            "start_node_id": 0,
+            "nodes": [
+                {
+                    "id": 0,
+                    "speaker": "Wise Elder",
+                    "text": "Welcome, traveler! I am the Wise Elder, keeper of this waypoint. You find yourself at the center of the world. Would you like me to teach you the ways of survival?",
+                    "options": [
+                        { "text": "Yes, please teach me.", "next": 1 },
+                        { "text": "Tell me about this place.", "next": 5 },
+                        { "text": "I'll figure it out myself.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "speaker": "Wise Elder",
+                    "text": "Very well! First, movement. Use the arrow keys or ZQSD to walk. Bump into enemies to attack them. The world is vast - explore in any direction you wish.",
+                    "options": [
+                        { "text": "What about combat?", "next": 2 },
+                        { "text": "Thanks, that's enough for now.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "speaker": "Wise Elder",
+                    "text": "Combat is simple but deadly. Walk into an enemy to strike them. Watch your HP in the status bar - if it reaches zero, you perish. Press [I] to open your inventory and use healing items.",
+                    "options": [
+                        { "text": "How do I get stronger?", "next": 3 },
+                        { "text": "Tell me about items.", "next": 4 },
+                        { "text": "Thanks for the tips!", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "speaker": "Wise Elder",
+                    "text": "Defeating enemies grants experience. Gain enough and you will level up, becoming stronger. You can also find better weapons and armor in dungeons and shops. Look for the '>' symbol - it marks dungeon entrances!",
+                    "options": [
+                        { "text": "Tell me about items.", "next": 4 },
+                        { "text": "What dangers await?", "next": 6 },
+                        { "text": "I'm ready to explore!", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "speaker": "Wise Elder",
+                    "text": "Press [I] for your inventory. You can [E]quip weapons and armor, [U]se consumables like potions, or [T]hrow items at enemies. Potions can heal you, boost your stats, or even have... stranger effects. Merchants in villages will trade with you.",
+                    "options": [
+                        { "text": "What dangers await?", "next": 6 },
+                        { "text": "How do I get stronger?", "next": 3 },
+                        { "text": "Thanks, I'll start exploring!", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "speaker": "Wise Elder",
+                    "text": "This is the Traveler's Rest, a sanctuary at the heart of the world. From here, you may journey in any direction. To the forests, deserts, mountains, and beyond. Structures and dungeons dot the landscape - each holds treasures and dangers.",
+                    "options": [
+                        { "text": "Teach me the basics.", "next": 1 },
+                        { "text": "I'll start exploring now.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "speaker": "Wise Elder",
+                    "text": "The world is filled with monsters - goblins, wolves, skeletons, and far worse. Dungeons are especially dangerous but hold the greatest rewards. Be wary of dragons in their lairs. Press [M] to view your world map and plan your journey.",
+                    "options": [
+                        { "text": "Any final advice?", "next": 7 },
+                        { "text": "I'm ready!", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "speaker": "Wise Elder",
+                    "text": "Trust your instincts. Run from battles you cannot win - there is no shame in retreat. Visit villages to trade and rest. And remember: death is not the end, merely a lesson. Now go forth, brave traveler!",
+                    "options": [
+                        { "text": "Thank you, Elder!", "next": -1, "ends": true }
+                    ]
+                }
+            ]
+        }
+    }
+}

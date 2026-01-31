@@ -1,0 +1,33 @@
+{
+    "id": "antidote",
+    "name": "Antidote",
+    "description": "Cures poison",
+    "category": "item",
+    "tags": ["consumable", "potion", "cure"],
+    
+    "components": {
+        "render": {
+            "char": "!",
+            "color": "green",
+            "priority": 3
+        },
+        "name": {
+            "name": "Antidote",
+            "description": "Cures poison"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 20,
+            "stackable": true
+        },
+        "item_effect": {
+            "effects": [
+                {
+                    "effect_id": "effect.cure_poison",
+                    "trigger": "on_use",
+                    "message": "The poison is purged from %target%'s body!"
+                }
+            ]
+        }
+    }
+}

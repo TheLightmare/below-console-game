@@ -1,0 +1,134 @@
+{
+    "id": "innkeeper",
+    "name": "Innkeeper",
+    "description": "The keeper of the local inn",
+    "category": "npc",
+    "tags": ["human", "friendly", "shopkeeper", "inn"],
+    
+    "components": {
+        "render": {
+            "char": "I",
+            "color": "brown",
+            "priority": 6
+        },
+        "name": {
+            "name": "Innkeeper",
+            "description": "The keeper of the local inn"
+        },
+        "stats": {
+            "level": 2,
+            "hp_base": 30,
+            "hp_per_level": 5,
+            "attack_base": 5,
+            "attack_per_level": 2,
+            "defense_base": 4,
+            "defense_per_level": 1
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "villager"
+        },
+        "ai": {
+            "behavior": "idle",
+            "aggro_range": 5.0,
+            "flee_threshold": 0.3
+        },
+        "anatomy": {
+            "preset": "humanoid"
+        },
+        "utility_ai": {
+            "preset": "merchant"
+        },
+        "npc": {
+            "role": "innkeeper",
+            "disposition": "friendly",
+            "can_trade": true,
+            "greeting": "Welcome to my humble inn!",
+            "farewell": "Rest well, traveler!"
+        },
+        "inventory": {
+            "max_items": 20,
+            "gold": 75
+        },
+        "dialogue": {
+            "start_node_id": 0,
+            "nodes": [
+                {
+                    "id": 0,
+                    "speaker": "Innkeeper",
+                    "text": "Welcome, weary traveler! Would you like a room for the night, or perhaps some food and drink?",
+                    "options": [
+                        { "text": "I'd like to rest.", "next": 1, "action": "rest" },
+                        { "text": "Show me what you have.", "next": 5, "action": "trade" },
+                        { "text": "Tell me about this place.", "next": 2 },
+                        { "text": "No thanks, just passing through.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "speaker": "Innkeeper",
+                    "text": "Of course! A good night's rest will restore your strength. That'll be 10 gold.",
+                    "options": [
+                        { "text": "Here you go.", "next": -1, "ends": true, "action": "pay_rest" },
+                        { "text": "That's too expensive.", "next": 0 }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "speaker": "Innkeeper",
+                    "text": "This land has seen better days. Monsters roam the wilderness, and fewer travelers come through each year. But we make do.",
+                    "options": [
+                        { "text": "Sounds rough.", "next": 3 },
+                        { "text": "I should get going.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "speaker": "Innkeeper",
+                    "text": "Indeed. But folk like you give us hope. Strong adventurers who might clear out some of those beasts. Would you be interested in such work?",
+                    "options": [
+                        { "text": "Maybe. Tell me more.", "next": 4 },
+                        { "text": "I'll think about it.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "speaker": "Innkeeper",
+                    "text": "There's a bounty on goblin ears. Bring me proof of your kills and I'll pay you handsomely. The merchant across the way also buys monster parts.",
+                    "options": [
+                        { "text": "I'll see what I can do.", "next": -1, "ends": true }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "speaker": "Innkeeper",
+                    "text": "Here's what I have available. Food, drink, and supplies for the road.",
+                    "options": [
+                        { "text": "Thanks.", "next": -1, "ends": true }
+                    ]
+                }
+            ]
+        },
+        "shop": {
+            "buy_multiplier": 1.2,
+            "sell_multiplier": 0.4,
+            "restocks": true,
+            "restock_interval": 50,
+            "items": [
+                { "template_id": "bread", "name": "Bread", "price": 5 },
+                { "template_id": "meat_stew", "name": "Meat Stew", "price": 15 },
+                { "template_id": "ale", "name": "Ale", "price": 8 },
+                { "template_id": "wine", "name": "Wine", "price": 20 },
+                { "template_id": "health_potion", "name": "Health Potion", "price": 30 },
+                { "template_id": "torch", "name": "Torch", "price": 5 },
+                { "template_id": "rope", "name": "Rope", "price": 7 }
+            ]
+        },
+        "interactable": {
+            "message": "Press E to talk"
+        }
+    }
+}

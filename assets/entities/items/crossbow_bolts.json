@@ -1,0 +1,30 @@
+{
+    "id": "crossbow_bolts",
+    "name": "Crossbow Bolts",
+    "description": "Heavy iron-tipped bolts",
+    "category": "item",
+    "tags": ["ammo", "bolt"],
+    
+    "components": {
+        "render": {
+            "char": "|",
+            "color": "gray",
+            "priority": 2
+        },
+        "name": {
+            "name": "Crossbow Bolts",
+            "description": "Heavy iron-tipped bolts"
+        },
+        "item": {
+            "type": "consumable",
+            "value": 30,
+            "stackable": true,
+            "stack_count": 15
+        },
+        "ammo": {
+            "ammo_type": "bolt",
+            "quantity": 15,
+            "damage_bonus": 2
+        }
+    }
+}

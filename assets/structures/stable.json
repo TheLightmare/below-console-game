@@ -1,0 +1,43 @@
+{
+    "id": "stable",
+    "name": "Village Stable",
+    "description": "A large stable for horses with hay storage and tack room",
+    
+    "legend": {
+        "#": { "symbol": "#", "color": "brown", "walkable": false },
+        "+": { "symbol": "+", "color": "yellow", "walkable": true },
+        ".": { "symbol": ".", "color": "brown", "walkable": true },
+        "|": { "symbol": "|", "color": "brown", "walkable": false },
+        "-": { "symbol": "-", "color": "brown", "walkable": false },
+        ",": { "symbol": ",", "color": "yellow", "walkable": true },
+        "H": { "symbol": "H", "color": "white", "walkable": false },
+        "h": { "symbol": "h", "color": "brown", "walkable": false },
+        "=": { "symbol": "=", "color": "brown", "walkable": true },
+        "~": { "symbol": "~", "color": "blue", "walkable": true },
+        "o": { "symbol": "o", "color": "gray", "walkable": true },
+        "w": { "symbol": "\"", "color": "cyan", "walkable": false },
+        "S": { "spawn": "npc", "subtype": "stablehand", "name": "Stablehand" }
+    },
+    
+    "pattern": [
+        "##########################",
+        "#w,,,|H..|H..|H..|,,,,.w#",
+        "#,,,,|...|...|...|......#",
+        "#,S,,|~~~|~~~|~~~|......#",
+        "#----+---+---+---+------#",
+        "#w.......*.............w#",
+        "#.........=====.....h.h.#",
+        "#o........=...=.....h.h.#",
+        "#.........=====.....h.h.#",
+        "#w...*..................w#",
+        "###########+++###########"
+    ],
+    
+    "jigsaw": {
+        "district": "industrial",
+        "spawn_weight": 0.7,
+        "unique": true
+    },
+    
+    "tags": ["building", "stable", "animals"]
+}

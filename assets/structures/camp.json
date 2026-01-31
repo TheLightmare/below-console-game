@@ -1,0 +1,69 @@
+{
+    "id": "camp",
+    "name": "Traveler's Camp",
+    "description": "A small camp with tents around a fire",
+    "type_id": 1,
+    "min_size": 6,
+    "max_size": 8,
+    
+    "biomes": {
+        "plains": 0.04,
+        "forest": 0.03,
+        "hills": 0.02,
+        "desert": 0.03
+    },
+    
+    "shapes": [
+        {
+            "type": "circle_filled",
+            "x1": 0, "y1": 0,
+            "radius": 5,
+            "symbol": ".",
+            "color": "brown",
+            "walkable": true
+        }
+    ],
+    
+    "tiles": [
+        {"x": 0, "y": 0, "symbol": "*", "color": "red", "walkable": true},
+        
+        {"x": -3, "y": -2, "symbol": "A", "color": "brown", "walkable": false},
+        {"x": 3, "y": -1, "symbol": "A", "color": "brown", "walkable": false},
+        {"x": -2, "y": 3, "symbol": "A", "color": "brown", "walkable": false},
+        {"x": 2, "y": 2, "symbol": "A", "color": "brown", "walkable": false, "chance": 0.7},
+        
+        {"x": -1, "y": 1, "symbol": "=", "color": "brown", "walkable": true},
+        {"x": 1, "y": -1, "symbol": "=", "color": "brown", "walkable": true}
+    ],
+    
+    "spawns": [
+        {
+            "type": "enemy",
+            "subtype": "bandit",
+            "name": "Bandit",
+            "x": 0, "y": 0,
+            "radius": 4,
+            "level_min": 1, "level_max": 3,
+            "count_min": 2, "count_max": 4,
+            "chance": 0.8
+        },
+        {
+            "type": "npc",
+            "subtype": "wandering_trader",
+            "name": "Wandering Trader",
+            "x": 2, "y": 0,
+            "radius": 2,
+            "chance": 0.5
+        },
+        {
+            "type": "npc",
+            "subtype": "mysterious_stranger",
+            "name": "Mysterious Stranger",
+            "x": -2, "y": 0,
+            "radius": 2,
+            "chance": 0.3
+        }
+    ],
+    
+    "tags": ["rest_point", "trade"]
+}

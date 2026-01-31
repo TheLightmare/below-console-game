@@ -1,0 +1,51 @@
+{
+    "id": "shop",
+    "name": "General Store",
+    "description": "A well-stocked merchant's shop with storage and display areas",
+    
+    "legend": {
+        "#": { "symbol": "#", "color": "red", "walkable": false },
+        "+": { "symbol": "+", "color": "yellow", "walkable": true },
+        ".": { "symbol": ".", "color": "brown", "walkable": true },
+        "|": { "symbol": "|", "color": "red", "walkable": false },
+        "-": { "symbol": "-", "color": "red", "walkable": false },
+        "$": { "symbol": "$", "color": "yellow", "walkable": true },
+        "%": { "symbol": "%", "color": "magenta", "walkable": true },
+        "=": { "symbol": "=", "color": "brown", "walkable": true },
+        "s": { "symbol": "s", "color": "gray", "walkable": true },
+        "*": { "symbol": "*", "color": "yellow", "walkable": true },
+        "o": { "symbol": "o", "color": "cyan", "walkable": true },
+        "w": { "symbol": "\"", "color": "cyan", "walkable": false },
+        "S": { "symbol": "S", "color": "yellow", "walkable": false },
+        "B": { "symbol": "B", "color": "brown", "walkable": false },
+        "b": { "symbol": "b", "color": "brown", "walkable": true },
+        "M": { "spawn": "npc", "subtype": "merchant", "name": "Merchant" }
+    },
+    
+    "pattern": [
+        "SS######################SS",
+        "##########################",
+        "#wsss|w$..$..$..$..$...$.w#",
+        "#ssss|....................#",
+        "#ssss|...........*........#",
+        "#sss.|....................#",
+        "#----+....................#",
+        "#w..........========.....w#",
+        "#...........=......=......#",
+        "#....%...%..=..M...=......#",
+        "#...........=......=.....o#",
+        "#...........========......#",
+        "#w..........*.............#",
+        "#.........................#",
+        "#w$..%..b..%..b..%..b..%$w#",
+        "##########+++#############"
+    ],
+    
+    "jigsaw": {
+        "district": "market",
+        "spawn_weight": 1.0,
+        "unique": false
+    },
+    
+    "tags": ["building", "shop", "trade"]
+}

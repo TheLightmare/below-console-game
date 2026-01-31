@@ -1,0 +1,47 @@
+{
+    "id": "hot_spring",
+    "name": "Hot Spring",
+    "description": "A steaming natural hot spring surrounded by rocks",
+    "type_id": 14,
+    "min_size": 6,
+    "max_size": 8,
+    
+    "biomes": {
+        "swamp": 0.04,
+        "mountains": 0.03,
+        "tundra": 0.05
+    },
+    
+    "shapes": [
+        {
+            "type": "circle_outline",
+            "x1": 0, "y1": 0,
+            "radius": 4,
+            "symbol": "O",
+            "color": "gray",
+            "walkable": false
+        },
+        {
+            "type": "circle_outline",
+            "x1": 0, "y1": 0,
+            "radius": 3,
+            "symbol": "*",
+            "color": "white",
+            "walkable": true
+        },
+        {
+            "type": "circle_filled",
+            "x1": 0, "y1": 0,
+            "radius": 2,
+            "symbol": "~",
+            "color": "cyan",
+            "walkable": false
+        }
+    ],
+    
+    "tiles": [],
+    
+    "spawns": [],
+    
+    "tags": ["rest_point", "healing", "natural"]
+}

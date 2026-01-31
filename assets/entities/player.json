@@ -1,0 +1,48 @@
+{
+    "id": "player",
+    "name": "Hero",
+    "description": "A brave adventurer",
+    "category": "player",
+    "tags": ["player", "humanoid", "hero"],
+    
+    "components": {
+        "render": {
+            "char": "@",
+            "color": "yellow",
+            "priority": 10
+        },
+        "stats": {
+            "level": 1,
+            "hp_base": 30,
+            "attack_base": 8,
+            "defense_base": 5,
+            "attribute_points": 5
+        },
+        "name": {
+            "name": "Hero",
+            "description": "A brave adventurer"
+        },
+        "collision": {
+            "blocks_movement": true,
+            "blocks_sight": false
+        },
+        "faction": {
+            "faction": "player"
+        },
+        "inventory": {
+            "max_items": 20,
+            "gold": 100
+        },
+        "equipment": {},
+        "player_controller": {
+            "can_move": true,
+            "can_attack": true
+        },
+        "anatomy": {
+            "preset": "humanoid",
+            "limbs": [
+                {"type": "other", "name": "tail", "resistance": 0.5}
+            ]
+        }
+    }
+}

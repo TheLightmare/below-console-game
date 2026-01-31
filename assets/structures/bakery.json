@@ -1,0 +1,44 @@
+{
+    "id": "bakery",
+    "name": "Village Bakery",
+    "description": "A warm bakery with ovens, display counter, and storage",
+    
+    "legend": {
+        "#": { "symbol": "#", "color": "brown", "walkable": false },
+        "+": { "symbol": "+", "color": "yellow", "walkable": true },
+        ".": { "symbol": ".", "color": "brown", "walkable": true },
+        "|": { "symbol": "|", "color": "brown", "walkable": false },
+        "-": { "symbol": "-", "color": "brown", "walkable": false },
+        "^": { "symbol": "^", "color": "red", "walkable": false },
+        "O": { "symbol": "O", "color": "red", "walkable": false },
+        "o": { "symbol": "o", "color": "yellow", "walkable": true },
+        "%": { "symbol": "%", "color": "yellow", "walkable": true },
+        "=": { "symbol": "=", "color": "brown", "walkable": true },
+        "s": { "symbol": "s", "color": "brown", "walkable": true },
+        "*": { "symbol": "*", "color": "yellow", "walkable": true },
+        "w": { "symbol": "\"", "color": "cyan", "walkable": false },
+        "B": { "spawn": "npc", "subtype": "baker", "name": "Baker" }
+    },
+    
+    "pattern": [
+        "^^^^################^^^^",
+        "########################",
+        "#wOO^|%..o..o..%.....%w#",
+        "#..OO|................o#",
+        "#....|..*...======....#",
+        "#....|....B.=....=....#",
+        "#----|----++=....=....#",
+        "#wsss...*...======...w#",
+        "#ssss..................#",
+        "#wsss......*..........w#",
+        "#########++++##########"
+    ],
+    
+    "jigsaw": {
+        "district": "market",
+        "spawn_weight": 0.7,
+        "unique": true
+    },
+    
+    "tags": ["building", "bakery", "trade", "food"]
+}

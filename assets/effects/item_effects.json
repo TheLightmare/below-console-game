@@ -1,0 +1,143 @@
+{
+    "item_effect_types": [
+        {
+            "id": "heal_hp",
+            "name": "Heal HP",
+            "description": "Restores a fixed amount of HP",
+            "behavior": "instant_heal",
+            "stat": "hp",
+            "is_percent": false,
+            "message_player": "Restored {amount} HP!",
+            "message_other": "{target} is healed for {amount} HP!"
+        },
+        {
+            "id": "restore_hp_percent",
+            "name": "Restore HP %",
+            "description": "Restores a percentage of max HP",
+            "behavior": "instant_heal",
+            "stat": "hp",
+            "is_percent": true,
+            "message_player": "Restored {amount} HP!",
+            "message_other": "{target} is healed for {amount} HP!"
+        },
+        {
+            "id": "damage_hp",
+            "name": "Damage HP",
+            "description": "Deals instant damage",
+            "behavior": "instant_damage",
+            "stat": "hp",
+            "message_player": "Took {amount} damage!",
+            "message_other": "{target} takes {amount} damage!"
+        },
+        {
+            "id": "buff_attack",
+            "name": "Buff Attack",
+            "description": "Increases attack stat",
+            "behavior": "stat_modifier",
+            "stat": "attack",
+            "modifier_type": "add",
+            "status_effect_id": "buff_attack",
+            "message_player": "Attack increased by {amount}!",
+            "message_other": "{target}'s attack increased by {amount}!"
+        },
+        {
+            "id": "buff_defense",
+            "name": "Buff Defense",
+            "description": "Increases defense stat",
+            "behavior": "stat_modifier",
+            "stat": "defense",
+            "modifier_type": "add",
+            "status_effect_id": "buff_defense",
+            "message_player": "Defense increased by {amount}!",
+            "message_other": "{target}'s defense increased by {amount}!"
+        },
+        {
+            "id": "buff_armor",
+            "name": "Buff Armor",
+            "description": "Increases armor/defense stat",
+            "behavior": "stat_modifier",
+            "stat": "defense",
+            "modifier_type": "add",
+            "status_effect_id": "buff_defense",
+            "message_player": "Defense increased by {amount}!",
+            "message_other": "{target}'s defense increased by {amount}!"
+        },
+        {
+            "id": "debuff_attack",
+            "name": "Debuff Attack",
+            "description": "Decreases attack stat",
+            "behavior": "stat_modifier",
+            "stat": "attack",
+            "modifier_type": "subtract",
+            "status_effect_id": "debuff_attack",
+            "message_player": "Attack reduced by {amount}!",
+            "message_other": "{target}'s attack reduced by {amount}!"
+        },
+        {
+            "id": "debuff_defense",
+            "name": "Debuff Defense",
+            "description": "Decreases defense stat",
+            "behavior": "stat_modifier",
+            "stat": "defense",
+            "modifier_type": "subtract",
+            "status_effect_id": "debuff_defense",
+            "message_player": "Defense reduced by {amount}!",
+            "message_other": "{target}'s defense reduced by {amount}!"
+        },
+        {
+            "id": "gain_xp",
+            "name": "Gain XP",
+            "description": "Grants experience points",
+            "behavior": "instant_stat",
+            "stat": "experience",
+            "modifier_type": "add",
+            "message_player": "Gained {amount} experience!",
+            "message_other": "{target} gained {amount} experience!"
+        },
+        {
+            "id": "poison",
+            "name": "Poison",
+            "description": "Applies poison status effect",
+            "behavior": "apply_status",
+            "status_effect_id": "poison",
+            "default_duration": 5,
+            "message_player": "You are poisoned!",
+            "message_other": "{target} is poisoned!"
+        },
+        {
+            "id": "regeneration",
+            "name": "Regeneration",
+            "description": "Applies regeneration status effect",
+            "behavior": "apply_status",
+            "status_effect_id": "regeneration",
+            "default_duration": 5,
+            "message_player": "You feel regenerative energy!",
+            "message_other": "{target} is regenerating!"
+        },
+        {
+            "id": "teleport",
+            "name": "Teleport",
+            "description": "Teleports to a random location",
+            "behavior": "custom",
+            "custom_handler": "teleport",
+            "message_player": "You teleport away!",
+            "message_other": "{target} teleports away!"
+        },
+        {
+            "id": "reveal_map",
+            "name": "Reveal Map",
+            "description": "Reveals the entire map",
+            "behavior": "custom",
+            "custom_handler": "reveal_map",
+            "message_player": "The map is revealed!",
+            "message_other": "The map is revealed!"
+        },
+        {
+            "id": "custom",
+            "name": "Custom Effect",
+            "description": "Custom scripted effect",
+            "behavior": "custom",
+            "custom_handler": "callback"
+        }
+    ]
+}
