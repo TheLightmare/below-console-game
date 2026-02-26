@@ -2,6 +2,7 @@
 build/
 out/
 cmake-build-*/
+.github/
 
 # Compiled binaries
 *.exe

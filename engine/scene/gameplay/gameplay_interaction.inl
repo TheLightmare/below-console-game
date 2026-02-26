@@ -76,6 +76,7 @@ void show_examine_window(EntityId target_id) {
     DoorComponent* door = manager->get_component<DoorComponent>(target_id);
     ChestComponent* chest = manager->get_component<ChestComponent>(target_id);
     NPCComponent* npc = manager->get_component<NPCComponent>(target_id);
+    PropertiesComponent* props = manager->get_component<PropertiesComponent>(target_id);
     
     // Window dimensions
     int panel_width = 70;
@@ -135,6 +136,16 @@ void show_examine_window(EntityId target_id) {
             // Description
             if (name && !name->description.empty()) {
                 console->draw_string(x, y++, name->description, Color::WHITE);
+                y++;
+            }
+            
+            // Properties / Traits
+            if (props && !props->properties.empty()) {
+                console->draw_string(x, y++, "== Traits ==", Color::YELLOW);
+                for (const auto& prop : props->properties) {
+                    console->draw_string(x, y, "  * ", Color::DARK_GRAY);
+                    console->draw_string(x + 4, y++, prop, Color::MAGENTA);
+                }
                 y++;
             }
             
@@ -381,6 +392,14 @@ void examine_entity(EntityId target_id) {
         add_message(name->description);
     } else {
         add_message("You examine " + target_name + ".");
+    }
+    
+    // Show properties / traits
+    PropertiesComponent* props = manager->get_component<PropertiesComponent>(target_id);
+    if (props && !props->properties.empty()) {
+        for (const auto& prop : props->properties) {
+            add_message("  * " + prop);
+        }
     }
     
     // Show faction and relationship

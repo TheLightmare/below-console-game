@@ -990,6 +990,28 @@ inline void deserialize_utility_ai(UtilityAIComponent& comp, const json::Value& 
     }
 }
 
+// Serialize PropertiesComponent
+inline json::Object serialize_properties(const PropertiesComponent& comp) {
+    json::Object obj;
+    obj["_type"] = "properties";
+    json::Array arr;
+    for (const auto& prop : comp.properties) {
+        arr.push_back(json::Value(prop));
+    }
+    obj["properties"] = json::Value(std::move(arr));
+    return obj;
+}
+
+inline void deserialize_properties(PropertiesComponent& comp, const json::Value& val) {
+    comp.properties.clear();
+    if (val.has("properties") && val["properties"].is_array()) {
+        const auto& arr = val["properties"].as_array();
+        for (const auto& v : arr) {
+            comp.properties.push_back(v.get_string(""));
+        }
+    }
+}
+
 // ==================== Full Entity Serialization ====================
 
 // Serialize all components of an entity to a JSON object
@@ -1065,6 +1087,9 @@ inline json::Object serialize_entity_components(EntityId entity_id, ComponentMan
     }
     if (auto* comp = manager->get_component<PlayerControllerComponent>(entity_id)) {
         components_arr.push_back(json::Value(serialize_player_controller(*comp)));
+    }
+    if (auto* comp = manager->get_component<PropertiesComponent>(entity_id)) {
+        components_arr.push_back(json::Value(serialize_properties(*comp)));
     }
     
     obj["entity_id"] = static_cast<int>(entity_id);
@@ -1181,6 +1206,10 @@ inline EntityId deserialize_entity_components(const json::Value& val, ComponentM
         else if (type == "player_controller") {
             auto& comp = manager->add_component<PlayerControllerComponent>(entity_id);
             deserialize_player_controller(comp, comp_val);
+        }
+        else if (type == "properties") {
+            auto& comp = manager->add_component<PropertiesComponent>(entity_id);
+            deserialize_properties(comp, comp_val);
         }
     }
     

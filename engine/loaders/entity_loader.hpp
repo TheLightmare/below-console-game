@@ -446,6 +446,24 @@ private:
         entity.add_component(corpse);
     }
 
+    void parse_properties_component(Entity& entity, const json::Value& data) {
+        PropertiesComponent props;
+        if (data.is_array()) {
+            // Shorthand: "properties": ["trait1", "trait2"]
+            for (size_t i = 0; i < data.size(); ++i) {
+                props.add_property(data[i].get_string(""));
+            }
+        } else if (data.is_object()) {
+            // Object form: "properties": { "list": ["trait1", "trait2"] }
+            if (data.has("list") && data["list"].is_array()) {
+                for (size_t i = 0; i < data["list"].size(); ++i) {
+                    props.add_property(data["list"][i].get_string(""));
+                }
+            }
+        }
+        entity.add_component(props);
+    }
+
 public:
     EntityLoader() = default;
     
@@ -619,6 +637,8 @@ public:
                 parse_leaves_corpse_component(entity, comp_data);
             } else if (comp_name == "corpse") {
                 parse_corpse_component(entity, comp_data);
+            } else if (comp_name == "properties") {
+                parse_properties_component(entity, comp_data);
             }
         }
         

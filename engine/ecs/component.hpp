@@ -49,6 +49,9 @@
 // Corpse system (entities leaving bodies behind)
 #include "components/corpse_component.hpp"
 
+// Arbitrary entity properties/traits
+#include "components/properties_component.hpp"
+
 // Legacy includes for files that expect everything from this header
 #include "types.hpp"
 #include "../util/json.hpp"
