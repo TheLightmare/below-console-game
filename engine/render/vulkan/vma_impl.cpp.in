@@ -1,0 +1,5 @@
+// VMA implementation - compiled once.
+// This file is configured by CMake. The include path is set via target_include_directories.
+
+#define VMA_IMPLEMENTATION
+#include <vk_mem_alloc.h>

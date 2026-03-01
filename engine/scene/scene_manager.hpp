@@ -1,13 +1,9 @@
 #pragma once
 #include "scene.hpp"
-#include "../ecs/entity_transfer.hpp"
 #include <unordered_map>
 #include <unordered_set>
 #include <memory>
 #include <functional>
-
-// Forward declaration
-struct GameState;
 
 class SceneManager {
 private:
@@ -16,14 +12,13 @@ private:
     std::unordered_set<std::string> persistent_scene_names;  // Which scenes to keep alive
     Scene* current_scene = nullptr;
     std::string current_scene_name;
-    GameState* game_state = nullptr;  // Shared game state (owned externally, typically by Game)
-    EntityTransferManager transfer_manager;  // Manages entity transfers between scenes
+    void* user_data = nullptr;  // Optional user data propagated to scenes
     
 public:
     SceneManager() : current_scene(nullptr), current_scene_name("") {}
     
-    // Set the shared game state - must be called before loading scenes
-    void set_game_state(GameState* state) { game_state = state; }
+    // Set optional user data - propagated to scenes on load
+    void set_user_data(void* data) { user_data = data; }
     
     // Register a scene factory
     template<typename T>
@@ -61,22 +56,20 @@ public:
                 // Create and cache new scene
                 persistent_scenes[name] = it->second();
                 current_scene = persistent_scenes[name].get();
-                // Inject game state and transfer manager into newly created scene
-                if (game_state) {
-                    current_scene->set_game_state(game_state);
+                // Inject user data into newly created scene
+                if (user_data) {
+                    current_scene->set_user_data(user_data);
                 }
-                current_scene->set_transfer_manager(&transfer_manager);
             }
         } else {
             // Non-persistent scene - clear old cache if any and create fresh
             persistent_scenes.erase(name);
             persistent_scenes[name] = it->second();
             current_scene = persistent_scenes[name].get();
-            // Inject game state and transfer manager into newly created scene
-            if (game_state) {
-                current_scene->set_game_state(game_state);
+            // Inject user data into newly created scene
+            if (user_data) {
+                current_scene->set_user_data(user_data);
             }
-            current_scene->set_transfer_manager(&transfer_manager);
         }
         
         current_scene_name = name;
@@ -141,34 +134,4 @@ public:
         return current_scene_name;
     }
     
-    // ==================== Entity Transfer System ====================
-    
-    // Get the entity transfer manager for cross-scene entity migration
-    EntityTransferManager& get_transfer_manager() {
-        return transfer_manager;
-    }
-    
-    const EntityTransferManager& get_transfer_manager() const {
-        return transfer_manager;
-    }
-    
-    // Convenience: Queue player entity for transfer to next scene
-    bool transfer_player(EntityId player_id, ComponentManager* manager) {
-        return transfer_manager.queue_player_for_transfer(player_id, manager);
-    }
-    
-    // Convenience: Check if there's a player waiting to be restored
-    bool has_player_to_restore() const {
-        return transfer_manager.has_player_transfer();
-    }
-    
-    // Convenience: Restore player entity from transfer
-    EntityId restore_player(ComponentManager* manager, int spawn_x, int spawn_y) {
-        return transfer_manager.restore_player(manager, spawn_x, spawn_y);
-    }
-    
-    // Convenience: Clear player transfer after restoration
-    void clear_player_transfer() {
-        transfer_manager.clear_player_transfer();
-    }
 };

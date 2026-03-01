@@ -7,8 +7,6 @@ class Console;
 class ComponentManager;
 class Renderer;
 class UI;
-class EntityTransferManager;
-struct GameState;
 enum class Key;
 
 // Base scene class
@@ -18,27 +16,21 @@ protected:
     ComponentManager* manager;
     Renderer* renderer;
     UI* ui;
-    GameState* game_state;  // Shared game state (owned by Game, managed by SceneManager)
-    EntityTransferManager* transfer_manager = nullptr;  // For entity transfers between scenes
+    void* user_data = nullptr;  // Optional user data pointer (game-specific state)
     bool finished;
     std::string next_scene;
     bool request_fresh_scene = false;  // Request that the next scene be freshly created
     
 public:
     Scene(Console* con, ComponentManager* mgr, Renderer* rend, UI* ui_sys)
-        : console(con), manager(mgr), renderer(rend), ui(ui_sys), game_state(nullptr)
+        : console(con), manager(mgr), renderer(rend), ui(ui_sys)
         , finished(false), next_scene("") {}
     
     virtual ~Scene() = default;
     
-    // Set the shared game state (called by SceneManager)
-    void set_game_state(GameState* state) { game_state = state; }
-    
-    // Set the entity transfer manager (called by SceneManager)
-    void set_transfer_manager(EntityTransferManager* tm) { transfer_manager = tm; }
-    
-    // Get the entity transfer manager for cross-scene entity transfers
-    EntityTransferManager* get_transfer_manager() { return transfer_manager; }
+    // Set optional user data (game-specific state, owned externally)
+    void set_user_data(void* data) { user_data = data; }
+    void* get_user_data() const { return user_data; }
     
     void enter() {
         finished = false;

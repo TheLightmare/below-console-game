@@ -38,19 +38,13 @@ enum class GameAction {
     MOVE_DOWN,
     MOVE_LEFT,
     MOVE_RIGHT,
+    MOVE_UP_LAYER,      // Go up one z-level  (like Dwarf Fortress '<')
+    MOVE_DOWN_LAYER,    // Go down one z-level (like Dwarf Fortress '>')
     
-    // Gameplay
-    INVENTORY,
-    CHARACTER,
-    INTERACT,       // Pickup items (E key)
-    TALK,           // Open interaction menu (F key)
-    USE_ITEM,
-    DROP_ITEM,
-    THROW_ITEM,     // Throw item at nearby entity (T key)
-    MAP,
+    // Generic gameplay
+    ACTION_1,       // Primary action (e.g. interact, select)
+    ACTION_2,       // Secondary action (e.g. use, inspect)
     HELP,
-    EXAMINE,
-    RANGED_ATTACK,  // Enter ranged targeting mode (R key)
     
     // Menu Navigation
     MENU_UP,
@@ -61,11 +55,7 @@ enum class GameAction {
     CANCEL,
     PAUSE,
     
-    // Stairs/Levels
-    ASCEND,         // Go up stairs (<)
-    DESCEND,        // Go down stairs (>)
-    
-    // Quick actions
+    // Camera / viewport
     ZOOM_IN,
     ZOOM_OUT,
     SCROLL_MESSAGES_UP,
@@ -91,13 +81,10 @@ inline ActionCategory get_action_category(GameAction action) {
         case GameAction::MOVE_DOWN:
         case GameAction::MOVE_LEFT:
         case GameAction::MOVE_RIGHT:
-        case GameAction::INTERACT:
-        case GameAction::TALK:
-        case GameAction::EXAMINE:
-        case GameAction::RANGED_ATTACK:
-        case GameAction::THROW_ITEM:
-        case GameAction::ASCEND:
-        case GameAction::DESCEND:
+        case GameAction::MOVE_UP_LAYER:
+        case GameAction::MOVE_DOWN_LAYER:
+        case GameAction::ACTION_1:
+        case GameAction::ACTION_2:
             return ActionCategory::GAMEPLAY;
         
         // Menu navigation
@@ -107,11 +94,6 @@ inline ActionCategory get_action_category(GameAction action) {
         case GameAction::MENU_RIGHT:
         case GameAction::CONFIRM:
         case GameAction::CANCEL:
-        case GameAction::INVENTORY:
-        case GameAction::CHARACTER:
-        case GameAction::USE_ITEM:
-        case GameAction::DROP_ITEM:
-        case GameAction::MAP:
             return ActionCategory::MENU;
         
         // Camera
@@ -228,44 +210,26 @@ inline std::string key_to_short_string(Key key) {
 // Convert GameAction to display name
 inline std::string action_to_string(GameAction action) {
     switch (action) {
-        // Movement
         case GameAction::MOVE_UP: return "Move Up";
         case GameAction::MOVE_DOWN: return "Move Down";
         case GameAction::MOVE_LEFT: return "Move Left";
         case GameAction::MOVE_RIGHT: return "Move Right";
-        
-        // Gameplay
-        case GameAction::INVENTORY: return "Inventory";
-        case GameAction::CHARACTER: return "Character Stats";
-        case GameAction::INTERACT: return "Interact/Pickup";
-        case GameAction::TALK: return "Talk to NPC";
-        case GameAction::USE_ITEM: return "Use Item";
-        case GameAction::DROP_ITEM: return "Drop Item";
-        case GameAction::THROW_ITEM: return "Throw Item";
-        case GameAction::MAP: return "World Map";
+        case GameAction::MOVE_UP_LAYER: return "Go Up Level";
+        case GameAction::MOVE_DOWN_LAYER: return "Go Down Level";
+        case GameAction::ACTION_1: return "Action 1";
+        case GameAction::ACTION_2: return "Action 2";
         case GameAction::HELP: return "Help";
-        case GameAction::EXAMINE: return "Examine";
-        case GameAction::RANGED_ATTACK: return "Ranged Attack";
-        
-        // Menu Navigation
         case GameAction::MENU_UP: return "Menu Up";
         case GameAction::MENU_DOWN: return "Menu Down";
         case GameAction::MENU_LEFT: return "Menu Left";
         case GameAction::MENU_RIGHT: return "Menu Right";
         case GameAction::CONFIRM: return "Confirm/Select";
         case GameAction::CANCEL: return "Cancel/Back";
-        case GameAction::PAUSE: return "Pause Game";
-        
-        // Stairs
-        case GameAction::ASCEND: return "Go Up Stairs";
-        case GameAction::DESCEND: return "Go Down Stairs";
-        
-        // Quick actions
+        case GameAction::PAUSE: return "Pause";
         case GameAction::ZOOM_IN: return "Zoom In";
         case GameAction::ZOOM_OUT: return "Zoom Out";
         case GameAction::SCROLL_MESSAGES_UP: return "Scroll Messages Up";
         case GameAction::SCROLL_MESSAGES_DOWN: return "Scroll Messages Down";
-        
         default: return "Unknown";
     }
 }
@@ -276,17 +240,11 @@ inline GameAction string_to_action(const std::string& str) {
     if (str == "MOVE_DOWN") return GameAction::MOVE_DOWN;
     if (str == "MOVE_LEFT") return GameAction::MOVE_LEFT;
     if (str == "MOVE_RIGHT") return GameAction::MOVE_RIGHT;
-    if (str == "INVENTORY") return GameAction::INVENTORY;
-    if (str == "CHARACTER") return GameAction::CHARACTER;
-    if (str == "INTERACT") return GameAction::INTERACT;
-    if (str == "TALK") return GameAction::TALK;
-    if (str == "USE_ITEM") return GameAction::USE_ITEM;
-    if (str == "DROP_ITEM") return GameAction::DROP_ITEM;
-    if (str == "THROW_ITEM") return GameAction::THROW_ITEM;
-    if (str == "MAP") return GameAction::MAP;
+    if (str == "MOVE_UP_LAYER") return GameAction::MOVE_UP_LAYER;
+    if (str == "MOVE_DOWN_LAYER") return GameAction::MOVE_DOWN_LAYER;
+    if (str == "ACTION_1") return GameAction::ACTION_1;
+    if (str == "ACTION_2") return GameAction::ACTION_2;
     if (str == "HELP") return GameAction::HELP;
-    if (str == "EXAMINE") return GameAction::EXAMINE;
-    if (str == "RANGED_ATTACK") return GameAction::RANGED_ATTACK;
     if (str == "MENU_UP") return GameAction::MENU_UP;
     if (str == "MENU_DOWN") return GameAction::MENU_DOWN;
     if (str == "MENU_LEFT") return GameAction::MENU_LEFT;
@@ -294,8 +252,6 @@ inline GameAction string_to_action(const std::string& str) {
     if (str == "CONFIRM") return GameAction::CONFIRM;
     if (str == "CANCEL") return GameAction::CANCEL;
     if (str == "PAUSE") return GameAction::PAUSE;
-    if (str == "ASCEND") return GameAction::ASCEND;
-    if (str == "DESCEND") return GameAction::DESCEND;
     if (str == "ZOOM_IN") return GameAction::ZOOM_IN;
     if (str == "ZOOM_OUT") return GameAction::ZOOM_OUT;
     if (str == "SCROLL_MESSAGES_UP") return GameAction::SCROLL_MESSAGES_UP;
@@ -310,17 +266,11 @@ inline std::string action_to_save_string(GameAction action) {
         case GameAction::MOVE_DOWN: return "MOVE_DOWN";
         case GameAction::MOVE_LEFT: return "MOVE_LEFT";
         case GameAction::MOVE_RIGHT: return "MOVE_RIGHT";
-        case GameAction::INVENTORY: return "INVENTORY";
-        case GameAction::CHARACTER: return "CHARACTER";
-        case GameAction::INTERACT: return "INTERACT";
-        case GameAction::TALK: return "TALK";
-        case GameAction::USE_ITEM: return "USE_ITEM";
-        case GameAction::DROP_ITEM: return "DROP_ITEM";
-        case GameAction::THROW_ITEM: return "THROW_ITEM";
-        case GameAction::MAP: return "MAP";
+        case GameAction::MOVE_UP_LAYER: return "MOVE_UP_LAYER";
+        case GameAction::MOVE_DOWN_LAYER: return "MOVE_DOWN_LAYER";
+        case GameAction::ACTION_1: return "ACTION_1";
+        case GameAction::ACTION_2: return "ACTION_2";
         case GameAction::HELP: return "HELP";
-        case GameAction::EXAMINE: return "EXAMINE";
-        case GameAction::RANGED_ATTACK: return "RANGED_ATTACK";
         case GameAction::MENU_UP: return "MENU_UP";
         case GameAction::MENU_DOWN: return "MENU_DOWN";
         case GameAction::MENU_LEFT: return "MENU_LEFT";
@@ -328,8 +278,6 @@ inline std::string action_to_save_string(GameAction action) {
         case GameAction::CONFIRM: return "CONFIRM";
         case GameAction::CANCEL: return "CANCEL";
         case GameAction::PAUSE: return "PAUSE";
-        case GameAction::ASCEND: return "ASCEND";
-        case GameAction::DESCEND: return "DESCEND";
         case GameAction::ZOOM_IN: return "ZOOM_IN";
         case GameAction::ZOOM_OUT: return "ZOOM_OUT";
         case GameAction::SCROLL_MESSAGES_UP: return "SCROLL_MESSAGES_UP";
@@ -376,18 +324,14 @@ public:
         secondary_bindings[GameAction::MOVE_LEFT] = Key::LEFT;
         secondary_bindings[GameAction::MOVE_RIGHT] = Key::RIGHT;
         
-        // Gameplay actions
-        primary_bindings[GameAction::INVENTORY] = Key::I;
-        primary_bindings[GameAction::CHARACTER] = Key::C;
-        primary_bindings[GameAction::INTERACT] = Key::E;  // Pickup items
-        primary_bindings[GameAction::TALK] = Key::F;      // Open interaction menu
-        primary_bindings[GameAction::USE_ITEM] = Key::U;
-        primary_bindings[GameAction::DROP_ITEM] = Key::G; // Drop item (changed from R)
-        primary_bindings[GameAction::THROW_ITEM] = Key::T; // Throw item at target
-        primary_bindings[GameAction::MAP] = Key::M;
+        // Z-level movement - < goes up, > goes down (like Dwarf Fortress)
+        primary_bindings[GameAction::MOVE_UP_LAYER] = Key::LESS;
+        primary_bindings[GameAction::MOVE_DOWN_LAYER] = Key::GREATER;
+        
+        // Generic gameplay actions
+        primary_bindings[GameAction::ACTION_1] = Key::E;
+        primary_bindings[GameAction::ACTION_2] = Key::F;
         primary_bindings[GameAction::HELP] = Key::H;
-        primary_bindings[GameAction::EXAMINE] = Key::X;
-        primary_bindings[GameAction::RANGED_ATTACK] = Key::R; // Ranged attack targeting
         
         // Menu navigation - primary: WASD, secondary: arrow keys
         primary_bindings[GameAction::MENU_UP] = Key::W;
@@ -408,11 +352,7 @@ public:
         secondary_bindings[GameAction::CONFIRM] = Key::SPACE;
         secondary_bindings[GameAction::CANCEL] = Key::N;
         
-        // Stairs
-        primary_bindings[GameAction::ASCEND] = Key::LESS;
-        primary_bindings[GameAction::DESCEND] = Key::GREATER;
-        
-        // Zoom (for map)
+        // Zoom
         primary_bindings[GameAction::ZOOM_IN] = Key::PLUS;
         primary_bindings[GameAction::ZOOM_OUT] = Key::MINUS;
         
@@ -518,13 +458,10 @@ public:
                 GameAction::MOVE_DOWN,
                 GameAction::MOVE_LEFT,
                 GameAction::MOVE_RIGHT,
-                GameAction::INTERACT,
-                GameAction::TALK,
-                GameAction::EXAMINE,
-                GameAction::RANGED_ATTACK,
-                GameAction::THROW_ITEM,
-                GameAction::ASCEND,
-                GameAction::DESCEND
+                GameAction::MOVE_UP_LAYER,
+                GameAction::MOVE_DOWN_LAYER,
+                GameAction::ACTION_1,
+                GameAction::ACTION_2
             }},
             { ActionCategory::MENU, {
                 GameAction::MENU_UP,
@@ -532,12 +469,7 @@ public:
                 GameAction::MENU_LEFT,
                 GameAction::MENU_RIGHT,
                 GameAction::CONFIRM,
-                GameAction::CANCEL,
-                GameAction::INVENTORY,
-                GameAction::CHARACTER,
-                GameAction::USE_ITEM,
-                GameAction::DROP_ITEM,
-                GameAction::MAP
+                GameAction::CANCEL
             }},
             { ActionCategory::CAMERA, {
                 GameAction::ZOOM_IN,

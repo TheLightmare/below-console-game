@@ -1,0 +1,5 @@
+// stb_image implementation - compiled once.
+// This file is configured by CMake. The include path is set via target_include_directories.
+
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>

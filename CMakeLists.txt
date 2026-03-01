@@ -1,63 +1,55 @@
-cmake_minimum_required(VERSION 3.10)
-project(ConsoleGame)
+cmake_minimum_required(VERSION 3.14)
+project(ConsoleEngine)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Include directories
-include_directories(${CMAKE_SOURCE_DIR}/engine)
-include_directories(${CMAKE_SOURCE_DIR})
+# =============================================================================
+# Engine libraries (console_engine, vk_renderer)
+# =============================================================================
+add_subdirectory(engine)
 
-# Engine source files
-set(ENGINE_SOURCES
-    engine/src/console.cpp
-    engine/src/ui.cpp
-    engine/src/component.cpp
-    engine/src/ai_system.cpp
-    engine/src/combat_system.cpp
-    engine/src/inventory_system.cpp
-    engine/src/interaction_system.cpp
-)
+# =============================================================================
+# Helper: add a Vulkan game/demo target with shader copying
+# =============================================================================
+function(add_vk_target TARGET_NAME SOURCE_FILE)
+    add_executable(${TARGET_NAME} ${SOURCE_FILE})
+    target_link_libraries(${TARGET_NAME} PRIVATE vk_renderer)
+    set_target_properties(${TARGET_NAME} PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
+    )
+    add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E make_directory $<TARGET_FILE_DIR:${TARGET_NAME}>/shaders
+        COMMAND ${CMAKE_COMMAND} -E copy_directory ${ENGINE_SPV_DIR} $<TARGET_FILE_DIR:${TARGET_NAME}>/shaders
+        COMMENT "Copying compiled shaders to output directory (${TARGET_NAME})"
+    )
+endfunction()
 
-# Game source files
-set(GAME_SOURCES
-    main.cpp
-)
+# =============================================================================
+# Console-based demos
+# =============================================================================
 
-# All sources
-set(SOURCES
-    ${ENGINE_SOURCES}
-    ${GAME_SOURCES}
-)
+add_executable(engine_demo main.cpp)
+target_link_libraries(engine_demo PRIVATE console_engine)
+# main.cpp uses #include "engine/..." style, so it needs the repo root
+target_include_directories(engine_demo PRIVATE ${CMAKE_SOURCE_DIR})
+set_target_properties(engine_demo PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
-# Create executable
-add_executable(game ${SOURCES})
+add_executable(zlevel_game demos/zlevel_game.cpp)
+target_link_libraries(zlevel_game PRIVATE console_engine)
+target_include_directories(zlevel_game PRIVATE ${CMAKE_SOURCE_DIR})
+set_target_properties(zlevel_game PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
-# Compiler-specific options
-if(MSVC)
-    target_compile_options(game PRIVATE /W4 /EHsc)
-    # Enable UTF-8 support
-    target_compile_options(game PRIVATE /utf-8)
-else()
-    target_compile_options(game PRIVATE -Wall -Wextra -O2)
-endif()
+# =============================================================================
+# Vulkan-based demos
+# =============================================================================
 
-# Platform-specific libraries
-if(WIN32)
-    # Link Windows console API
-    target_link_libraries(game)
-else()
-    # Linux doesn't need special linking for termios
-endif()
-
-# Set output directory
-set_target_properties(game PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
-)
-
-# Copy assets folder to build directory if it exists
-if(EXISTS ${CMAKE_SOURCE_DIR}/assets)
-    file(COPY ${CMAKE_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR})
+if(BUILD_VULKAN_RENDERER)
+    add_vk_target(vk_demo    demos/vk_demo.cpp)
+    add_vk_target(vk_game    demos/vk_game.cpp)
+    add_vk_target(vk_test    demos/vk_test.cpp)
+    add_vk_target(vk_ui_demo demos/vk_ui_demo.cpp)
+    add_vk_target(hello_world hello_world/hello_world.cpp)
 endif()
 
 # Print build info

@@ -5,7 +5,7 @@
 
 // Forward declarations for custom effect callbacks
 class ComponentManager;
-struct Entity;
+class Entity;
 
 struct Component {
     virtual ~Component() = default;

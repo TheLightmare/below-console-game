@@ -13,72 +13,114 @@ private:
     ComponentManager* manager;
     int camera_x = 0;
     int camera_y = 0;
+    int camera_z = 0;   // Current z-level being viewed
     
-    // UI Layout constants
-    static constexpr int SIDE_PANEL_WIDTH = 30;
+    // UI Layout - configurable side panel width (0 = no side panel)
+    int side_panel_width = 0;
+
+    // How many z-levels below the camera to show through transparent tiles
+    int z_see_through_depth = 1;
     
 public:
     Renderer(Console* con, ComponentManager* mgr) : console(con), manager(mgr) {}
     
-    void set_camera(int x, int y) {
+    void set_side_panel_width(int width) { side_panel_width = width; }
+    int get_side_panel_width() const { return side_panel_width; }
+
+    void set_z_see_through_depth(int d) { z_see_through_depth = d; }
+    int get_z_see_through_depth() const { return z_see_through_depth; }
+    
+    void set_camera(int x, int y, int z = 0) {
         camera_x = x;
         camera_y = y;
+        camera_z = z;
     }
     
     void center_camera_on_entity(EntityId id) {
         if (PositionComponent* pos = manager->get_component<PositionComponent>(id)) {
-            int viewport_width = console->get_width() - SIDE_PANEL_WIDTH;
+            int viewport_width = console->get_width() - side_panel_width;
             camera_x = pos->x - viewport_width / 2;
             camera_y = pos->y - console->get_height() / 2;
+            camera_z = pos->z;
         }
     }
-    
-    void render_map(World* world) {
-        int viewport_width = console->get_width() - SIDE_PANEL_WIDTH;
+
+    // ---- Fixed-size World (3D) -----------------------------------------------
+
+    void render_map(World* world, int view_z = 0) {
+        int viewport_width = console->get_width() - side_panel_width;
         int screen_height = console->get_height();
         
-        // Render tiles from world
         for (int y = 0; y < screen_height; ++y) {
             for (int x = 0; x < viewport_width; ++x) {
                 int world_x = x + camera_x;
                 int world_y = y + camera_y;
                 
                 if (world_x >= 0 && world_x < world->get_width() && 
-                    world_y >= 0 && world_y < world->get_height()) {
-                    Tile& tile = world->get_tile(world_x, world_y);
-                    Color tile_color = string_to_color(tile.color);
-                    console->set_cell(x, y, tile.symbol, tile_color, Color::BLACK);
+                    world_y >= 0 && world_y < world->get_height() &&
+                    world->valid_z(view_z)) {
+
+                    Tile& tile = world->get_tile(world_x, world_y, view_z);
+
+                    // If tile has no floor and is transparent, show level below (dimmed)
+                    if (!tile.has_floor && tile.transparent && view_z > 0 && world->valid_z(view_z - 1)) {
+                        Tile& below = world->get_tile(world_x, world_y, view_z - 1);
+                        Color dim = string_to_color(below.below_color.empty() ? "dark_gray" : below.below_color);
+                        char sym = below.below_symbol != ' ' ? below.below_symbol : below.symbol;
+                        console->set_cell(x, y, sym, dim, Color::BLACK);
+                    } else {
+                        Color tile_color = string_to_color(tile.color);
+                        console->set_cell(x, y, tile.symbol, tile_color, Color::BLACK);
+                    }
                 } else {
                     console->set_cell(x, y, ' ', Color::BLACK, Color::BLACK);
                 }
             }
         }
     }
-    
-    // Render the chunked world map (show_chunk_outlines reserved for debug visualization)
+
+    // ---- Chunked World (3D) --------------------------------------------------
+
     void render_chunked_map(ChunkedWorld* world, [[maybe_unused]] bool show_chunk_outlines = false) {
-        int viewport_width = console->get_width() - SIDE_PANEL_WIDTH;
+        int viewport_width = console->get_width() - side_panel_width;
         int screen_height = console->get_height();
         
-        // Render tiles from chunked world
         for (int y = 0; y < screen_height; ++y) {
             for (int x = 0; x < viewport_width; ++x) {
                 int world_x = x + camera_x;
                 int world_y = y + camera_y;
                 
-                Tile& tile = world->get_tile(world_x, world_y);
-                Color tile_color = string_to_color(tile.color);
-                
-                console->set_cell(x, y, tile.symbol, tile_color, Color::BLACK);
+                Tile& tile = world->get_tile(world_x, world_y, camera_z);
+
+                // See-through for transparent / no-floor tiles
+                if (!tile.has_floor && tile.transparent) {
+                    // Look through up to z_see_through_depth levels below
+                    bool found_below = false;
+                    for (int dz = 1; dz <= z_see_through_depth; ++dz) {
+                        int below_z = camera_z - dz;
+                        Tile* below = world->get_tile_ptr(world_x, world_y, below_z);
+                        if (below && below->has_floor) {
+                            Color dim = string_to_color(below->below_color.empty() ? "dark_gray" : below->below_color);
+                            char sym = below->below_symbol != ' ' ? below->below_symbol : below->symbol;
+                            console->set_cell(x, y, sym, dim, Color::BLACK);
+                            found_below = true;
+                            break;
+                        }
+                    }
+                    if (!found_below) {
+                        console->set_cell(x, y, ' ', Color::BLACK, Color::BLACK);
+                    }
+                } else {
+                    Color tile_color = string_to_color(tile.color);
+                    console->set_cell(x, y, tile.symbol, tile_color, Color::BLACK);
+                }
             }
         }
     }
     
     void render_entities() {
-        // Get all entities with position and render components
         auto positioned_entities = manager->get_entities_with_component<PositionComponent>();
         
-        // Create a list of entities to render with their priority
         struct RenderInfo {
             EntityId id;
             int x, y;
@@ -92,11 +134,12 @@ public:
             RenderComponent* render = manager->get_component<RenderComponent>(id);
             
             if (pos && render) {
-                // Calculate screen position
+                // Only render entities on the current z-level
+                if (pos->z != camera_z) continue;
+
                 int screen_x = pos->x - camera_x;
                 int screen_y = pos->y - camera_y;
                 
-                // Check if on screen
                 if (screen_x >= 0 && screen_x < console->get_width() &&
                     screen_y >= 0 && screen_y < console->get_height()) {
                     to_render.push_back({id, screen_x, screen_y, render->priority});
@@ -104,13 +147,11 @@ public:
             }
         }
         
-        // Sort by priority (lower priority renders first)
         std::sort(to_render.begin(), to_render.end(), 
             [](const RenderInfo& a, const RenderInfo& b) {
                 return a.priority < b.priority;
             });
         
-        // Render entities
         for (const auto& info : to_render) {
             RenderComponent* render = manager->get_component<RenderComponent>(info.id);
             Color fg = string_to_color(render->color);
@@ -119,9 +160,11 @@ public:
         }
     }
     
+    // ---- Convenience wrappers ------------------------------------------------
+
     void render_all(World* world) {
         console->clear();
-        render_map(world);
+        render_map(world, camera_z);
         render_entities();
     }
     
@@ -131,7 +174,6 @@ public:
         render_entities();
     }
     
-    // Alias for compatibility
     void render_chunks(ChunkedWorld* world) {
         render_all_chunked(world);
     }
@@ -142,4 +184,5 @@ public:
     
     int get_camera_x() const { return camera_x; }
     int get_camera_y() const { return camera_y; }
+    int get_camera_z() const { return camera_z; }
 };

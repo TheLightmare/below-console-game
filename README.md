@@ -1,25 +1,37 @@
-# Bienvenue dans Below!
+# Console Engine
 
-Le but pour ce TP 3 de C++ était de créer un RPG, et il se pourrait que je me soies lancé avant d'avoir pu avoir l'énoncé, il y a de celà Octobre. Certaines exigences basiques du TP ont donc été ajoutées au sparadrap par dessus un projet déjà assez défini.
+A lightweight C++17 console-based game engine featuring:
 
-# Compilation et Installation
+- **ECS (Entity-Component-System)** architecture with a type-indexed `ComponentManager`
+- **Console rendering** with dual Windows API / ANSI escape code backends and RGB color support
+- **Scene management** with factory registration, persistent scene caching, and transitions
+- **Chunked world system** with Perlin noise generation and multi-chunk structure support
+- **Cross-platform input** with configurable key bindings (Windows `_kbhit`/`_getch`, Linux `termios`)
+- **UI primitives**: panels, text, progress bars, menus, message logs, confirmation dialogs
+- **Utilities**: custom JSON parser/serializer, RNG, Perlin noise
 
-Le jeu se compile pour linux et Windows:
+## Building
 
-COMPILATION LINUX : `$ make` -> l'exécutable est dans le root directory
+**Linux:** `make`
 
-COMPILATION WINDOWS : lancer "build.bat" -> l'exécutable est dans `build/Release/`
+**Windows:** run `build.bat` (output in `build/Release/`)
 
-Dans les deux cas, le dossier "assets" est une dépendance pour le bon fonctionnement du projet, et l'exécutable doit être dans le même dossier pour une installation correcte.
+## Project Structure
 
+```
+engine/
+  ecs/          - Entity-Component-System (ComponentManager, Entity, Components)
+  input/        - Cross-platform input handling and key bindings
+  render/       - Console abstraction, Renderer, UI widgets
+  scene/        - Scene base class and SceneManager
+  src/          - .cpp implementations (console, ui)
+  util/         - JSON parser, RNG
+  world/        - World, Chunk, ChunkedWorld, Perlin noise, tile utilities
+main.cpp        - Minimal engine demo
+```
 
-# Dossiers et fichiers générés
+## Cleanup
 
-En jouant, le jeu va générer un dossier "saves" et un fichier "keybindings.cfg" au besoin si jamais le joueur a sauvegardé la partie ou altéré les touches. 
+**Linux:** `make clean`
 
-
-# Cleanup du projet
-
-POUR LINUX : `$ make clean`
-
-POUR WINDOWS : supprimer manuellement le dossier "build"
+**Windows:** delete the `build/` folder manually
