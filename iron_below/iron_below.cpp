@@ -95,7 +95,7 @@ int main(int argc, char* argv[]) {
         float ui_x = cam.left() + 10.0f;
         float ui_y = cam.top()  + 10.0f;
 
-        renderer.draw_text(ui_x, ui_y, "Underlight", Color4::white(), 2.0f);
+        renderer.draw_text(ui_x, ui_y, "Iron Below", Color4::white(), 2.0f);
         renderer.draw_text(ui_x, ui_y + 24.0f,
                            "WASD: move  +/-: zoom  ESC: quit",
                            { 0.6f, 0.6f, 0.6f, 1.0f }, 1.5f);
